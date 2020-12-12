@@ -2,6 +2,7 @@ import { ThemeProvider } from "styled-components";
 import Head from "next/head";
 import theme from "../styles/theme";
 import GlobalStyles from "../styles/globalStyles";
+import "../styles/fonts.css";
 
 const MainApp = ({ Component, pageProps }) => {
   return (
