@@ -21,3 +21,86 @@
   src: local("MADE Canvas Heavy"),
     url("/static/fonts/made-canvas-heavy.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 100;
+  src: local("AvenirNextCyr-UltraLight"),
+    url("/static/fonts/avenir-next-ultra-light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 100;
+  src: local("AvenirNextCyr-UltraLight"),
+    url("/static/fonts/avenir-next-ultra-light.woff") format("woff");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 200;
+  src: local("AvenirNextCyr-Thin"),
+    url("/static/fonts/avenir-next-thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 300;
+  src: local("AvenirNextCyr-Light"),
+    url("/static/fonts/avenir-next-light.woff") format("woff");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 400;
+  src: local("AvenirNextCyr-Regular"),
+    url("/static/fonts/avenir-next-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 500;
+  src: local("AvenirNextCyr-Medium"),
+    url("/static/fonts/avenir-next-medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 600;
+  src: local("AvenirNextCyr-Demi"),
+    url("/static/fonts/avenir-next-demi.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 700;
+  src: local("AvenirNextCyr-Bold"),
+    url("/static/fonts/avenir-next-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 900;
+  src: local("AvenirNextCyr-Heavy"),
+    url("/static/fonts/avenir-next-heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-style: italic;
+  font-weight: 400;
+  src: local("AvenirNextCyr-Italic"),
+    url("/static/fonts/avenir-next-italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-style: italic;
+  font-weight: 700;
+  src: local("AvenirNextCyr-BoldItalic"),
+    url("/static/fonts/avenir-next-bold-italic.woff") format("woff");
+}
