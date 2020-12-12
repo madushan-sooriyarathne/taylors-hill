@@ -18,7 +18,6 @@ const ContentWrapper = styled.div`
     )
     [content-end] minmax(5rem, 1fr)
     [full-end];
-  font-family: ${(props) => props.theme.fonts.secondary};
 `;
 
 export { Container, ContentWrapper };
