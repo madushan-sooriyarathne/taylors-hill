@@ -11,7 +11,7 @@ const theme = {
     secondaryLight: "#BCBCBC",
   },
   fonts: {
-    primary: "'Avenir Next' sans-sarif",
+    primary: "'Avenir Next', sans-sarif",
     secondary: "'Made Canvas', 'Times New Roman', Times, serif",
   },
   sizes: {
