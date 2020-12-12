@@ -9,7 +9,7 @@ const globalStyles = createGlobalStyle`
 
     html {
         font-size: 62.5%;
-        font-family: ${(props) => props.theme.fontPrimary};
+        font-family: ${(props) => props.theme.fonts.primary};
         font-weight: 400;
         letter-spacing: 0.5px;
         scroll-behavior: smooth;
