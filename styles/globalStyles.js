@@ -13,14 +13,39 @@ const globalStyles = createGlobalStyle`
         font-weight: 400;
         letter-spacing: 0.5px;
         scroll-behavior: smooth;
+        color: ${(props) => props.theme.colors.black};
+        box-sizing: border-box;
     }
 
     body {
-        max-width: 100vw;
-        max-height: 100vh;
-        overflow-y: scroll;
+        height: 100%;
+        width :100%;
+        overflow-y: auto;
         overflow-x: hidden;
+        border-left: ${(props) =>
+          `${props.theme.sizes.frameSize} solid ${props.theme.colors.white}`};
+        border-right: ${(props) =>
+          `${props.theme.sizes.frameSize} solid ${props.theme.colors.white}`};
+
+        &::after, &::before {
+            content: "";
+            height: ${(props) => props.theme.sizes.frameSize};
+            position: fixed;
+            left: 0;
+            right: 0;
+            background-color: ${(props) => props.theme.colors.white}
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
     }
+
+    
 `;
 
 export default globalStyles;
