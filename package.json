@@ -1,0 +1,17 @@
+{
+  "name": "taylors-hill",
+  "version": "1.0.0",
+  "description": "Official website for Taylors Hill Boutique Hotel",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madushan-sooriyarathne/taylors-hill.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Madushan Sooriyarathne",
+  "license": "ISC"
+}
