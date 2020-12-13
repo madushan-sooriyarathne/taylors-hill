@@ -15,10 +15,12 @@ const Slide = styled(animated.div)`
     [col-start] minmax(min-content, 1fr) [col-end]
   );
   grid-template-rows: repeat(2, [row-start] minmax(min-content, 1fr) [row-end]);
-  background-image: ${(props) => `url(${props.image})`};
+  background-image: ${(props) =>
+    `linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url(${props.image})`};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  will-change: transform;
 `;
 
 const TextWrapper = styled.div`
