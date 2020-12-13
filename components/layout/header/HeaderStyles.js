@@ -1,0 +1,68 @@
+import styled from "styled-components";
+
+const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  width: 100%;
+  padding: 3rem 10rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Logo = styled.img`
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+`;
+
+const NavBar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > *:not(:last-child) {
+    margin-right: 3rem;
+  }
+`;
+
+const NavLink = styled.a`
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  color: ${(props) => props.theme.colors.white};
+  cursor: pointer;
+  position: relative;
+  opacity: 1;
+  transform-origin: 50% 50%;
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+
+  &::before {
+    content: "";
+    visibility: ${(props) => (props.current ? "visible" : "hidden")};
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: ${(props) => props.theme.colors.primary};
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    opacity: 0.7;
+  }
+`;
+
+export { Container, Logo, NavBar, NavLink };
