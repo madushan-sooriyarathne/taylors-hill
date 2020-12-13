@@ -24,8 +24,9 @@ const Button = styled.div`
   background-color: transparent;
   filter: invert(1);
   cursor: pointer;
+  opacity: 0.5;
 
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 `;
 
 const ButtonRight = styled(Button)`
@@ -33,6 +34,7 @@ const ButtonRight = styled(Button)`
   background-image: url("/static/svg/right-arrow.svg");
   &:hover {
     transform: translate(5px, -50%);
+    opacity: 0.8;
   }
 `;
 
@@ -41,6 +43,7 @@ const ButtonLeft = styled(Button)`
   background-image: url("/static/svg/left-arrow.svg");
   &:hover {
     transform: translate(-5px, -50%);
+    opacity: 0.8;
   }
 `;
 
