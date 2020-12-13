@@ -7,6 +7,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: [main-start] 1fr [main-end footer-start] min-content [ footer-end];
+  position: relative;
 `;
 
 const ContentWrapper = styled.div`
