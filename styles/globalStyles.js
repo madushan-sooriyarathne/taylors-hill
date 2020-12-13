@@ -33,7 +33,8 @@ const globalStyles = createGlobalStyle`
             position: fixed;
             left: 0;
             right: 0;
-            background-color: ${(props) => props.theme.colors.white}
+            background-color: ${(props) => props.theme.colors.white};
+            z-index: 10;
         }
 
         &::before {
