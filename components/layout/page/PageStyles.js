@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.colors.bgMedium};
-  min-height: 110vh;
+  min-height: 100vh;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
