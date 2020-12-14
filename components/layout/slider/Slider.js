@@ -41,11 +41,15 @@ const slides = [
 const Slider = () => {
   const [index, setIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
+  const [pageLoad, setPageLoad] = useState(true);
+
   // spring transition
   const transitions = useTransition(index, (index) => index, {
     from: {
       opacity: 0,
-      transform: reverse
+      transform: pageLoad
+        ? "translate3d(0, 0, 0)"
+        : reverse
         ? "translate3d(-100%, 0, 0)"
         : "translate3d(100%, 0, 0)",
     },
@@ -61,6 +65,7 @@ const Slider = () => {
 
   const moveLeft = useCallback(() => {
     setReverse(true);
+    setPageLoad(false);
     setIndex((prevState) => {
       const index = (prevState - 1) % slides.length;
       if (index === -1) return slides.length - 1;
@@ -70,6 +75,7 @@ const Slider = () => {
 
   const moveRight = useCallback(() => {
     setReverse(false);
+    setPageLoad(false);
     setIndex((prevState) => (prevState + 1) % slides.length);
   });
 
