@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.bgMedium};
+  background-color: ${(props) => props.theme.colors.bgLight};
   min-height: 100vh;
   overflow: hidden;
   display: grid;
@@ -15,7 +15,7 @@ const ContentWrapper = styled.div`
   grid-template-columns:
     [full-start] minmax(5rem, 1fr) [content-start] repeat(
       8,
-      [col-start] minmax(min-content, 15rem) [col-end]
+      [col-start] minmax(min-content, 18rem) [col-end]
     )
     [content-end] minmax(5rem, 1fr)
     [full-end];
