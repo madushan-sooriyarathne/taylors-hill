@@ -8,11 +8,12 @@ const Container = styled.div`
   z-index: 5;
 
   width: 100%;
-  padding: 3rem 10rem;
   height: auto;
+  padding: 3rem 10rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: transparent;
 `;
 
 const Logo = styled.img`
@@ -65,4 +66,26 @@ const NavLink = styled.a`
   }
 `;
 
-export { Container, Logo, NavBar, NavLink };
+const CompressedContainer = styled(Container)`
+  position: fixed;
+  background-color: ${(props) => props.theme.colors.white};
+`;
+
+const CompressedNavLink = styled(NavLink)`
+  color: ${(props) => props.theme.colors.black};
+`;
+
+const CompressedLogo = styled(Logo)`
+  width: 15rem;
+  height: auto;
+`;
+
+export {
+  Container,
+  CompressedContainer,
+  Logo,
+  CompressedLogo,
+  NavBar,
+  NavLink,
+  CompressedNavLink,
+};
