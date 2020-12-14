@@ -46,6 +46,12 @@ const globalStyles = createGlobalStyle`
         }
     }
 
+    p {
+        font-size: 1.5rem;
+        text-align: center;
+        color: ${(props) => props.theme.colors.secondary}
+    }
+
     
 `;
 
