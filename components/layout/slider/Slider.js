@@ -8,7 +8,7 @@ import {
   ButtonRight,
 } from "./SliderStyles";
 import ImageSlide from "../../image-slide/ImageSlide";
-import HeadingMain from "../../headings/heading-main/HeadingMain";
+import HeadingPrimary from "../../headings/heading-primary/HeadingPrimary";
 import SliderTextBox from "../../slider-text-box/SliderTextBox";
 
 const slides = [
@@ -88,7 +88,7 @@ const Slider = () => {
             <ButtonLeft onClick={moveLeft} />
             <ButtonRight onClick={moveRight} />
             <SliderTextBox>
-              <HeadingMain>{text.heading}</HeadingMain>
+              <HeadingPrimary color="#fff">{text.heading}</HeadingPrimary>
               <Description>{text.description}</Description>
             </SliderTextBox>
           </ImageSlide>
