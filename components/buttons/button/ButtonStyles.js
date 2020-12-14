@@ -30,10 +30,11 @@ const Btn = styled.button`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% + 1px);
     height: 100%;
     background-color: ${(props) =>
       props.invert ? props.theme.colors.black : props.theme.colors.white};
+
     transform: scale3d(0, 1, 1);
     transform-origin: 100% 0;
     transition: transform 0.3s cubic-bezier(0.49, 0.07, 0.45, 0.89);
