@@ -44,7 +44,7 @@ const NavLink = styled.a`
   position: relative;
   opacity: 1;
   transform-origin: 50% 50%;
-  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
 
   &::before {
     content: "";
@@ -61,7 +61,6 @@ const NavLink = styled.a`
   }
 
   &:hover {
-    transform: scale(1.02);
     opacity: 0.7;
   }
 `;
