@@ -8,42 +8,49 @@ const Section = styled.section`
   margin: 10rem 0;
 
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+
+  gap: 5rem;
+`;
+
+const ContentWrapper = styled.div`
+  grid-row: 2 / 3;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
   grid-template-columns: repeat(
     6,
     [col-start] minmax(min-content, 1fr) [col-end]
   );
-  grid-template-rows:
-    [title-start] min-content [title-end box-start] repeat(
-      2,
-      [row-start] 1fr [row-end]
-    )
-    [box-end];
+  grid-template-rows: repeat(2, [row-start] 1fr [row-end]);
   grid-template-areas:
-    "ti ti ti ti ti ti"
     "ro ro ro rt rt rt"
     "rh rh rf rf ri ri";
   gap: 3rem;
+
+  // arrange the image boxes in the grid.
+
+  & > *:nth-child(1) {
+    grid-area: ro;
+  }
+
+  & > *:nth-child(2) {
+    grid-area: rt;
+  }
+
+  & > *:nth-child(3) {
+    grid-area: rh;
+  }
+
+  & > *:nth-child(4) {
+    grid-area: rf;
+  }
+
+  & > *:nth-child(5) {
+    grid-area: ri;
+  }
 `;
 
-const TitleWrapper = styled.div`
-  grid-area: ti;
-`;
-
-const BoxOne = styled.div`
-  grid-area: ro;
-`;
-
-const BoxTwo = styled.div`
-  grid-area: rt;
-`;
-const BoxThree = styled.div`
-  grid-area: rh;
-`;
-const BoxFour = styled.div`
-  grid-area: rf;
-`;
-const BoxFive = styled.div`
-  grid-area: ri;
-`;
-
-export { Section, TitleWrapper, BoxOne, BoxTwo, BoxThree, BoxFour, BoxFive };
+export { Section, ContentWrapper };
