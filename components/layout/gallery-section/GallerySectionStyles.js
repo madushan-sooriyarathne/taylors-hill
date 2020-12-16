@@ -4,7 +4,7 @@ const Section = styled.section`
   grid-column: full-start / full-end;
   width: 100%;
   min-height: 100vh;
-  margin: 10rem 0 5rem 0;
+  margin: 10rem 0 2rem 0;
 
   display: grid;
   grid-template-columns: 1fr;
