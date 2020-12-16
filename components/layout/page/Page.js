@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTransition } from "react-spring";
+import Footer from "../footer/Footer";
 
 import HeaderCompressed from "../header-compressed/HeaderCompressed";
 import Header from "../header/Header";
@@ -34,6 +35,7 @@ const Page = ({ children }) => {
       )}
 
       <ContentWrapper>{children}</ContentWrapper>
+      <Footer />
     </Container>
   );
 };
