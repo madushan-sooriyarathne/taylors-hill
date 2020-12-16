@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   grid-column: full-start / full-end;
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
   background-image: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.7) 0%,
