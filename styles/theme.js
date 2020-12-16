@@ -1,13 +1,13 @@
 const theme = {
   colors: {
     black: "#04141A",
-    white: "#F4F4F4",
-    bgLight: "#FAF5E5",
+    white: "#FFF",
+    bgLight: "#FAFAFA",
     bgMedium: "#FCE7D0",
     bgDark: "#E6C7A8",
     primary: "#D69D19",
     primaryLight: "#ECB662",
-    secondary: "#7C7C7C",
+    secondary: "#53534A",
     secondaryLight: "#BCBCBC",
   },
   fonts: {
