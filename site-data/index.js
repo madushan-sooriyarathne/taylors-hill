@@ -12,30 +12,45 @@ const rooms = [
   {
     id: 0,
     title: "Pattiyagama Suite",
+    type: "Quadruple Room",
     url: "/accommodation/pattiyagama-suite",
     image: "/static/img/rooms/pattiyagama.jpg",
+    description:
+      "The Largest Suite Accommodates quadruple in a King-Sized double Bed with Two Single Beds. Overlooking central lawn of the Mansion appends the opulence of the Suite with a vast arena within the suite itself.",
   },
   {
     id: 0,
     title: "Loolecondera Suite",
+    type: "Triple Room",
+    description:
+      "Subsequent to the Master, This Suite Accommodates double with an optional single bed to anchor triple. The roomy appearance of Yellowish tone will charm the Stay",
     url: "/accommodation/loolecondera-suite",
     image: "/static/img/rooms/loolecondera.jpg",
   },
   {
     id: 0,
     title: "Taylor Room",
+    type: "Twin Room",
+    description:
+      "Quintessentially Capacious Suite with pair of Two Queen Size Double Beds welcoming Small to the maiden household or two Adults.",
     url: "/accommodation/taylor-room",
     image: "/static/img/rooms/taylor.jpg",
   },
   {
     id: 0,
     title: "Le Cocq Room",
+    description:
+      "The elegance of classic French splendor of this room favored for Couples, A large King-Size Bed with classic Roomy layout accomplish the Stay",
+    type: "Double Room",
     url: "/accommodation/le-cocq-room",
     image: "/static/img/rooms/le-cocq.jpg",
   },
   {
     id: 0,
     title: "Lipton Room",
+    description:
+      "Twee in the line but classical scarlet theme offers a significant glance to accommodate two Adults in a King-Sized Double Bed.",
+    type: "Double Room",
     url: "/accommodation/lipton-room",
     image: "/static/img/rooms/lipton.jpg",
   },
