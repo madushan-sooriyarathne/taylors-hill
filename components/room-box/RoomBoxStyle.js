@@ -23,7 +23,7 @@ const Box = styled.div`
   &:hover {
     div {
       background-color: ${(props) => props.theme.colors.white};
-      transform: translateY(0);
+      transform: translateY(2px);
 
       h2 {
         color: ${(props) => props.theme.colors.secondary};
@@ -42,6 +42,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  will-change: transform;
 
   background-color: transparent;
 
