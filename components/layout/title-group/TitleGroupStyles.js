@@ -9,6 +9,10 @@ const Group = styled.div`
   & > * {
     text-align: ${(props) => (props.centered ? "center" : "left")};
   }
+
+  & > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export { Group };
