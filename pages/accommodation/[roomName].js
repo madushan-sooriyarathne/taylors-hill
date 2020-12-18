@@ -20,7 +20,6 @@ const getStaticProps = async ({ params }) => {
   const primaryRoom = rooms.filter((room) => room.id === params.roomName)[0];
   const otherRooms = rooms.filter((room) => room.id !== params.roomName);
 
-  console.log(primaryRoom);
   return {
     props: {
       primaryRoom,
@@ -32,7 +31,6 @@ const getStaticProps = async ({ params }) => {
 const getStaticPaths = async () => {
   const paths = rooms.map((room) => ({ params: { roomName: room.id } }));
 
-  console.log(paths);
   return { paths, fallback: false };
 };
 
