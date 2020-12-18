@@ -11,28 +11,7 @@ import {
   Description,
 } from "./ExcursionSectionStyles";
 
-const excursions = [
-  {
-    id: 0,
-    image: "/static/img/experience/snooker.jpg",
-    url: "/experience/snooker",
-    title: "Snooker",
-  },
-  {
-    id: 1,
-    image: "/static/img/experience/croquet.jpg",
-    url: "/experience/croquet",
-    title: "Croquet",
-  },
-  {
-    id: 2,
-    image: "/static/img/experience/infinity-pool.jpg",
-    url: "/experience/infinity-pool",
-    title: "Infinity Pool",
-  },
-];
-
-const ExcursionsSection = () => {
+const ExcursionsSection = ({ excursions }) => {
   return (
     <Section>
       <MainTitle
@@ -41,9 +20,12 @@ const ExcursionsSection = () => {
         shadowHeading="Things to do"
       />
       <ContentWrapper>
-        {excursions.map((item) => (
-          <ImageBox {...item} key={item.id} />
-        ))}
+        {excursions.map((item, index) => {
+          if (index < 3)
+            return (
+              <ImageBox title={item.title} image={item.image} key={item.id} />
+            );
+        })}
         <Content>
           <ContentItem>
             <HeadingSecondary>Activities</HeadingSecondary>
