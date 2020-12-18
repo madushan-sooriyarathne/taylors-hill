@@ -12,8 +12,11 @@ const Box = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: ${(props) => props.theme.shadows.low};
 
   overflow: hidden;
+
+  transition: box-shadow 0.2s ease-out;
 
   h2 {
     color: ${(props) => props.theme.colors.white};
@@ -21,6 +24,8 @@ const Box = styled.div`
   }
 
   &:hover {
+    box-shadow: ${(props) => props.theme.shadows.medium};
+
     div {
       background-color: ${(props) => props.theme.colors.white};
       transform: translateY(2px);
