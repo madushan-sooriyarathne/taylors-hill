@@ -6,7 +6,7 @@ const Accommodation = () => {
   return (
     <Page>
       <CoverImage
-        image="/static/img/rooms/pattiyagama.jpg"
+        image="/static/img/accommodation-cover.webp"
         title="Accommodation"
         subTitle="Best in class rooms with a touch of british architecture"
       />
