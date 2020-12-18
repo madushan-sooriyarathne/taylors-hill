@@ -11,34 +11,7 @@ import ImageSlide from "../../image-slide/ImageSlide";
 import HeadingPrimary from "../../headings/heading-primary/HeadingPrimary";
 import SliderTextBox from "../../slider-text-box/SliderTextBox";
 
-const slides = [
-  {
-    id: 0,
-    image: "/static/img/hero-slider/img-01.jpg",
-    text: { heading: "Best in it's class", description: "some text" },
-    textPos: { column: { start: 1, end: 2 }, row: { start: 2, end: 3 } },
-  },
-  {
-    id: 1,
-    image: "/static/img/hero-slider/img-02.jpg",
-    text: { heading: "Best in it's class", description: "some text" },
-    textPos: { column: { start: 1, end: 2 }, row: { start: 1, end: 2 } },
-  },
-  {
-    id: 2,
-    image: "/static/img/hero-slider/img-03.jpg",
-    text: { heading: "Best in it's class", description: "some text" },
-    textPos: { column: { start: 2, end: 3 }, row: { start: 2, end: 3 } },
-  },
-  {
-    id: 3,
-    image: "/static/img/hero-slider/img-04.jpg",
-    text: { heading: "Best in it's class", description: "some text" },
-    textPos: { column: { start: 1, end: 2 }, row: { start: 2, end: 3 } },
-  },
-];
-
-const Slider = () => {
+const Slider = ({ slides }) => {
   const [index, setIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
   const [pageLoad, setPageLoad] = useState(true);
