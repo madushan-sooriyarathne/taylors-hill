@@ -9,7 +9,7 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.7) 0%,
       rgba(0, 0, 0, 0.7) 100%
     ),
-    url("/static/img/error-bg.jpg");
+    url("/static/img/error-bg.webp");
 
   background-position: center;
   background-repeat: no-repeat;
