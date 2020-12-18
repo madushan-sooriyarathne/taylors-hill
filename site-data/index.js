@@ -193,4 +193,29 @@ const dining = {
 Various Dining locations at the Property will charm the experience like no other in its class.`,
 };
 
-export { navLinks, rooms, ourStory, dining };
+const offers = [
+  {
+    id: "new-year-special",
+    title: "Celebrations in classical exclusivity for 2021",
+    description:
+      "Safest Location to celebrate this new year in a class of its own",
+    image: "/static/img/offers/new-year-special.webp",
+  },
+
+  {
+    id: "honeymoon-delight-at-taylors-hill",
+    title: "Honeymoon Delight at Taylors Hill",
+    description:
+      "Purchase our special Honeymoon voucher and experience exclusive value additions. ",
+    image: "/static/img/offers/honeymoon-delight.webp",
+  },
+
+  {
+    id: "early-bird",
+    title: "Early Bird Offer",
+    description: "Book 60 days in advance to enjoy a 10% saving",
+    image: "/static/img/offers/early-bird.webp",
+  },
+];
+
+export { navLinks, rooms, ourStory, dining, offers };
