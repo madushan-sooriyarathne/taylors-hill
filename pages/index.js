@@ -4,13 +4,14 @@ import GallerySection from "../components/layout/gallery-section/GallerySection"
 import ImageContentSection from "../components/layout/Image-content-section/ImageContentSection";
 import Page from "../components/layout/page/Page";
 import RoomsSection from "../components/layout/rooms-section/RoomsSecton";
+import OfferSection from "../components/layout/offer-section/OfferSection";
 import Slider from "../components/layout/slider/Slider";
-import { ourStory, dining } from "../site-data";
+import { ourStory, dining, offers, slides } from "../site-data";
 
 const Home = () => {
   return (
     <Page>
-      <Slider />
+      <Slider slides={slides} />
       <ImageContentSection image={ourStory.image}>
         <CTADescription {...ourStory} />
       </ImageContentSection>
@@ -19,6 +20,7 @@ const Home = () => {
       <ImageContentSection image={dining.image} reversed>
         <CTADescription {...dining} />
       </ImageContentSection>
+      <OfferSection offers={offers} />
       <GallerySection />
     </Page>
   );
