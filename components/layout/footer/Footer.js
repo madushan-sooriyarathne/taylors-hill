@@ -111,7 +111,7 @@ const Footer = () => {
           Taylors Hill Boutique Hotel {new Date().getFullYear()} ©
         </CopyrightItem>
         <CopyrightItem>
-          Handcrafted with ❤️ by{" "}
+          Handcrafted by{" "}
           <a href="https://madushan.dev" rel="noopener" target="_blank">
             Madushan Sooriyarathne
           </a>
