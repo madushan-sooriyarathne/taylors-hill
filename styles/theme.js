@@ -17,6 +17,11 @@ const theme = {
   sizes: {
     frameSize: "1.5rem",
   },
+  shadows: {
+    low: "0 0 8px 0 rgba(0, 0, 0, 0.2)",
+    medium: "0 0 16px 0 rgba(0, 0, 0, 0.2)",
+  },
+
   responsive: {},
 };
 
