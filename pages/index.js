@@ -6,7 +6,14 @@ import Page from "../components/layout/page/Page";
 import RoomsSection from "../components/layout/rooms-section/RoomsSecton";
 import OfferSection from "../components/layout/offer-section/OfferSection";
 import Slider from "../components/layout/slider/Slider";
-import { ourStory, dining, offers, slides } from "../site-data";
+import {
+  ourStory,
+  dining,
+  offers,
+  slides,
+  excursions,
+  galleryImages,
+} from "../site-data";
 
 const Home = () => {
   return (
@@ -16,12 +23,12 @@ const Home = () => {
         <CTADescription {...ourStory} />
       </ImageContentSection>
       <RoomsSection />
-      <ExcursionsSection />
+      <ExcursionsSection excursions={excursions} />
       <ImageContentSection image={dining.image} reversed>
         <CTADescription {...dining} />
       </ImageContentSection>
       <OfferSection offers={offers} />
-      <GallerySection />
+      <GallerySection images={galleryImages} />
     </Page>
   );
 };
