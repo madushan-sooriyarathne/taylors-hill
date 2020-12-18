@@ -15,7 +15,13 @@ const RoomsSection = () => {
       />
       <ContentWrapper>
         {rooms.map((room) => (
-          <ImageBox {...room} key={room.id} />
+          <ImageBox
+            title={room.title}
+            image={room.image}
+            url={`/accommodation/${room.id}`}
+            key={room.id}
+            withButton
+          />
         ))}
       </ContentWrapper>
     </Section>
