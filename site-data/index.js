@@ -162,6 +162,44 @@ const ourStory = {
     "A 19th Century’s English mansion located in hill country of Kandy, chronicles The Ceylon Tea with its own indulgence offering an experiential luxury dwelling with incomparable boutique Concept. Extensive ventures within the premises compel the accommodation further the elaborate its concept.",
 };
 
+const history = {
+  image: "/static/img/james-taylor.webp",
+  mainHeading: "The History",
+  subHeading: "History of Ceylon Tea & Taylors Hill",
+  shadowHeading: "Our Story",
+  route: null,
+  description: ` The sterling story of the Plantation Estate <b>Pattiyagama</b> dates
+          back to a coffee plantation in 18th Centaury established by a welsh
+          planter <b>Dominic Elwes</b>, subsequently the coffee Blight called
+          <i>Hemeleia vastatrix</i> in 1870s put an end to the coffee plantations.
+          <br />
+          <br />
+          After setting sails to Ceylon by the protagonist of Ceylon Tea <b>James
+          Taylor</b> emerged the Primal Tea plantation in Ceylon claimed <b>Filed no
+          07</b> in Loolecondera. This regal embellishment led Ceylon to be the Tea
+          Country under Her Majesty Queen Victoria’s Era.
+          <br />
+          <br />
+          While his endeavor on establishing Tea in Ceylon, Taylor had fallen in
+          love with Loolecondera Estate which is adjoining Pattiyagama Estate
+          where he marked his name in gold as the pioneer of the legendary
+          ceylon tea. Which made the central hill of Ceylon truly heavenly.
+          Taylors Seat is where Taylor has foreseen the future of Ceylon Tea by
+          glancing towards the astonishing sight towards Hills & Valleys
+          visible.`,
+};
+
+const historyTaylorsHill = {
+  image: "/static/img/taylors-old.webp",
+  mainHeading: "Pattiyagama Mansion",
+  subHeading: "The Planters Gathering House",
+  shadowHeading: "Taylors Hill",
+  route: null,
+  description: `<b>Taylors Hill</b> Known as Pattiyagama Mansion used to host Taylor and his fellow planters, Assisted by Dominic Elwis possessing as the Planters Gathering house. Tournament size 200 years old Burroughes and Watts “1836” Snooker table in house still enunciates the colonial day. <br><br>
+  Subsequently the Mansion being taken by a trust at the end of Colonial Era prior acquiring this Mansion by E.L Senanayake an International Lawyer trained at Kings College London and a scion of the well-known E.L. Senanayake former Cabinet minister and Speaker of Parliament of Sri Lanka. This dynastic family owned large plantations for more than five generations to date. <br><br>
+  Ingenious Colonial architecture of the mansion clarifies the uniqueness of its own boutique concept with quintuple dwellings in the loft, where a mezzanine allows a vast house room. Immense garden for a number of activities with an infinite pool overlooking the pinnacles of central hills & Valleys.`,
+};
+
 const dining = {
   image: "/static/img/th-high-tea.webp",
   mainHeading: "Dining",
@@ -180,6 +218,23 @@ const offers = [
     description:
       "Safest Location to celebrate this new year in a class of its own",
     image: "/static/img/offers/new-year-special.webp",
+    currency: "LKR",
+    price: "100,000",
+    discount: null,
+    validTill: new Date(2021, 0, 2).toJSON(),
+    terms: [
+      "Additional adult meal supplement (on All-Inclusive Basis): LKR 10,000/- Per Adult (Up-to 14 Pax total).",
+      "New Year's eve Gala Dinner supplement: LKR 3,500/- Per Adult.",
+      "Rates are given nett.",
+      "Pets are not allowed.",
+    ],
+    includes: [
+      "Full Access to the mansion and all it's amenities.",
+      "Meals on All-Inclusive basis for 8 Adults.",
+      "House wine for the departure day dinner.",
+      "Daily Fresh Fruit platter or Home-made chocolate platter",
+      "New Year's eve Gala Dinner*",
+    ],
   },
 
   {
@@ -188,6 +243,10 @@ const offers = [
     description:
       "Purchase our special Honeymoon voucher and experience exclusive value additions. ",
     image: "/static/img/offers/honeymoon-delight.webp",
+    currency: "LKR",
+    price: "80,000",
+    discount: null,
+    validTill: new Date(2021, 8, 30).toJSON(),
   },
 
   {
@@ -195,6 +254,10 @@ const offers = [
     title: "Early Bird Offer",
     description: "Book 60 days in advance to enjoy a 10% saving",
     image: "/static/img/offers/early-bird.webp",
+    currency: "",
+    price: "",
+    discount: 10,
+    validTill: new Date(2021, 3, 31).toJSON(),
   },
 ];
 
@@ -272,6 +335,31 @@ const galleryImages = [
   { id: 13, img: "/static/img/gallery/14.webp" },
 ];
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
 export {
   navLinks,
   rooms,
@@ -281,4 +369,8 @@ export {
   slides,
   excursions,
   galleryImages,
+  months,
+  days,
+  history,
+  historyTaylorsHill,
 };
