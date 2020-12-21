@@ -4,6 +4,7 @@ const Image = styled.div`
   grid-column: full-start / full-end;
   width: 100%;
   height: 70vh;
+  padding: 10rem 5rem;
 
   background-image: ${(props) =>
     `linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%),url(${props.image})`};
@@ -17,7 +18,7 @@ const Image = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 10rem;
+  font-size: ${(props) => (props.isLarge ? "6rem" : "10rem")};
   font-weight: 700;
   font-family: ${(props) => props.theme.fonts.primary};
   letter-spacing: 1px;

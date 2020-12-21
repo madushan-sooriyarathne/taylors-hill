@@ -5,7 +5,7 @@ const CoverImage = ({ image, title, subTitle }) => {
   return (
     <Image image={image}>
       <TitledGroup centered>
-        <Title>{title}</Title>
+        <Title isLarge={title.length > 25}>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
       </TitledGroup>
     </Image>
