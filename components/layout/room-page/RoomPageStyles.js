@@ -5,8 +5,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: max-content;
-  gap: 10rem;
-  margin-bottom: 10rem;
+  gap: 15rem;
 `;
 
 const SummeryWrapper = styled.section`
@@ -15,6 +14,7 @@ const SummeryWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -10rem;
 
   & > div {
     width: 50;
@@ -23,7 +23,7 @@ const SummeryWrapper = styled.section`
     grid-template-columns: repeat(4, minmax(min-content, 1fr));
     align-items: center;
     justify-items: center;
-    gap: 1rem;
+    gap: 5rem;
   }
 `;
 
@@ -36,6 +36,8 @@ const SummeryItem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
   & > h4 {
     font-size: 1.2rem;
     font-weight: 600;
