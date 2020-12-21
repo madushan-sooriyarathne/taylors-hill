@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Para = styled.p`
-  font-size: 1.5rem;
+  font-size: ${(props) => (props.large ? "1.8rem" : "1.5rem")};
   font-weight: 400;
   letter-spacing: 1px;
   line-height: 2rem;
