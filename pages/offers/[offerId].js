@@ -1,8 +1,19 @@
 import Page from "../../components/layout/page/Page";
+import OfferPage from "../../components/layout/offer-page/OfferPage";
+import CoverImage from "../../components/layout/cover-image/CoverImage";
 import { offers } from "../../site-data";
 
-const OfferPage = ({ primaryOffer, otherOffers }) => {
-  return <Page></Page>;
+const IndividualOffer = ({ primaryOffer, otherOffers }) => {
+  return (
+    <Page>
+      <CoverImage
+        image={primaryOffer.image}
+        title={primaryOffer.title}
+        subTitle={primaryOffer.description}
+      />
+      <OfferPage offer={primaryOffer} otherOffers={otherOffers} />
+    </Page>
+  );
 };
 
 const getStaticProps = async ({ params }) => {
@@ -31,4 +42,4 @@ const getStaticPaths = async () => {
 };
 
 export { getStaticPaths, getStaticProps };
-export default OfferPage;
+export default IndividualOffer;
