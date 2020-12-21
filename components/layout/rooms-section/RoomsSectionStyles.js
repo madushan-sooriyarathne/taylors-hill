@@ -5,7 +5,6 @@ const Section = styled.section`
 
   width: 100%;
   min-height: 100vh;
-  margin: 10rem 0;
 
   display: grid;
   grid-template-columns: 1fr;

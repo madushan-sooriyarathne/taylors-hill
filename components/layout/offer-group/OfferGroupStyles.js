@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.section`
   grid-column: content-start / content-end;
-  margin: 10rem 0;
 
   display: grid;
   grid-template-columns: repeat(3, minmax(min-content, 1fr));

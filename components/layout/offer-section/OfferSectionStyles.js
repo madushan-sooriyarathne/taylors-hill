@@ -5,8 +5,6 @@ const Section = styled.section`
   width: 100%;
   height: auto;
 
-  margin: 10rem 0;
-
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: max-content;
