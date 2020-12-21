@@ -19,7 +19,7 @@ const Description = styled.p`
   font-weight: 400;
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.secondary};
-  text-align: center;
+  text-align: ${(props) => props.alignment || "center"};
 `;
 
 export { Wrapper, Description };
