@@ -8,6 +8,7 @@ const CTADescription = ({
   route,
   description,
   shadowHeading = "",
+  alignment,
 }) => {
   return (
     <Wrapper>
@@ -16,10 +17,15 @@ const CTADescription = ({
         shadowHeading={shadowHeading}
         subHeading={subHeading}
       />
-      <Description>{description}</Description>
-      <Button route={route.url} invert={true}>
-        {route.name}
-      </Button>
+      <Description
+        alignment={alignment}
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></Description>
+      {route && (
+        <Button route={route.url} invert={true}>
+          {route.name}
+        </Button>
+      )}
     </Wrapper>
   );
 };
