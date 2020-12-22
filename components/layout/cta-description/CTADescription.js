@@ -16,6 +16,7 @@ const CTADescription = ({
         mainHeading={mainHeading}
         shadowHeading={shadowHeading}
         subHeading={subHeading}
+        centered
       />
       <Description
         alignment={alignment}
