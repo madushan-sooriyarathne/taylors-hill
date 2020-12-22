@@ -1,9 +1,22 @@
 import Page from "../../components/layout/page/Page";
+import CoverImage from "../../components/layout/cover-image/CoverImage";
+import ExperiencePage from "../../components/layout/experiences/experience-page/ExperiencePage";
 
 import { excursions } from "../../site-data";
 
 const IndividualExperience = ({ primaryExperience, otherExperiences }) => {
-  return <Page></Page>;
+  return (
+    <Page>
+      <CoverImage
+        image={primaryExperience.image}
+        title={primaryExperience.title}
+      />
+      <ExperiencePage
+        primaryExperience={primaryExperience}
+        otherExperiences={otherExperiences}
+      />
+    </Page>
+  );
 };
 
 const getStaticProps = async ({ params }) => {
