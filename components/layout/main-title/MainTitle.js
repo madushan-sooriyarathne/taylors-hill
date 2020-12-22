@@ -3,10 +3,10 @@ import HeadingSub from "../../headings/heading-sub/HeadingSub";
 
 import { Wrapper, ShadowTitle } from "./MainTitleStyles";
 
-const MainTitle = ({ mainHeading, subHeading, shadowHeading }) => {
+const MainTitle = ({ mainHeading, subHeading, shadowHeading, centered }) => {
   return (
-    <Wrapper>
-      <ShadowTitle>{shadowHeading}</ShadowTitle>
+    <Wrapper centered={centered}>
+      <ShadowTitle centered={centered}>{shadowHeading}</ShadowTitle>
       <HeadingPrimary>{mainHeading}</HeadingPrimary>
       <HeadingSub>{subHeading}</HeadingSub>
     </Wrapper>

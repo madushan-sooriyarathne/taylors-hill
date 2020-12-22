@@ -4,13 +4,13 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: ${(props) => (props.centered ? "center" : "flex-start")};
   justify-content: center;
 
   position: relative;
 
   & > * {
-    text-align: center;
+    text-align: ${(props) => (props.centered ? "center" : "left")};
     z-index: 3;
   }
 `;
@@ -18,8 +18,9 @@ const Wrapper = styled.div`
 const ShadowTitle = styled.span`
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: ${(props) => (props.centered ? "0" : "0%")};
+  transform: ${(props) =>
+    props.centered ? "translate(-50%, -50%)" : "translate(0, -50%)"};
   z-index: 2;
 
   font-size: 9rem;
