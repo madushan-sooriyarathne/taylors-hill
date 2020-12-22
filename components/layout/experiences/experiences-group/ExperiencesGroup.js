@@ -3,8 +3,6 @@ import ImageBox from "../../../image-box/ImageBox";
 import MainTitle from "../../main-title/MainTitle";
 
 const ExperiencesGroup = ({ experiences, mainHeading, subHeading }) => {
-  console.log(experiences);
-
   return (
     <Section>
       <MainTitle
