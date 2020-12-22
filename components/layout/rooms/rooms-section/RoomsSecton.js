@@ -10,6 +10,7 @@ const RoomsSection = ({ rooms }) => {
         mainHeading="Accommodation"
         shadowHeading="Your Stay"
         subHeading="Unique Rooms"
+        centered
       />
       <ContentWrapper>
         {rooms.map((room) => (

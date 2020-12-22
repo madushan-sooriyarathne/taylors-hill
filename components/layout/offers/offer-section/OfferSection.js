@@ -10,10 +10,11 @@ const OfferSection = ({ offers }) => {
         mainHeading="Offers"
         shadowHeading="Exclusive Deals"
         subHeading="Grab the best available details for your stay at Taylors Hill"
+        centered
       />
       <ContentWrapper>
         {offers.map((offer) => (
-          <OfferBox offer={offer} />
+          <OfferBox offer={offer} key={offer.id} />
         ))}
       </ContentWrapper>
       <div>

@@ -18,6 +18,7 @@ const ExperiencesSection = ({ experiences }) => {
         mainHeading="Experience"
         subHeading="Things we offer that keep you occupied"
         shadowHeading="Things to do"
+        centered
       />
       <ContentWrapper>
         {experiences.map((item, index) => {
