@@ -3,13 +3,14 @@ import { useTransition } from "react-spring";
 import {
   CarouselWrapper,
   Image,
+  ButtonWrapper,
   ButtonLeft,
   ButtonRight,
   ThumbRow,
   ThumbItem,
 } from "./ImageCarouselStyles";
 
-const ImageCarousel = ({ images, width, height }) => {
+const ImageCarousel = ({ images, width, height, withThumb }) => {
   const [index, setIndex] = useState(0);
   const [reversed, setReversed] = useState(false);
 
@@ -18,14 +19,17 @@ const ImageCarousel = ({ images, width, height }) => {
       transform: reversed
         ? "scale(0.9) translateX(-100%)"
         : "scale(0.9) translateX(100%)",
+      opacity: 0,
     },
     enter: {
       transform: "scale(1) translateX(0)",
+      opacity: 1,
     },
     leave: {
       transform: reversed
         ? "scale(0.9) translateX(100%)"
         : "scale(0.9) translateX(-100%)",
+      opacity: 0,
     },
   });
 
@@ -54,29 +58,34 @@ const ImageCarousel = ({ images, width, height }) => {
   });
 
   return (
-    <CarouselWrapper height={height}>
+    <CarouselWrapper height={height} width={width}>
       {transition.map(({ item, props, key }) => (
         <Image style={props} image={images[item]} key={key} />
       ))}
-      <ButtonLeft onClick={handleLeft}>
-        <svg>
-          <use xlinkHref="/static/svg/sprites.svg#arrow-left"></use>
-        </svg>
-      </ButtonLeft>
-      <ButtonRight onClick={handleRight}>
-        <svg>
-          <use xlinkHref="/static/svg/sprites.svg#arrow-right"></use>
-        </svg>
-      </ButtonRight>
-      <ThumbRow length={images.length} width={width}>
-        {images.map((image, curIndex) => (
-          <ThumbItem
-            image={image}
-            selected={index === curIndex}
-            onClick={() => handleSelect(curIndex)}
-          />
-        ))}
-      </ThumbRow>
+      <ButtonWrapper>
+        <ButtonLeft onClick={handleLeft}>
+          <svg>
+            <use xlinkHref="/static/svg/sprites.svg#arrow-left"></use>
+          </svg>
+        </ButtonLeft>
+        <ButtonRight onClick={handleRight}>
+          <svg>
+            <use xlinkHref="/static/svg/sprites.svg#arrow-right"></use>
+          </svg>
+        </ButtonRight>
+      </ButtonWrapper>
+
+      {withThumb && (
+        <ThumbRow length={images.length} width={width}>
+          {images.map((image, curIndex) => (
+            <ThumbItem
+              image={image}
+              selected={index === curIndex}
+              onClick={() => handleSelect(curIndex)}
+            />
+          ))}
+        </ThumbRow>
+      )}
     </CarouselWrapper>
   );
 };

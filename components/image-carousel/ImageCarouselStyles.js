@@ -27,18 +27,25 @@ const Image = styled(animated.div)`
   transform-origin: 50% 50%;
 `;
 
+const ButtonWrapper = styled.div`
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  right: 0%;
+
+  display: flex;
+`;
+
 const Button = styled.div`
   width: 7rem;
   height: 7rem;
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzg0cHQiIGhlaWdodD0iMzgzLjk5OTk4NnB0IiB2aWV3Qm94PSIwIDAgMzg0IDM4My45OTk5ODYiIHZlcnNpb249IjEuMiI+CjxnIGlkPSJzdXJmYWNlMSI+CjxwYXRoIHN0eWxlPSIgc3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDpyZ2IoMTAwJSwxMDAlLDEwMCUpO2ZpbGwtb3BhY2l0eToxOyIgZD0iTSAxOTIgMCBDIDg1LjY2MDE1NiAwIDAgODUuNjYwMTU2IDAgMTkyIEMgMCAyOTguMzM5ODQ0IDg1LjY2MDE1NiAzODQgMTkyIDM4NCBDIDI5Ny4zNTU0NjkgMzg0IDM4NCAyOTguMzM5ODQ0IDM4NCAxOTIgQyAzODQgODUuNjYwMTU2IDI5Ny4zNTU0NjkgMCAxOTIgMCBaIE0gMTkyIDM1NC40NjA5MzggQyAxMDIuMzk4NDM4IDM1NC40NjA5MzggMjkuNTM5MDYyIDI4MS42MDE1NjIgMjkuNTM5MDYyIDE5MiBDIDI5LjUzOTA2MiAxMDIuMzk4NDM4IDEwMi4zOTg0MzggMjkuNTM5MDYyIDE5MiAyOS41MzkwNjIgQyAyODEuNjAxNTYyIDI5LjUzOTA2MiAzNTQuNDYwOTM4IDEwMi4zOTg0MzggMzU0LjQ2MDkzOCAxOTIgQyAzNTQuNDYwOTM4IDI4MS42MDE1NjIgMjgxLjYwMTU2MiAzNTQuNDYwOTM4IDE5MiAzNTQuNDYwOTM4IFogTSAxOTIgMzU0LjQ2MDkzOCAiLz4KPHBhdGggc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYigxMDAlLDEwMCUsMTAwJSk7ZmlsbC1vcGFjaXR5OjE7IiBkPSJNIDE5MiAyOS41MzkwNjIgQyAxMDIuMzk4NDM4IDI5LjUzOTA2MiAyOS41MzkwNjIgMTAyLjM5ODQzOCAyOS41MzkwNjIgMTkyIEMgMjkuNTM5MDYyIDI4MS42MDE1NjIgMTAyLjM5ODQzOCAzNTQuNDYwOTM4IDE5MiAzNTQuNDYwOTM4IEMgMjgxLjYwMTU2MiAzNTQuNDYwOTM4IDM1NC40NjA5MzggMjgxLjYwMTU2MiAzNTQuNDYwOTM4IDE5MiBDIDM1NC40NjA5MzggMTAyLjM5ODQzOCAyODEuNjAxNTYyIDI5LjUzOTA2MiAxOTIgMjkuNTM5MDYyIFogTSAxOTIgMjkuNTM5MDYyICIvPgo8L2c+Cjwvc3ZnPgo=");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
-  top: 50%;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.bgLight};
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   cursor: pointer;
 
@@ -48,15 +55,12 @@ const Button = styled.div`
     height: 3rem;
     background-color: transparent;
 
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease 0.1s;
   }
 `;
 
 const ButtonLeft = styled(Button)`
-  left: 0;
-  transform: translate(-50%, -50%);
-  justify-content: flex-end;
-
+  border-right: none;
   &:hover {
     svg {
       transform: translateX(-3px);
@@ -65,10 +69,6 @@ const ButtonLeft = styled(Button)`
 `;
 
 const ButtonRight = styled(Button)`
-  right: 0;
-  transform: translate(50%, -50%);
-  justify-content: flex-start;
-
   &:hover {
     svg {
       transform: translateX(3px);
@@ -109,4 +109,12 @@ const ThumbItem = styled.div`
   transform: ${(props) => (props.selected ? "scale(0.95)" : "scale(1)")};
 `;
 
-export { CarouselWrapper, Image, ButtonLeft, ButtonRight, ThumbRow, ThumbItem };
+export {
+  CarouselWrapper,
+  Image,
+  ButtonWrapper,
+  ButtonLeft,
+  ButtonRight,
+  ThumbRow,
+  ThumbItem,
+};
