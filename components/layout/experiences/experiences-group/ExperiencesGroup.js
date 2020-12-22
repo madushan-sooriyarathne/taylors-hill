@@ -11,6 +11,7 @@ const ExperiencesGroup = ({ experiences, mainHeading, subHeading }) => {
         mainHeading={mainHeading}
         subHeading={subHeading}
         shadowHeading={mainHeading}
+        alignment="left"
       />
       <Group>
         {experiences.map((item) => (
