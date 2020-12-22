@@ -1,6 +1,6 @@
 import CTADescription from "../components/layout/cta-description/CTADescription";
 import RoomsSection from "../components/layout/rooms/rooms-section/RoomsSecton";
-import ExcursionsSection from "../components/layout/experience/excursions-sections/ExcursionsSection";
+import ExperiencesSection from "../components/layout/experiences/experiences-section/ExperiencesSection";
 import GallerySection from "../components/layout/gallery-section/GallerySection";
 import ImageContentSection from "../components/layout/Image-content-section/ImageContentSection";
 import Page from "../components/layout/page/Page";
@@ -24,7 +24,7 @@ const Home = () => {
         <CTADescription {...ourStory} />
       </ImageContentSection>
       <RoomsSection rooms={rooms} />
-      <ExcursionsSection excursions={excursions} />
+      <ExperiencesSection experiences={excursions} />
       <ImageContentSection image={dining.image} reversed>
         <CTADescription {...dining} />
       </ImageContentSection>
