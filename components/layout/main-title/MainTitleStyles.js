@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const ShadowTitle = styled.span`
   position: absolute;
   top: 0;
-  left: ${(props) => (props.centered ? "0" : "0%")};
+  left: ${(props) => (props.centered ? "50%" : "0%")};
   transform: ${(props) =>
     props.centered ? "translate(-50%, -50%)" : "translate(0, -50%)"};
   z-index: 2;
