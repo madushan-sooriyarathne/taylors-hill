@@ -1,5 +1,5 @@
 import Page from "../../components/layout/page/Page";
-import OfferPage from "../../components/layout/offer-page/OfferPage";
+import OfferPage from "../../components/layout/offers/offer-page/OfferPage";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import { offers } from "../../site-data";
 

@@ -1,7 +1,7 @@
 import { rooms } from "../../site-data";
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
-import RoomPage from "../../components/layout/room-page/RoomPage";
+import RoomPage from "../../components/layout/rooms/room-page/RoomPage";
 
 const Room = ({ primaryRoom, otherRooms }) => {
   return (

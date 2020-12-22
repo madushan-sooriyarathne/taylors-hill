@@ -1,8 +1,10 @@
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
-import RoomGroup from "../../components/layout/rooms-group/RoomsGroup";
+import RoomGroup from "../../components/layout/rooms/rooms-group/RoomsGroup";
 
-const Accommodation = () => {
+import { rooms } from "../../site-data";
+
+const Accommodation = ({ rooms }) => {
   return (
     <Page>
       <CoverImage
@@ -10,9 +12,18 @@ const Accommodation = () => {
         title="Accommodation"
         subTitle="Best in class rooms with a touch of british architecture"
       />
-      <RoomGroup />
+      <RoomGroup rooms={rooms} />
     </Page>
   );
 };
 
+const getStaticProps = async () => {
+  return {
+    props: {
+      rooms: rooms,
+    },
+  };
+};
+
+export { getStaticProps };
 export default Accommodation;

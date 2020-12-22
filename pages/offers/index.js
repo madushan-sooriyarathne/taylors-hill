@@ -1,6 +1,6 @@
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
-import OfferGroup from "../../components/layout/offer-group/OfferGroup";
+import OfferGroup from "../../components/layout/offers/offer-group/OfferGroup";
 
 import { offers } from "../../site-data/";
 
