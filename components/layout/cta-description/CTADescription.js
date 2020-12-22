@@ -4,11 +4,11 @@ import { Wrapper, Description } from "./CTADescriptionStyles";
 
 const CTADescription = ({
   mainHeading,
-  subHeading,
   route,
   description,
-  shadowHeading = "",
   alignment,
+  subHeading = "",
+  shadowHeading = "",
 }) => {
   return (
     <Wrapper>
