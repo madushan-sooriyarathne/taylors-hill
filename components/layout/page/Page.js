@@ -7,11 +7,15 @@ import Header from "../header/Header";
 import PageOverlay from "../page-overlay/PageOverlay";
 import { Container, ContentWrapper } from "./PageStyles";
 
-const Page = ({ children }) => {
-  const [scrolled, setScrolled] = useState(false);
+const Page = ({ children, compressedHeader = false }) => {
+  const [scrolled, setScrolled] = useState(compressedHeader);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
+      if (compressedHeader) {
+        setScrolled(true);
+        return;
+      }
       if (window.scrollY >= 50) {
         setScrolled(true);
       } else {
@@ -28,7 +32,8 @@ const Page = ({ children }) => {
   return (
     <Container>
       <PageOverlay />
-      <Header />
+      {!compressedHeader && <Header />}
+
       {transition.map(
         ({ item, props, key }) =>
           item && <HeaderCompressed style={props} key={key} />
