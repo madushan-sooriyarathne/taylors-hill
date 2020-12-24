@@ -38,11 +38,16 @@ const ContactPage = () => {
       center: [80.70228482634505, 7.166891652160369],
       zoom: 12,
       pitch: 50,
+      minZoom: 10,
     });
 
-    new mapboxgl.Marker({
-      color: "#53534A",
-    })
+    // create an element for custom marker
+    const el = document.createElement("div");
+    el.innerHTML = `<img src="/static/svg/location-pin.svg" style="transform: translateY(-40%);  height: 8rem;"></img>`;
+    el.style.width = "auto";
+    el.style.height = "auto";
+
+    new mapboxgl.Marker(el)
       .setLngLat([80.70228482634505, 7.166891652160369])
       .addTo(map);
   }, []);
