@@ -9,6 +9,8 @@ const theme = {
     primaryLight: "#ECB662",
     secondary: "#53534A",
     secondaryLight: "#BCBCBC",
+    danger: "#d00000",
+    success: "#52b788",
   },
   fonts: {
     primary: "'Avenir Next', sans-sarif",
