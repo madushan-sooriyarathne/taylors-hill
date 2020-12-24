@@ -11,12 +11,15 @@ const spin = keyframes`
 `;
 
 const Spinner = styled.div`
-  width: 5rem;
-  height: 5rem;
+  width: ${(props) => (props.small ? "2rem" : "5rem")};
+  height: ${(props) => (props.small ? "2rem" : "5rem")};
   display: inline-block;
-  border: ${(props) => `3px solid ${props.theme.colors.bgDark}`};
+  border: ${(props) =>
+    props.small
+      ? `2px solid ${props.theme.colors.secondaryLight}`
+      : `3px solid ${props.theme.colors.secondaryLight}`};
   border-radius: 50%;
-  border-top-color: ${(props) => props.theme.colors.white};
+  border-top-color: ${(props) => props.theme.colors.secondary};
   animation: ${spin} 1s ease-in infinite;
 `;
 
