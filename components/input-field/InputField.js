@@ -13,7 +13,7 @@ const InputField = ({
     <InputWrapper>
       {textArea ? (
         <TextArea
-          placeholder={name}
+          placeholder={`${name} ${required ? "(Required)" : ""}`}
           name={name}
           id={name.toLowerCase().replace(" ", "")}
           type={type}
@@ -23,7 +23,7 @@ const InputField = ({
         />
       ) : (
         <Input
-          placeholder={name}
+          placeholder={`${name} ${required ? "(Required)" : ""}`}
           name={name}
           id={name.toLowerCase()}
           type={type}
@@ -33,7 +33,9 @@ const InputField = ({
           onChange={onChange}
         />
       )}
-      <Label htmlFor={name.toLowerCase().replace(" ", "")}>{name}</Label>
+      <Label htmlFor={name.toLowerCase().replace(" ", "")}>{`${name} ${
+        required ? "(Required)" : ""
+      }`}</Label>
     </InputWrapper>
   );
 };
