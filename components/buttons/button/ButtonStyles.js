@@ -9,7 +9,7 @@ const Btn = styled.button`
   padding: 1rem 3rem;
   border: ${(props) =>
     props.invert
-      ? `2px solid ${props.theme.colors.black}`
+      ? `2px solid ${props.theme.colors.secondary}`
       : `2px solid ${props.theme.colors.white}`};
   outline: none;
   cursor: pointer;
@@ -21,7 +21,7 @@ const Btn = styled.button`
     letter-spacing: 1px;
     z-index: 2;
     color: ${(props) =>
-      props.invert ? props.theme.colors.black : props.theme.colors.white};
+      props.invert ? props.theme.colors.secondary : props.theme.colors.white};
     transition: color 0.3s cubic-bezier(0.49, 0.07, 0.45, 0.89);
   }
 
@@ -33,7 +33,7 @@ const Btn = styled.button`
     width: calc(100% + 1px);
     height: 100%;
     background-color: ${(props) =>
-      props.invert ? props.theme.colors.black : props.theme.colors.white};
+      props.invert ? props.theme.colors.secondary : props.theme.colors.white};
 
     transform: scale3d(0, 1, 1);
     transform-origin: 100% 0;
@@ -43,7 +43,7 @@ const Btn = styled.button`
   &:hover {
     & > span {
       color: ${(props) =>
-        props.invert ? props.theme.colors.white : props.theme.colors.black};
+        props.invert ? props.theme.colors.white : props.theme.colors.secondary};
     }
 
     &::before {
