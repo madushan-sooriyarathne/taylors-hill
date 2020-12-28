@@ -12,6 +12,7 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  margin-bottom: -10rem;
 `;
 
 const Gallery = styled.div`
