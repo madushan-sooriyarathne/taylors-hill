@@ -4,7 +4,7 @@ const navLinks = [
   { id: 2, name: "Accommodation", route: "/accommodation" },
   { id: 3, name: "Experience", route: "/experience" },
   { id: 4, name: "Offers", route: "/offers" },
-  { id: 5, name: "Wellness", route: "/wellness" },
+  { id: 5, name: "Gallery", route: "/gallery" },
   { id: 6, name: "Contact", route: "/contact" },
 ];
 
