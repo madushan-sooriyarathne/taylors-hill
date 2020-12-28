@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTransition } from "react-spring";
 import {
   CarouselWrapper,
@@ -10,8 +10,8 @@ import {
   ThumbItem,
 } from "./ImageCarouselStyles";
 
-const ImageCarousel = ({ images, width, height, withThumb }) => {
-  const [index, setIndex] = useState(0);
+const ImageCarousel = ({ images, width, height, withThumb, defaultIndex }) => {
+  const [index, setIndex] = useState(defaultIndex || 0);
   const [reversed, setReversed] = useState(false);
 
   const transition = useTransition(index, (index) => index, {
@@ -32,6 +32,13 @@ const ImageCarousel = ({ images, width, height, withThumb }) => {
       opacity: 0,
     },
   });
+
+  useEffect(() => {
+    if (!defaultIndex) return setIndex(0);
+    if (defaultIndex !== index) {
+      setIndex(defaultIndex);
+    }
+  }, [defaultIndex]);
 
   const handleLeft = (event) => {
     setReversed(false);
