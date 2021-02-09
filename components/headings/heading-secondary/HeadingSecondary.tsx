@@ -3,7 +3,7 @@ import { Heading } from "./HeadingSecondaryStyles";
 
 interface Props {
   children: ReactNode;
-  color: string;
+  color?: string;
   alignment?: AlignmentProps;
 }
 
