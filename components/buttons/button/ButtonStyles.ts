@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Btn = styled.button`
+interface BtnProps {
+  invert: boolean;
+}
+
+const Btn = styled.button<BtnProps>`
   position: relative;
   display: flex;
   align-items: center;
