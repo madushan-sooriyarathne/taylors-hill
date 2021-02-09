@@ -1,5 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
+interface SpinnerProps {
+  small: boolean;
+}
+
 const spin = keyframes`
 
     from {
@@ -10,7 +14,7 @@ const spin = keyframes`
     } 
 `;
 
-const Spinner = styled.div`
+const Spinner = styled.div<SpinnerProps>`
   width: ${(props) => (props.small ? "2rem" : "5rem")};
   height: ${(props) => (props.small ? "2rem" : "5rem")};
   display: inline-block;
