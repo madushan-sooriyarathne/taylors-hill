@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-const Para = styled.p`
+interface ParaProps {
+  large: boolean;
+  alignment: AlignmentProps;
+}
+
+const Para = styled.p<ParaProps>`
   font-size: ${(props) => (props.large ? "1.8rem" : "1.5rem")};
   font-weight: 400;
   letter-spacing: 1px;
   line-height: 2rem;
-  text-align: ${(props) => props.alignment || "left"};
+  text-align: ${(props) => props.alignment};
   color: ${(props) => props.theme.colors.secondary};
 
   & > b,
