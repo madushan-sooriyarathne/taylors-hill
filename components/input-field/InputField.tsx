@@ -1,6 +1,19 @@
+import { ChangeEvent } from "react";
 import { InputWrapper, Input, TextArea, Label } from "./InputFieldStyles";
 
-const InputField = ({
+interface Props {
+  name: string;
+  type: "email" | "text" | "password" | "date";
+  value: string;
+  onChange: (
+    event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => void;
+  required?: boolean;
+  pattern?: string;
+  textArea?: boolean;
+}
+
+const InputField: React.FC<Props> = ({
   name,
   type,
   value,
@@ -8,7 +21,7 @@ const InputField = ({
   pattern,
   required,
   textArea,
-}) => {
+}: Props): JSX.Element => {
   return (
     <InputWrapper>
       {textArea ? (
@@ -16,10 +29,9 @@ const InputField = ({
           placeholder={`${name} ${required ? "(Required)" : ""}`}
           name={name}
           id={name.toLowerCase().replace(" ", "")}
-          type={type}
-          required={required}
           value={value}
           onChange={onChange}
+          required={required}
         />
       ) : (
         <Input
@@ -27,10 +39,10 @@ const InputField = ({
           name={name}
           id={name.toLowerCase()}
           type={type}
-          pattern={pattern}
-          required={required}
           value={value}
           onChange={onChange}
+          pattern={pattern}
+          required={required}
         />
       )}
       <Label htmlFor={name.toLowerCase().replace(" ", "")}>{`${name} ${
