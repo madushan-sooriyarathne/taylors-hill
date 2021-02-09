@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ImageProps {
+  image: string;
+}
+
 const Box = styled.div`
   width: 100%;
   height: 100%;
@@ -16,7 +20,7 @@ const Box = styled.div`
   }
 `;
 
-const Image = styled.div`
+const Image = styled.div<ImageProps>`
   width: 100%;
   padding-top: 56.25%;
 

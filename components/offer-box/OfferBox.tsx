@@ -1,9 +1,13 @@
 import Paragraph from "../paragraph/Paragraph";
 import HeadingSecondary from "../headings/heading-secondary/HeadingSecondary";
 import RouteButton from "../buttons/route-button/RouteButton";
-
 import { Box, Image, ContentWrapper } from "./OfferBoxStyles";
-const OfferBox = ({ offer }) => {
+
+interface Props {
+  offer: Offer;
+}
+
+const OfferBox: React.FC<Props> = ({ offer }: Props): JSX.Element => {
   return (
     <Box>
       <Image image={offer.image} />
