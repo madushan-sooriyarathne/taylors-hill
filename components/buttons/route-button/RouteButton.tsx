@@ -4,9 +4,9 @@ import { Button } from "./RouteButtonStyles";
 
 interface Props {
   route: string;
-  color: string;
-  alignment: AlignmentProps;
   children: ReactNode;
+  color?: string;
+  alignment?: AlignmentProps;
 }
 
 const RouteButton: React.FC<Props> = ({
