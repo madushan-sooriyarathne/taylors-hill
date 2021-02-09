@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface HeadingProps {
-  alignment: "center" | "left" | "right";
+  alignment: AlignmentProps;
 }
 
 const Heading = styled.h1<HeadingProps>`
