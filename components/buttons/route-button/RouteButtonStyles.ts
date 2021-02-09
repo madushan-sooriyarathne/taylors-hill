@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Button = styled.a`
+interface ButtonProps {
+  alignment?: "left" | "right" | "center";
+}
+
+const Button = styled.a<ButtonProps>`
   outline: none;
   border: none;
 
@@ -9,7 +13,7 @@ const Button = styled.a`
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  text-align: ${(props) => props.alignment || "center"};
+  text-align: ${(props) => props.alignment};
   color: ${(props) => props.color || props.theme.colors.primary};
   transition: transform 0.2s ease-out;
   cursor: pointer;
