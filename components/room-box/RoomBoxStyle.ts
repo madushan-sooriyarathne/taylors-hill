@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Box = styled.div`
+interface BoxProps {
+  image: string;
+}
+
+const Box = styled.div<BoxProps>`
   width: 100%;
   height: 100%;
 

@@ -8,14 +8,18 @@ import {
   Button,
 } from "./RoomBoxStyle";
 
-const RoomBox = ({ image, title, type, description, id }) => {
+interface Props {
+  room: Room;
+}
+
+const RoomBox: React.FC<Props> = ({ room }: Props): JSX.Element => {
   return (
-    <Box image={image}>
+    <Box image={room.image}>
       <ContentWrapper>
-        <HeadingSecondary>{title}</HeadingSecondary>
-        <RoomType>{type}</RoomType>
-        <Description>{description}</Description>
-        <Link href={`/accommodation/${id}`}>
+        <HeadingSecondary>{room.title}</HeadingSecondary>
+        <RoomType>{room.type}</RoomType>
+        <Description>{room.description}</Description>
+        <Link href={`/accommodation/${room.id}`}>
           <Button>Check it out</Button>
         </Link>
       </ContentWrapper>
