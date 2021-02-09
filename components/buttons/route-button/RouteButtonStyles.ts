@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-  alignment?: "left" | "right" | "center";
+  alignment: AlignmentProps;
 }
 
 const Button = styled.a<ButtonProps>`

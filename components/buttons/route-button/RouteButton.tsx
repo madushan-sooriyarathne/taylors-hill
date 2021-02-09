@@ -5,7 +5,7 @@ import { Button } from "./RouteButtonStyles";
 interface Props {
   route: string;
   color: string;
-  alignment: "left" | "right" | "center";
+  alignment: AlignmentProps;
   children: ReactNode;
 }
 
