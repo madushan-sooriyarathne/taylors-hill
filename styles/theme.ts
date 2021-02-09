@@ -1,4 +1,5 @@
 import "styled-components";
+import { DefaultTheme } from "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
@@ -30,7 +31,7 @@ declare module "styled-components" {
   }
 }
 
-const theme = {
+const theme: DefaultTheme = {
   colors: {
     black: "#04141A",
     white: "#FFF",
