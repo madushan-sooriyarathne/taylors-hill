@@ -1,3 +1,35 @@
+import "styled-components";
+
+declare module "styled-components" {
+  export interface DefaultTheme {
+    colors: {
+      black: string;
+      white: string;
+      bgLight: string;
+      bgMedium: string;
+      bgDark: string;
+      primary: string;
+      primaryLight: string;
+      secondary: string;
+      secondaryLight: string;
+      danger: string;
+      success: string;
+    };
+    fonts: {
+      primary: string;
+      secondary: string;
+    };
+    sizes: {
+      frameSize: string;
+    };
+    shadows: {
+      low: string;
+      medium: string;
+    };
+    responsive: {};
+  }
+}
+
 const theme = {
   colors: {
     black: "#04141A",

@@ -1,6 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import {
+  createGlobalStyle,
+  DefaultTheme,
+  GlobalStyleComponent,
+} from "styled-components";
 
-const globalStyles = createGlobalStyle`
+const globalStyles: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
     *, *::before, *::after {
         margin: 0;
         padding: 0;
