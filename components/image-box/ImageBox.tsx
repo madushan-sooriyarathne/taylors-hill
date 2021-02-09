@@ -2,7 +2,19 @@ import Link from "next/link";
 import HeadingSecondary from "../headings/heading-secondary/HeadingSecondary";
 import { Box, ContentGroup, Anchor, AnchorText, Arrow } from "./ImageBoxStyles";
 
-const ImageBox = ({ image, title, url, withButton }) => {
+interface Props {
+  image: string;
+  title: string;
+  url: string;
+  withButton?: boolean;
+}
+
+const ImageBox: React.FC<Props> = ({
+  image,
+  title,
+  url,
+  withButton,
+}: Props): JSX.Element => {
   return (
     <Box image={image}>
       <ContentGroup>
