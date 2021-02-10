@@ -47,10 +47,19 @@ const ButtonLeft = styled(Button)`
   }
 `;
 
+const SliderHeading = styled.h1`
+  font-size: 6rem;
+  font-weight: 900;
+  font-family: ${(props) => props.theme.fonts.secondary};
+  letter-spacing: 1px;
+  color: ${(props) => props.theme.colors.white};
+  text-align: center;
+`;
+
 const Description = styled.p`
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 400;
   color: ${(props) => props.color || props.theme.colors.white};
 `;
 
-export { Container, ButtonRight, ButtonLeft, Description };
+export { Container, ButtonRight, ButtonLeft, SliderHeading, Description };

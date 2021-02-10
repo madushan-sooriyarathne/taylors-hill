@@ -3,21 +3,25 @@ import { useTransition } from "react-spring";
 
 import {
   Container,
+  SliderHeading,
   Description,
   ButtonLeft,
   ButtonRight,
 } from "./SliderStyles";
 import ImageSlide from "../../image-slide/ImageSlide";
-import HeadingPrimary from "../../headings/heading-primary/HeadingPrimary";
 import SliderTextBox from "../../slider-text-box/SliderTextBox";
 
-const Slider = ({ slides }) => {
-  const [index, setIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-  const [pageLoad, setPageLoad] = useState(true);
+interface Props {
+  slides: any[];
+}
+
+const Slider: React.FC<Props> = ({ slides }: Props): JSX.Element => {
+  const [index, setIndex] = useState<number>(0);
+  const [reverse, setReverse] = useState<boolean>(false);
+  const [pageLoad, setPageLoad] = useState<boolean>(true);
 
   // spring transition
-  const transitions = useTransition(index, (index) => index, {
+  const transitions = useTransition(index, (index: number): number => index, {
     from: {
       opacity: 0,
       transform: pageLoad
@@ -36,32 +40,37 @@ const Slider = ({ slides }) => {
     },
   });
 
-  const moveLeft = useCallback(() => {
+  const moveLeft: () => void = useCallback((): void => {
     setReverse(true);
     setPageLoad(false);
-    setIndex((prevState) => {
+    setIndex((prevState: number): number => {
       const index = (prevState - 1) % slides.length;
       if (index === -1) return slides.length - 1;
       return index;
     });
-  });
+  }, []);
 
-  const moveRight = useCallback(() => {
+  const moveRight = useCallback((): void => {
     setReverse(false);
     setPageLoad(false);
-    setIndex((prevState) => (prevState + 1) % slides.length);
-  });
+    setIndex((prevState: number): number => (prevState + 1) % slides.length);
+  }, []);
 
   return (
     <Container>
       {transitions.map(({ item, props, key }) => {
         const { image, text, textPos } = slides[item];
         return (
-          <ImageSlide key={key} image={image} textPos={textPos} style={props}>
+          <ImageSlide
+            key={key}
+            image={image}
+            textPos={textPos}
+            style={props as CSSStyles}
+          >
             <ButtonLeft onClick={moveLeft} />
             <ButtonRight onClick={moveRight} />
             <SliderTextBox>
-              <HeadingPrimary color="#fff">{text.heading}</HeadingPrimary>
+              <SliderHeading>{text.heading}</SliderHeading>
               <Description>{text.description}</Description>
             </SliderTextBox>
           </ImageSlide>
