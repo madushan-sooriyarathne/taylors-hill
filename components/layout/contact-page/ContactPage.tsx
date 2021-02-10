@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import useInputState from "../../../hooks/use-input";
 
@@ -18,7 +18,7 @@ import {
   ContactItem,
 } from "./ContactPageStyles";
 
-const ContactPage = () => {
+const ContactPage: React.FC = (): JSX.Element => {
   // Input states
   const [fistName, updateFirstName, resetFirstName] = useInputState("");
   const [lastName, updateLastName, resetLastName] = useInputState("");
@@ -27,12 +27,13 @@ const ContactPage = () => {
   const [message, updateMessage, resetMessage] = useInputState("");
 
   // other state
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // side effects
   useEffect(() => {
-    mapboxgl.accessToken = process.env.MAP_BOX_SECRET;
-    const map = new mapboxgl.Map({
+    mapboxgl.accessToken = process.env.MAP_BOX_SECRET as string;
+
+    const map: mapboxgl.Map = new mapboxgl.Map({
       container: "map-box",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [80.70228482634505, 7.166891652160369],
@@ -42,7 +43,7 @@ const ContactPage = () => {
     });
 
     // create an element for custom marker
-    const el = document.createElement("div");
+    const el: HTMLDivElement = document.createElement("div");
     el.innerHTML = `<img src="/static/svg/location-pin.svg" style="transform: translateY(-40%);  height: 8rem;"></img>`;
     el.style.width = "auto";
     el.style.height = "auto";
@@ -53,11 +54,13 @@ const ContactPage = () => {
   }, []);
 
   // submit handler
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
+
+    // TODO: Implement the form submit mechanism
     alert(`${fistName} - ${lastName} - ${email} - ${phone} ${message}`);
-    setTimeout(() => {
+    setTimeout((): void => {
       setLoading(false);
     }, 2000);
 
