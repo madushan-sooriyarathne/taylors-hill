@@ -3,7 +3,19 @@ import HeadingSub from "../../headings/heading-sub/HeadingSub";
 
 import { Wrapper, ShadowTitle } from "./MainTitleStyles";
 
-const MainTitle = ({ mainHeading, subHeading, shadowHeading, centered }) => {
+interface Props {
+  mainHeading: string;
+  subHeading?: string;
+  shadowHeading?: string;
+  centered?: boolean;
+}
+
+const MainTitle: React.FC<Props> = ({
+  mainHeading,
+  subHeading,
+  shadowHeading,
+  centered = true,
+}: Props): JSX.Element => {
   return (
     <Wrapper centered={centered}>
       <ShadowTitle centered={centered}>{shadowHeading}</ShadowTitle>

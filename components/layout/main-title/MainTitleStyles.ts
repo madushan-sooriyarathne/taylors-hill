@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  centered: boolean;
+}
+
+interface ShadowTitleProps {
+  centered: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,7 +23,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ShadowTitle = styled.span`
+const ShadowTitle = styled.span<ShadowTitleProps>`
   position: absolute;
   top: 0;
   left: ${(props) => (props.centered ? "50%" : "0%")};
