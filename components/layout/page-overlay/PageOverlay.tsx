@@ -1,6 +1,6 @@
 import { Overlay } from "./PageOverlayStyles";
 
-const PageOverlay = () => {
+const PageOverlay: React.FC = (): JSX.Element => {
   return <Overlay />;
 };
 
