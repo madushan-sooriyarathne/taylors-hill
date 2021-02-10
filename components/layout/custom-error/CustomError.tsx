@@ -2,7 +2,7 @@ import TitleGroup from "../title-group/TitleGroup";
 import Button from "../../buttons/button/Button";
 import { Container, Heading, SubHeading } from "./CustomErrorStyles";
 
-const CustomError = () => {
+const CustomError: React.FC = (): JSX.Element => {
   return (
     <Container>
       <TitleGroup>
