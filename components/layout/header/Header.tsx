@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 
 import { navLinks } from "../../../site-data";
 
 import Button from "../../buttons/button/Button";
 import { Container, Logo, NavBar, NavLink } from "./HeaderStyles";
 
-const Header = () => {
-  const router = useRouter();
+const Header: React.FC = (): JSX.Element => {
+  const router: NextRouter = useRouter();
 
-  const isSelected = (route) => router.pathname === route;
+  const isSelected = (route: string) => router.pathname === route;
 
   return (
     <Container>

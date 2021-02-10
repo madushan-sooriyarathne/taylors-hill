@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface NavLinkProps {
+  current: boolean;
+}
+
 const Container = styled.div`
   position: absolute;
   top: 0;
@@ -32,7 +36,7 @@ const NavBar = styled.div`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled.a<NavLinkProps>`
   font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 3px;
