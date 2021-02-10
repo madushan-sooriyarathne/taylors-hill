@@ -1,6 +1,17 @@
+import { ReactNode } from "react";
 import { Section, Image, Content } from "./ImageContentSectionStyles";
 
-const ImageContentSection = ({ image, children, reversed = false }) => {
+interface Props {
+  image: string;
+  children: ReactNode;
+  reversed?: boolean;
+}
+
+const ImageContentSection: React.FC<Props> = ({
+  image,
+  children,
+  reversed = false,
+}: Props): JSX.Element => {
   return (
     <Section reversed={reversed}>
       <Image image={image} />

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Section = styled.section`
+interface SectionProps {
+  reversed: boolean;
+}
+
+const Section = styled.section<SectionProps>`
   grid-column: content-start / content-end;
 
   width: 100%;
@@ -15,7 +19,11 @@ const Section = styled.section`
   gap: 5rem;
 `;
 
-const Image = styled.div`
+interface ImageProps {
+  image: string;
+}
+
+const Image = styled.div<ImageProps>`
   grid-area: im;
 
   width: 100%;
