@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Group = styled.div`
+interface GroupProps {
+  centered: boolean;
+}
+
+const Group = styled.div<GroupProps>`
   display: flex;
   flex-direction: column;
   align-items: ${(props) => (props.centered ? "center" : "left")};
