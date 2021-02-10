@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { NextRouter, useRouter } from "next/router";
 
 import Button from "../../buttons/button/Button";
 
@@ -10,12 +10,16 @@ import {
   CompressedNavLink,
 } from "./HeaderCompressedStyles";
 
-import { navLinks } from "../../../site-data/";
+import { navLinks } from "../../../site-data";
 
-const HeaderCompressed = ({ style }) => {
-  const router = useRouter();
+interface Props {
+  style: CSSStyles;
+}
 
-  const isSelected = (route) => router.pathname === route;
+const HeaderCompressed: React.FC<Props> = ({ style }: Props): JSX.Element => {
+  const router: NextRouter = useRouter();
+
+  const isSelected = (route: string) => router.pathname === route;
 
   return (
     <CompressedContainer style={style}>

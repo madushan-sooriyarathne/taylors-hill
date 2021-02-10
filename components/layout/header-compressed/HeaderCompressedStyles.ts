@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { animated } from "react-spring";
 import { NavBar } from "../header/HeaderStyles";
 
+interface CompressedNavLinkProps {
+  current: boolean;
+}
+
 const CompressedContainer = styled(animated.div)`
   position: fixed;
   top: 0;
@@ -18,7 +22,7 @@ const CompressedContainer = styled(animated.div)`
   background-color: ${(props) => props.theme.colors.white};
 `;
 
-const CompressedNavLink = styled.a`
+const CompressedNavLink = styled.a<CompressedNavLinkProps>`
   font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 3px;
