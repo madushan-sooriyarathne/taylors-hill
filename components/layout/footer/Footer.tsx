@@ -52,7 +52,7 @@ const footerLinks = [
   { id: 3, name: "Site Map", route: "/site-map" },
 ];
 
-const Footer = () => {
+const Footer: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Logo
