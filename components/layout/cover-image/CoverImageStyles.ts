@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
-const Image = styled.div`
+interface ImageProps {
+  image: string;
+}
+
+interface TitleProps {
+  isLarge: boolean;
+}
+
+const Image = styled.div<ImageProps>`
   grid-column: full-start / full-end;
   width: 100%;
   height: 70vh;
@@ -17,7 +25,7 @@ const Image = styled.div`
   justify-content: center;
 `;
 
-const Title = styled.h1`
+const Title = styled.h1<TitleProps>`
   font-size: ${(props) => (props.isLarge ? "6rem" : "10rem")};
   font-weight: 700;
   font-family: ${(props) => props.theme.fonts.primary};

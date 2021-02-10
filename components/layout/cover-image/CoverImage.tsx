@@ -1,7 +1,17 @@
 import TitledGroup from "../title-group/TitleGroup";
-
 import { Image, Title, SubTitle } from "./CoverImageStyles";
-const CoverImage = ({ image, title, subTitle }) => {
+
+interface Props {
+  image: string;
+  title: string;
+  subTitle?: string;
+}
+
+const CoverImage: React.FC<Props> = ({
+  image,
+  title,
+  subTitle,
+}: Props): JSX.Element => {
   return (
     <Image image={image}>
       <TitledGroup centered>
