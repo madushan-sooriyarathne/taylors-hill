@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
 
-const Slide = styled(animated.div)`
+interface SlideProps {
+  image: string;
+}
+
+interface TextWrapperProps {
+  pos: CSSGridPos;
+}
+
+const Slide = styled(animated.div)<SlideProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -23,7 +31,7 @@ const Slide = styled(animated.div)`
   will-change: transform;
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled.div<TextWrapperProps>`
   grid-column: ${(props) =>
     `${props.pos.column.start} / ${props.pos.column.end}`};
   grid-row: ${(props) => `${props.pos.row.start} / ${props.pos.row.end}`};
