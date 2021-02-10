@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useTransition } from "react-spring";
+import { useState, useEffect, ReactNode } from "react";
+import { useTransition, UseTransitionResult } from "react-spring";
 import Footer from "../footer/Footer";
 
 import HeaderCompressed from "../header-compressed/HeaderCompressed";
@@ -7,8 +7,16 @@ import Header from "../header/Header";
 import PageOverlay from "../page-overlay/PageOverlay";
 import { Container, ContentWrapper } from "./PageStyles";
 
-const Page = ({ children, compressedHeader = false }) => {
-  const [scrolled, setScrolled] = useState(compressedHeader);
+interface Props {
+  children: ReactNode;
+  compressedHeader?: boolean;
+}
+
+const Page: React.FC<Props> = ({
+  children,
+  compressedHeader = false,
+}: Props): JSX.Element => {
+  const [scrolled, setScrolled] = useState<boolean>(compressedHeader);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -36,7 +44,12 @@ const Page = ({ children, compressedHeader = false }) => {
 
       {transition.map(
         ({ item, props, key }) =>
-          item && <HeaderCompressed style={props} key={key} />
+          item && (
+            <HeaderCompressed
+              style={props as { [key: string]: string }}
+              key={key}
+            />
+          )
       )}
 
       <ContentWrapper>{children}</ContentWrapper>
