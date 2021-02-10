@@ -3,7 +3,7 @@ import { InputWrapper, Input, TextArea, Label } from "./InputFieldStyles";
 
 interface Props {
   name: string;
-  type: "email" | "text" | "password" | "date";
+  type: "email" | "text" | "password" | "date" | "tel";
   value: string;
   onChange: (
     event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
