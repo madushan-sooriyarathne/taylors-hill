@@ -2,14 +2,27 @@ import MainTitle from "../main-title/MainTitle";
 import Button from "../../buttons/button/Button";
 import { Wrapper, Description } from "./CTADescriptionStyles";
 
-const CTADescription = ({
+interface Props {
+  mainHeading: string;
+  subHeading?: string;
+  shadowHeading?: string;
+  description: string;
+  alignment?: AlignmentProps;
+
+  route?: {
+    url: string;
+    name: string;
+  };
+}
+
+const CTADescription: React.FC<Props> = ({
   mainHeading,
   route,
   description,
-  alignment,
-  subHeading = "",
-  shadowHeading = "",
-}) => {
+  subHeading,
+  shadowHeading,
+  alignment = "center",
+}: Props): JSX.Element => {
   return (
     <Wrapper>
       <MainTitle
