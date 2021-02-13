@@ -3,7 +3,11 @@ import ImageBox from "../../../image-box/ImageBox";
 
 import { Section, ContentWrapper } from "./RoomsSectionStyles";
 
-const RoomsSection = ({ rooms }) => {
+interface Props {
+  rooms: Room[];
+}
+
+const RoomsSection: React.FC<Props> = ({ rooms }: Props): JSX.Element => {
   return (
     <Section>
       <MainTitle
@@ -13,7 +17,7 @@ const RoomsSection = ({ rooms }) => {
         centered
       />
       <ContentWrapper>
-        {rooms.map((room) => (
+        {rooms.map((room: Room) => (
           <ImageBox
             title={room.title}
             image={room.image}
