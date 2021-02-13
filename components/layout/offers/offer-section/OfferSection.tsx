@@ -3,7 +3,11 @@ import MainTitle from "../../main-title/MainTitle";
 import Button from "../../../buttons/button/Button";
 import { Section, ContentWrapper } from "./OfferSectionStyles";
 
-const OfferSection = ({ offers }) => {
+interface Props {
+  offers: Offer[];
+}
+
+const OfferSection: React.FC<Props> = ({ offers }: Props): JSX.Element => {
   return (
     <Section>
       <MainTitle
