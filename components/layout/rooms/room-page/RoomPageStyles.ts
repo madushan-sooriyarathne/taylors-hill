@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ImageItemProps {
+  image: string;
+}
+
 const Container = styled.div`
   grid-column: content-start / content-end;
   display: grid;
@@ -147,7 +151,7 @@ const ImageSection = styled.section`
   gap: 3rem;
 `;
 
-const ImageItem = styled.div`
+const ImageItem = styled.div<ImageItemProps>`
   width: 100%;
   height: auto;
   padding-top: 70%;
