@@ -18,7 +18,7 @@ const RoomBox: React.FC<Props> = ({ room }: Props): JSX.Element => {
       <ContentWrapper>
         <HeadingSecondary>{room.title}</HeadingSecondary>
         <RoomType>{room.type}</RoomType>
-        <Description>{room.description}</Description>
+        <Description>{room.intro}</Description>
         <Link href={`/accommodation/${room.id}`}>
           <Button>Check it out</Button>
         </Link>
