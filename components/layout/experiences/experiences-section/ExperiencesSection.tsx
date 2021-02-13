@@ -11,7 +11,13 @@ import {
   Description,
 } from "./ExperiencesSectionStyles";
 
-const ExperiencesSection = ({ experiences }) => {
+interface Props {
+  experiences: Excursion[];
+}
+
+const ExperiencesSection: React.FC<Props> = ({
+  experiences,
+}: Props): JSX.Element => {
   return (
     <Section>
       <MainTitle
@@ -21,8 +27,17 @@ const ExperiencesSection = ({ experiences }) => {
         centered
       />
       <ContentWrapper>
-        {experiences.map((item, index) => {
-          if (index < 3) return <ImageBox {...item} key={item.id} withButton />;
+        {experiences.map((item: Excursion, index: number) => {
+          if (index < 3)
+            return (
+              <ImageBox
+                image={item.image}
+                title={item.title}
+                url={`/experience/${item.id}`}
+                key={item.id}
+                withButton
+              />
+            );
         })}
         <Content>
           <ContentItem>
