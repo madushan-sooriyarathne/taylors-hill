@@ -1,15 +1,33 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
 
-const CarouselWrapper = styled.div`
-  width: ${(props) => props.width || "50vw"};
-  height: ${(props) => props.height || "60vh"};
+interface CarouselWrapperProps {
+  width: string;
+  height: string;
+}
+
+interface ImageProps {
+  image: string;
+}
+
+interface ThumbRowProps {
+  length: number;
+}
+
+interface ThumbItemProps {
+  selected: boolean;
+  image: string;
+}
+
+const CarouselWrapper = styled.div<CarouselWrapperProps>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
 
   position: relative;
   overflow: hidden;
 `;
 
-const Image = styled(animated.div)`
+const Image = styled(animated.div)<ImageProps>`
   width: 100%;
   height: 100%;
 
@@ -76,7 +94,7 @@ const ButtonRight = styled(Button)`
   }
 `;
 
-const ThumbRow = styled.div`
+const ThumbRow = styled.div<ThumbRowProps>`
   position: absolute;
   left: 0;
   right: 0;
@@ -91,7 +109,7 @@ const ThumbRow = styled.div`
   padding: 1rem 5rem;
 `;
 
-const ThumbItem = styled.div`
+const ThumbItem = styled.div<ThumbItemProps>`
   width: 100%;
   height: auto;
   padding-top: 56.25%;

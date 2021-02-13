@@ -10,11 +10,25 @@ import {
   ThumbItem,
 } from "./ImageCarouselStyles";
 
-const ImageCarousel = ({ images, width, height, withThumb, defaultIndex }) => {
-  const [index, setIndex] = useState(defaultIndex || 0);
-  const [reversed, setReversed] = useState(false);
+interface Props {
+  images: string[];
+  defaultIndex?: number;
+  width?: string;
+  height?: string;
+  withThumb?: boolean;
+}
 
-  const transition = useTransition(index, (index) => index, {
+const ImageCarousel: React.FC<Props> = ({
+  images,
+  withThumb = false,
+  defaultIndex = 0,
+  width = "50vw",
+  height = "60vh",
+}: Props): JSX.Element => {
+  const [index, setIndex] = useState<number>(defaultIndex);
+  const [reversed, setReversed] = useState<boolean>(false);
+
+  const transition = useTransition(index, (index: number): number => index, {
     from: {
       transform: reversed
         ? "scale(0.9) translateX(-100%)"
@@ -33,36 +47,39 @@ const ImageCarousel = ({ images, width, height, withThumb, defaultIndex }) => {
     },
   });
 
-  useEffect(() => {
+  useEffect((): void => {
     if (!defaultIndex) return setIndex(0);
     if (defaultIndex !== index) {
       setIndex(defaultIndex);
     }
   }, [defaultIndex]);
 
-  const handleLeft = (event) => {
+  const handleLeft: () => void = (): void => {
     setReversed(false);
-    setIndex((prevState) => {
+    setIndex((prevState: number): number => {
       const index = (prevState - 1) % images.length;
       if (index === -1) return images.length - 1;
       return index;
     });
   };
 
-  const handleRight = (event) => {
+  const handleRight: () => void = () => {
     setReversed(true);
     console.log("im clicked");
     setIndex((prevState) => (prevState + 1) % images.length);
   };
 
-  const handleSelect = useCallback((selectedIndex) => {
-    if (index > selectedIndex) {
-      setReversed(true);
-    } else {
-      setReversed(false);
-    }
-    setIndex(selectedIndex);
-  });
+  const handleSelect: (selectedIndex: number) => void = useCallback(
+    (selectedIndex: number): void => {
+      if (index > selectedIndex) {
+        setReversed(true);
+      } else {
+        setReversed(false);
+      }
+      setIndex(selectedIndex);
+    },
+    []
+  );
 
   return (
     <CarouselWrapper height={height} width={width}>
@@ -83,7 +100,7 @@ const ImageCarousel = ({ images, width, height, withThumb, defaultIndex }) => {
       </ButtonWrapper>
 
       {withThumb && (
-        <ThumbRow length={images.length} width={width}>
+        <ThumbRow length={images.length}>
           {images.map((image, curIndex) => (
             <ThumbItem
               image={image}
