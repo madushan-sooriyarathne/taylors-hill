@@ -1,6 +1,14 @@
 import { animated } from "react-spring";
 import styled from "styled-components";
 
+interface SelectionItemProps {
+  selected: boolean;
+}
+
+interface ImageBoxProps {
+  image: string;
+}
+
 const Container = styled.div`
   grid-column: content-start / content-end;
   min-height: 100vh;
@@ -30,7 +38,7 @@ const SelectionPanel = styled.section`
   }
 `;
 
-const SelectionItem = styled.p`
+const SelectionItem = styled.p<SelectionItemProps>`
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -63,7 +71,7 @@ const ImageGrid = styled.section`
   gap: 3rem;
 `;
 
-const ImageBox = styled(animated.div)`
+const ImageBox = styled(animated.div)<ImageBoxProps>`
   width: 100%;
   padding-top: 70%;
   border-radius: 2px;
