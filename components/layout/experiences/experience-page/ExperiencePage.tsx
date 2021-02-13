@@ -12,7 +12,15 @@ import {
   OtherExperiencesSection,
 } from "./ExperiencePageStyles";
 
-const ExperiencePage = ({ primaryExperience, otherExperiences }) => {
+interface Props {
+  primaryExperience: Excursion;
+  otherExperiences: Excursion[];
+}
+
+const ExperiencePage: React.FC<Props> = ({
+  primaryExperience,
+  otherExperiences,
+}: Props): JSX.Element => {
   return (
     <Container>
       <Experience>
@@ -30,9 +38,17 @@ const ExperiencePage = ({ primaryExperience, otherExperiences }) => {
           shadowHeading="Things to do"
         />
         <OtherExperiencesGroup>
-          {otherExperiences.map((item, index) => {
+          {otherExperiences.map((item: Excursion, index: number) => {
             if (index < 3) {
-              return <ImageBox key={item.id} {...item} withButton />;
+              return (
+                <ImageBox
+                  key={item.id}
+                  image={item.image}
+                  url={item.url}
+                  title={item.title}
+                  withButton
+                />
+              );
             }
           })}
         </OtherExperiencesGroup>
