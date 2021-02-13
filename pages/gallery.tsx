@@ -1,10 +1,14 @@
 import Page from "../components/layout/page/Page";
 import GalleryPage from "../components/layout/gallery/gallery-page/GalleryPage";
+import { galleryImages, gallerySelections } from "../site-data";
 
-const Gallery = () => {
+const Gallery: React.FC = (): JSX.Element => {
   return (
     <Page compressedHeader>
-      <GalleryPage />
+      <GalleryPage
+        images={galleryImages}
+        gallerySelections={gallerySelections}
+      />
     </Page>
   );
 };

@@ -2,8 +2,13 @@ import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import { excursions } from "../../site-data";
 import ExperiencesGroup from "../../components/layout/experiences/experiences-group/ExperiencesGroup";
+import { GetStaticProps, GetStaticPropsResult } from "next";
 
-const Experience = ({ experiences }) => {
+interface Props {
+  experiences: Excursion[];
+}
+
+const Experience: React.FC<Props> = ({ experiences }: Props): JSX.Element => {
   return (
     <Page>
       <CoverImage
@@ -26,7 +31,9 @@ const Experience = ({ experiences }) => {
   );
 };
 
-const getStaticProps = async () => {
+const getStaticProps: GetStaticProps = async (): Promise<
+  GetStaticPropsResult<Props>
+> => {
   return {
     props: {
       experiences: excursions,

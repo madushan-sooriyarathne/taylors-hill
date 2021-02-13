@@ -1,9 +1,16 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+  DocumentInitialProps,
+} from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 class MainDocument extends Document {
   // styled component ssr styling
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -14,7 +21,9 @@ class MainDocument extends Document {
             sheet.collectStyles(<App {...props} />),
         });
 
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps: DocumentInitialProps = await Document.getInitialProps(
+        ctx
+      );
       return {
         ...initialProps,
         styles: (
@@ -29,7 +38,7 @@ class MainDocument extends Document {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>

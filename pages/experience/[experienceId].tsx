@@ -1,10 +1,27 @@
+import {
+  GetStaticPaths,
+  GetStaticPathsResult,
+  GetStaticProps,
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+} from "next";
+import { ParsedUrlQuery } from "querystring";
+
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import ExperiencePage from "../../components/layout/experiences/experience-page/ExperiencePage";
 
 import { excursions } from "../../site-data";
 
-const IndividualExperience = ({ primaryExperience, otherExperiences }) => {
+interface Props {
+  primaryExperience: Excursion;
+  otherExperiences: Excursion[];
+}
+
+const IndividualExperience: React.FC<Props> = ({
+  primaryExperience,
+  otherExperiences,
+}: Props): JSX.Element => {
   return (
     <Page>
       <CoverImage
@@ -19,12 +36,14 @@ const IndividualExperience = ({ primaryExperience, otherExperiences }) => {
   );
 };
 
-const getStaticProps = async ({ params }) => {
+const getStaticProps: GetStaticProps = async ({
+  params,
+}: GetStaticPropsContext): Promise<GetStaticPropsResult<Props>> => {
   const primaryExperience = excursions.filter(
-    (item) => item.id === params.experienceId
+    (item) => item.id === (params as ParsedUrlQuery).experienceId
   )[0];
   const otherExperiences = excursions.filter(
-    (item) => item.id !== params.experienceId
+    (item) => item.id !== (params as ParsedUrlQuery).experienceId
   );
 
   return {
@@ -35,7 +54,9 @@ const getStaticProps = async ({ params }) => {
   };
 };
 
-const getStaticPaths = async () => {
+const getStaticPaths: GetStaticPaths = async (): Promise<
+  GetStaticPathsResult<{ experienceId: string }>
+> => {
   const paths = excursions.map((item) => ({
     params: {
       experienceId: item.id,

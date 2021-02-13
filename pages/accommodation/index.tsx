@@ -3,8 +3,13 @@ import CoverImage from "../../components/layout/cover-image/CoverImage";
 import RoomGroup from "../../components/layout/rooms/rooms-group/RoomsGroup";
 
 import { rooms } from "../../site-data";
+import { GetStaticProps, GetStaticPropsResult } from "next";
 
-const Accommodation = ({ rooms }) => {
+interface Props {
+  rooms: Room[];
+}
+
+const Accommodation: React.FC<Props> = ({ rooms }: Props): JSX.Element => {
   return (
     <Page>
       <CoverImage
@@ -17,7 +22,9 @@ const Accommodation = ({ rooms }) => {
   );
 };
 
-const getStaticProps = async () => {
+const getStaticProps: GetStaticProps = async (): Promise<
+  GetStaticPropsResult<Props>
+> => {
   return {
     props: {
       rooms: rooms,

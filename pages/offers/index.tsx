@@ -2,9 +2,9 @@ import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import OfferGroup from "../../components/layout/offers/offer-group/OfferGroup";
 
-import { offers } from "../../site-data/";
+import { offers } from "../../site-data";
 
-const Offers = ({}) => {
+const Offers: React.FC = (): JSX.Element => {
   return (
     <Page>
       <CoverImage
@@ -17,11 +17,4 @@ const Offers = ({}) => {
   );
 };
 
-// const getStaticProps = async () => {
-//   return {
-//     props: offers,
-//   };
-// };
-
-// export { getStaticProps };
 export default Offers;
