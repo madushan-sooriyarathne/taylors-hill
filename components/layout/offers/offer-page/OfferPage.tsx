@@ -18,7 +18,15 @@ import {
   OtherOffersGroup,
 } from "./OfferPageStyles";
 
-const OfferPage = ({ offer, otherOffers }) => {
+interface Props {
+  offer: Offer;
+  otherOffers: Offer[];
+}
+
+const OfferPage: React.FC<Props> = ({
+  offer,
+  otherOffers,
+}: Props): JSX.Element => {
   const validTill = new Date(offer.validTill);
   return (
     <Container>
@@ -46,7 +54,7 @@ const OfferPage = ({ offer, otherOffers }) => {
           <DetailsSection>
             <HeadingSecondary alignment="left">Inclusion</HeadingSecondary>
             <ItemsList>
-              {offer.includes.map((item, index) => (
+              {offer.includes.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ItemsList>
@@ -59,7 +67,7 @@ const OfferPage = ({ offer, otherOffers }) => {
               Terms & Conditions
             </HeadingSecondary>
             <ItemsList>
-              {offer.terms.map((item, index) => (
+              {offer.terms.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ItemsList>
@@ -72,7 +80,7 @@ const OfferPage = ({ offer, otherOffers }) => {
           shadowHeading="Offers"
         />
         <OtherOffersGroup>
-          {otherOffers.map((offer) => (
+          {otherOffers.map((offer: Offer) => (
             <OfferBox offer={offer} />
           ))}
         </OtherOffersGroup>
