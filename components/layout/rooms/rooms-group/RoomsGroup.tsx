@@ -1,12 +1,16 @@
 import RoomBox from "../../../room-box/RoomBox";
 import { Container, ContentWrapper } from "./RoomsGroupStyles";
 
-const RoomGroup = ({ rooms }) => {
+interface Props {
+  rooms: Room[];
+}
+
+const RoomGroup: React.FC<Props> = ({ rooms }: Props): JSX.Element => {
   return (
     <Container>
       <ContentWrapper>
-        {rooms.map((room) => (
-          <RoomBox {...room} key={room.id} />
+        {rooms.map((room: Room) => (
+          <RoomBox room={room} key={room.id} />
         ))}
       </ContentWrapper>
     </Container>
