@@ -1,10 +1,14 @@
 import OfferBox from "../../../offer-box/OfferBox";
 import { Container } from "./OfferGroupStyles";
 
-const OfferGroup = ({ offers }) => {
+interface Props {
+  offers: Offer[];
+}
+
+const OfferGroup: React.FC<Props> = ({ offers }: Props): JSX.Element => {
   return (
     <Container>
-      {offers.map((offer) => (
+      {offers.map((offer: Offer) => (
         <OfferBox offer={offer} />
       ))}
     </Container>
