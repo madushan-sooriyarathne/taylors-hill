@@ -44,6 +44,7 @@ const days = [
   "Saturday",
 ];
 
+// TODO: Move all the section Data to CMS
 const rooms: Room[] = [
   {
     id: "pattiygama-suite",
@@ -220,7 +221,6 @@ Every so often this handy-sized room will fulfill the Experience at Taylors Hill
   },
 ];
 
-// TODO: Move all the section Data to CMS
 const ourStory: SectionData = {
   image: "/static/img/th-morning-door.webp",
   mainHeading: "Taylors Hill",
