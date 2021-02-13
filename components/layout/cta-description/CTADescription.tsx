@@ -3,41 +3,29 @@ import Button from "../../buttons/button/Button";
 import { Wrapper, Description } from "./CTADescriptionStyles";
 
 interface Props {
-  mainHeading: string;
-  subHeading?: string;
-  shadowHeading?: string;
-  description: string;
+  data: SectionData;
   alignment?: AlignmentProps;
-
-  route?: {
-    url: string;
-    name: string;
-  };
 }
 
 const CTADescription: React.FC<Props> = ({
-  mainHeading,
-  route,
-  description,
-  subHeading,
-  shadowHeading,
+  data,
   alignment = "center",
 }: Props): JSX.Element => {
   return (
     <Wrapper>
       <MainTitle
-        mainHeading={mainHeading}
-        shadowHeading={shadowHeading}
-        subHeading={subHeading}
+        mainHeading={data.mainHeading}
+        shadowHeading={data.shadowHeading}
+        subHeading={data.subHeading}
         centered
       />
       <Description
         alignment={alignment}
-        dangerouslySetInnerHTML={{ __html: description }}
+        dangerouslySetInnerHTML={{ __html: data.description }}
       ></Description>
-      {route && (
-        <Button route={route.url} invert={true}>
-          {route.name}
+      {data.route && (
+        <Button route={data.route.url} invert={true}>
+          {data.route.name}
         </Button>
       )}
     </Wrapper>
