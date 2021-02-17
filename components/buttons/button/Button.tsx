@@ -28,7 +28,9 @@ const Button: React.FC<Props> = ({
   const router: NextRouter = useRouter();
 
   function handleClick(): void {
-    router.push(route);
+    if (route) {
+      router.push(route);
+    }
   }
 
   return (
