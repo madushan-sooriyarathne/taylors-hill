@@ -288,7 +288,7 @@ const offers: Offer[] = [
     currency: "LKR",
     price: 100000,
     discount: null,
-    validTill: new Date(2021, 0, 2),
+    validTill: new Date(2021, 0, 2).toJSON(),
     terms: [
       "Additional adult meal supplement (on All-Inclusive Basis): LKR 10,000/- Per Adult (Up-to 14 Pax total).",
       "New Year's eve Gala Dinner supplement: LKR 3,500/- Per Adult.",
@@ -313,7 +313,7 @@ const offers: Offer[] = [
     currency: "LKR",
     price: 80000,
     discount: null,
-    validTill: new Date(2021, 8, 30),
+    validTill: new Date(2021, 8, 30).toJSON(),
     terms: [
       "Additional adult meal supplement (on All-Inclusive Basis): LKR 10,000/- Per Adult (Up-to 14 Pax total).",
       "New Year's eve Gala Dinner supplement: LKR 3,500/- Per Adult.",
@@ -337,7 +337,7 @@ const offers: Offer[] = [
     currency: "LKR",
     price: null,
     discount: 10,
-    validTill: new Date(2021, 3, 31),
+    validTill: new Date(2021, 3, 31).toJSON(),
     terms: [
       "Additional adult meal supplement (on All-Inclusive Basis): LKR 10,000/- Per Adult (Up-to 14 Pax total).",
       "New Year's eve Gala Dinner supplement: LKR 3,500/- Per Adult.",

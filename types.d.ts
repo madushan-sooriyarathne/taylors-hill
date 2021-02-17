@@ -41,7 +41,7 @@ declare global {
     currency: "LKR" | "USD";
     price: number | null;
     discount: number | null;
-    validTill: Date;
+    validTill: string; // Date().toJSON();
     terms: string[];
     includes: string[];
   }
