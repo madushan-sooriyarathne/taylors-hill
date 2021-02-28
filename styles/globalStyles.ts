@@ -19,6 +19,10 @@ const globalStyles: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
         scroll-behavior: smooth;
         color: ${(props) => props.theme.colors.black};
         box-sizing: border-box;
+
+        ${(props) => props.theme.responsive.big} {
+            font-size: 56.25%;
+        }
     }
 
     body {
