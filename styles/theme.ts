@@ -27,7 +27,24 @@ declare module "styled-components" {
       low: string;
       medium: string;
     };
-    responsive: {};
+    responsive: {
+      largest: string;
+      larger: string;
+      large: string;
+      bigger: string;
+      big: string;
+      mediumLarge: string;
+      mediumBig: string;
+      medium: string;
+      mediumSmall: string;
+      mediumSmaller: string;
+      small: string;
+      smaller: string;
+      smallest: string;
+      mobileLarge: string;
+      mobileMedium: string;
+      mobileSmall: string;
+    };
   }
 }
 
@@ -57,7 +74,24 @@ const theme: DefaultTheme = {
     medium: "0 0 16px 0 rgba(0, 0, 0, 0.2)",
   },
 
-  responsive: {},
+  responsive: {
+    largest: "@media only screen and (max-width: 112.5em)", // 1800px
+    larger: "@media only screen and (max-width: 106.25em)", // 1700px
+    large: "@media only screen and (max-width: 100em)", // 1600px;
+    bigger: "@media only screen and (max-width: 93.75em)", // 1500px
+    big: "@media only screen and (max-width: 87.5em)", // 1400px
+    mediumLarge: "@medium only screen and (max-width: 81.25em)", // 1300px
+    mediumBig: "@medium only screen and (max-width: 75em)", // 1200px
+    medium: "@medium only screen and (max-width: 68.75em)", // 1100px
+    mediumSmall: "@medium only screen and (max-width: 62.5em)", // 1000px
+    mediumSmaller: "@medium only screen and (max-width: 56.25em)", // 900px
+    small: "@medium only screen and (max-width: 50em)", // 800px
+    smaller: "@medium only screen and (max-width: 43.75em)", // 700px
+    smallest: "@medium only screen and (max-width: 37.5em)", // 600px
+    mobileLarge: "@medium only screen and (max-width: 31.25em)", // 500px
+    mobileMedium: "@medium only screen and (max-width: 25em)", // 400px
+    mobileSmall: "@medium only screen and (max-width: 18.75em)", // 300px
+  },
 };
 
 export default theme;
