@@ -146,6 +146,10 @@ const ContactWrapper = styled.div`
   ${(props) => props.theme.responsive.mediumBig} {
     justify-items: center;
   }
+
+  ${(props) => props.theme.responsive.mediumSmaller} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 
 const ContactGroup = styled.div`
