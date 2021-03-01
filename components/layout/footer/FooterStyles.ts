@@ -10,6 +10,7 @@ const Container = styled.footer`
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, 1fr));
   grid-template-rows: repeat(3, min-content);
+  grid-auto-rows: min-content;
   grid-template-areas:
     "lo nl"
     "ad li"
@@ -17,12 +18,36 @@ const Container = styled.footer`
 
   align-items: start;
   gap: 2rem;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    grid-template-areas:
+      "lo nl"
+      "ad ad"
+      "li li"
+      "co co";
+  }
+
+  ${(props) => props.theme.responsive.smaller} {
+    grid-template-columns: minmax(min-content, 1fr);
+
+    grid-template-areas:
+      "lo"
+      "nl"
+      "ad"
+      "li"
+      "co";
+  }
 `;
 
 const Logo = styled.img`
   grid-area: lo;
   width: 10rem;
   height: 10rem;
+
+  ${(props) => props.theme.responsive.smaller} {
+    justify-self: center;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Newsletter = styled.div`
@@ -113,6 +138,14 @@ const ContactWrapper = styled.div`
 
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   padding: 2rem 0 0 0;
+
+  ${(props) => props.theme.responsive.largest} {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  }
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    justify-items: center;
+  }
 `;
 
 const ContactGroup = styled.div`
@@ -123,13 +156,18 @@ const ContactGroup = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 0.5rem;
   }
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    align-items: center;
+  }
 `;
 
 const ContactItem = styled.p`
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 1px;
-  align-items: left;
+  text-align: left;
+
   color: ${(props) => props.theme.colors.white};
 `;
 
@@ -144,6 +182,10 @@ const LinkWrapper = styled.div`
 
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   padding: 2rem 0 0 0;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    justify-items: center;
+  }
 `;
 
 const SocialMediaGroup = styled.div`
