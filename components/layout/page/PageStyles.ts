@@ -19,7 +19,7 @@ const ContentWrapper = styled.div`
     )
     [content-end] minmax(5rem, 1fr)
     [full-end];
-  gap: 15rem;
+  row-gap: 15rem;
   margin-bottom: 10rem;
 `;
 
