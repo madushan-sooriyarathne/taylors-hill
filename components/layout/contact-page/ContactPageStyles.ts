@@ -11,6 +11,15 @@ const Page = styled.section`
   align-items: start;
   justify-items: start;
   margin-bottom: -10rem;
+
+  ${(props) => props.theme.responsive.mediumLarge} {
+    height: auto;
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-template-rows: repeat(2, minmax(max-content, 100vh));
+    grid-template-areas:
+      "co"
+      "ma";
+  }
 `;
 
 const ContactFormWrapper = styled.div`
@@ -28,6 +37,10 @@ const ContactFormWrapper = styled.div`
 
   & > *:first-child {
     margin-bottom: 5rem;
+  }
+
+  ${(props) => props.theme.responsive.bigger} {
+    padding: 15rem 5rem 5rem 5rem;
   }
 `;
 
@@ -65,6 +78,11 @@ const ContactDetailsWrapper = styled.div`
   padding: 5rem 10rem;
   background-color: ${(props) => props.theme.colors.bgLight};
   box-shadow: ${(props) => props.theme.shadows.medium};
+
+  // 1500px
+  ${(props) => props.theme.responsive.bigger} {
+    padding: 5rem 5rem;
+  }
 `;
 
 const ContactDetails = styled.div`
