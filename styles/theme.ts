@@ -80,17 +80,17 @@ const theme: DefaultTheme = {
     large: "@media only screen and (max-width: 100em)", // 1600px;
     bigger: "@media only screen and (max-width: 93.75em)", // 1500px
     big: "@media only screen and (max-width: 87.5em)", // 1400px
-    mediumLarge: "@medium only screen and (max-width: 81.25em)", // 1300px
-    mediumBig: "@medium only screen and (max-width: 75em)", // 1200px
-    medium: "@medium only screen and (max-width: 68.75em)", // 1100px
-    mediumSmall: "@medium only screen and (max-width: 62.5em)", // 1000px
-    mediumSmaller: "@medium only screen and (max-width: 56.25em)", // 900px
-    small: "@medium only screen and (max-width: 50em)", // 800px
-    smaller: "@medium only screen and (max-width: 43.75em)", // 700px
-    smallest: "@medium only screen and (max-width: 37.5em)", // 600px
-    mobileLarge: "@medium only screen and (max-width: 31.25em)", // 500px
-    mobileMedium: "@medium only screen and (max-width: 25em)", // 400px
-    mobileSmall: "@medium only screen and (max-width: 18.75em)", // 300px
+    mediumLarge: "@media only screen and (max-width: 81.25em)", // 1300px
+    mediumBig: "@media only screen and (max-width: 75em)", // 1200px
+    medium: "@media only screen and (max-width: 68.75em)", // 1100px
+    mediumSmall: "@media only screen and (max-width: 62.5em)", // 1000px
+    mediumSmaller: "@media only screen and (max-width: 56.25em)", // 900px
+    small: "@media only screen and (max-width: 50em)", // 800px
+    smaller: "@media only screen and (max-width: 43.75em)", // 700px
+    smallest: "@media only screen and (max-width: 37.5em)", // 600px
+    mobileLarge: "@media only screen and (max-width: 31.25em)", // 500px
+    mobileMedium: "@media only screen and (max-width: 25em)", // 400px
+    mobileSmall: "@media only screen and (max-width: 18.75em)", // 300px
   },
 };
 
