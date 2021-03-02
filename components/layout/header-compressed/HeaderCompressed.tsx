@@ -2,12 +2,14 @@ import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
 
 import Button from "../../buttons/button/Button";
+import MenuButton from "../../buttons/menu-button/MenuButton";
 
 import {
   CompressedContainer,
   NavBar,
   CompressedLogo,
   CompressedNavLink,
+  ButtonWrapper,
 } from "./HeaderCompressedStyles";
 
 import { navLinks } from "../../../site-data";
@@ -38,9 +40,12 @@ const HeaderCompressed: React.FC<Props> = ({ style }: Props): JSX.Element => {
           </Link>
         ))}
       </NavBar>
-      <Button route="/reservations" invert>
-        Book now
-      </Button>
+      <ButtonWrapper>
+        <Button route="/reservations" invert>
+          Book now
+        </Button>
+        <MenuButton inverted />
+      </ButtonWrapper>
     </CompressedContainer>
   );
 };

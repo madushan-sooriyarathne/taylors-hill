@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
-import { NavBar } from "../header/HeaderStyles";
+import { NavBar, ButtonWrapper } from "../header/HeaderStyles";
 
 interface CompressedNavLinkProps {
   current: boolean;
@@ -11,7 +11,7 @@ const CompressedContainer = styled(animated.div)`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 7;
 
   width: 100%;
   height: auto;
@@ -20,6 +20,10 @@ const CompressedContainer = styled(animated.div)`
   align-items: center;
   justify-content: space-between;
   background-color: ${(props) => props.theme.colors.white};
+
+  ${(props) => props.theme.responsive.smallest} {
+    padding: 2rem 3rem;
+  }
 `;
 
 const CompressedNavLink = styled.a<CompressedNavLinkProps>`
@@ -61,4 +65,10 @@ const CompressedLogo = styled.img`
   cursor: pointer;
 `;
 
-export { CompressedContainer, NavBar, CompressedLogo, CompressedNavLink };
+export {
+  CompressedContainer,
+  NavBar,
+  CompressedLogo,
+  CompressedNavLink,
+  ButtonWrapper,
+};
