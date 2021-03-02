@@ -8,7 +8,7 @@ const Section = styled.section<SectionProps>`
   grid-column: content-start / content-end;
 
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
 
   display: grid;
   grid-template-columns: repeat(
@@ -17,6 +17,14 @@ const Section = styled.section<SectionProps>`
   );
   grid-template-areas: ${(props) => (props.reversed ? "'co im'" : "'im co'")};
   gap: 5rem;
+
+  ${(props) => props.theme.responsive.mediumSmaller} {
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas:
+      "im"
+      "co";
+  }
 `;
 
 interface ImageProps {
@@ -28,6 +36,7 @@ const Image = styled.div<ImageProps>`
 
   width: 100%;
   height: 100%;
+  min-height: 50rem;
   background-image: ${(props) => `url(${props.image})`};
   background-position: center center;
   background-repeat: no-repeat;
