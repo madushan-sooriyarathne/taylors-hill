@@ -18,6 +18,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
+
+  ${(props) => props.theme.responsive.smallest} {
+    padding: 3rem;
+  }
 `;
 
 const Logo = styled.img`
@@ -33,6 +37,10 @@ const NavBar = styled.div`
 
   & > *:not(:last-child) {
     margin-right: 3rem;
+  }
+
+  ${(props) => props.theme.responsive.mediumLarge} {
+    display: none;
   }
 `;
 
@@ -69,26 +77,14 @@ const NavLink = styled.a<NavLinkProps>`
   }
 `;
 
-const CompressedContainer = styled(Container)`
-  position: fixed;
-  background-color: ${(props) => props.theme.colors.white};
+const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  z-index: 12;
+
+  & > *:first-child {
+    margin-right: 2rem;
+  }
 `;
 
-const CompressedNavLink = styled(NavLink)`
-  color: ${(props) => props.theme.colors.black};
-`;
-
-const CompressedLogo = styled(Logo)`
-  width: 15rem;
-  height: auto;
-`;
-
-export {
-  Container,
-  CompressedContainer,
-  Logo,
-  CompressedLogo,
-  NavBar,
-  NavLink,
-  CompressedNavLink,
-};
+export { Container, Logo, ButtonWrapper, NavBar, NavLink };

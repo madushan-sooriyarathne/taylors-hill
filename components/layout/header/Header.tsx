@@ -4,7 +4,14 @@ import { NextRouter, useRouter } from "next/router";
 import { navLinks } from "../../../site-data";
 
 import Button from "../../buttons/button/Button";
-import { Container, Logo, NavBar, NavLink } from "./HeaderStyles";
+import MenuButton from "../../buttons/menu-button/MenuButton";
+import {
+  Container,
+  Logo,
+  NavBar,
+  NavLink,
+  ButtonWrapper,
+} from "./HeaderStyles";
 
 const Header: React.FC = (): JSX.Element => {
   const router: NextRouter = useRouter();
@@ -27,8 +34,10 @@ const Header: React.FC = (): JSX.Element => {
           </Link>
         ))}
       </NavBar>
-
-      <Button route="/reservations">Book Now</Button>
+      <ButtonWrapper>
+        <Button route="/reservations">Book Now</Button>
+        <MenuButton />
+      </ButtonWrapper>
     </Container>
   );
 };
