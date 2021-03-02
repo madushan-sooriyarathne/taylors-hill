@@ -1,9 +1,10 @@
 import { useState, useEffect, ReactNode } from "react";
-import { useTransition, UseTransitionResult } from "react-spring";
+import { useTransition } from "react-spring";
 import Footer from "../footer/Footer";
 
 import HeaderCompressed from "../header-compressed/HeaderCompressed";
 import Header from "../header/Header";
+import OverlayMenu from "../overlay-menu/OverlayMenu";
 import PageOverlay from "../page-overlay/PageOverlay";
 import { Container, ContentWrapper } from "./PageStyles";
 
@@ -40,6 +41,7 @@ const Page: React.FC<Props> = ({
   return (
     <Container>
       <PageOverlay />
+      <OverlayMenu />
       {!compressedHeader && <Header />}
 
       {transition.map(
