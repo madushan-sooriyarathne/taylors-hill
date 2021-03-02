@@ -42,7 +42,7 @@ const globalStyles: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
             left: 0;
             right: 0;
             background-color: ${(props) => props.theme.colors.white};
-            z-index: 10;
+            z-index: 20;
         }
 
         &::before {
