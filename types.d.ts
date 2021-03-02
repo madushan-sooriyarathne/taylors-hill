@@ -1,3 +1,5 @@
+import { SetStateAction, Dispatch } from "react";
+
 declare global {
   type AlignmentProps = "center" | "left" | "right" | "justify";
 
@@ -87,6 +89,8 @@ declare global {
       end: number;
     };
   };
+
+  type DispatchFn = Dispatch<SetStateAction<boolean>>;
 }
 
 export {};
