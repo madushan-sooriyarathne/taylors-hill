@@ -69,6 +69,18 @@ const ImageGrid = styled.section`
   grid-template-columns: repeat(4, minmax(10rem, 1fr));
   grid-auto-rows: max-content;
   gap: 3rem;
+
+  ${(props) => props.theme.responsive.big} {
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+  }
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+  }
+
+  ${(props) => props.theme.responsive.smaller} {
+    grid-template-columns: minmax(10rem, 1fr);
+  }
 `;
 
 const ImageBox = styled(animated.div)<ImageBoxProps>`
@@ -101,7 +113,7 @@ const GallerySliderOverlay = styled(animated.div)`
   bottom: 0;
   right: 0;
   background-color: ${(props) => props.theme.colors.bgLight};
-  z-index: 6;
+  z-index: 10;
 
   display: flex;
   align-items: center;
