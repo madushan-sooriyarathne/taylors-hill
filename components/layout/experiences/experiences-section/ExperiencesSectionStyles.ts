@@ -30,6 +30,22 @@ const ContentWrapper = styled.div`
 
   gap: 3rem;
 
+  ${(props) => props.theme.responsive.medium} {
+    grid-template-areas:
+      "bo bo co co"
+      "bt bt bh bh";
+  }
+
+  ${(props) => props.theme.responsive.smaller} {
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-auto-rows: minmax(min-content, 1fr);
+    grid-template-areas:
+      "bo"
+      "bt"
+      "bh"
+      "co";
+  }
+
   & > div {
     width: 100%;
     height: 100%;
@@ -60,6 +76,10 @@ const Content = styled.section`
 
   & > *:not(:last-child) {
     margin-bottom: 3rem;
+  }
+
+  ${(props) => props.theme.responsive.smaller} {
+    width: 100%;
   }
 `;
 
