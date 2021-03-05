@@ -9,11 +9,20 @@ const Container = styled.section`
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, 1fr));
   grid-template-rows: repeat(2, max-content);
+  grid-auto-rows: max-content;
   grid-template-areas:
     "su de"
     "ot ot";
   align-items: start;
   justify-items: start;
+
+  ${(props) => props.theme.responsive.medium} {
+    grid-template-columns: repeat(1, minmax(min-content, 1fr));
+    grid-template-areas:
+      "su"
+      "de"
+      "ot";
+  }
 `;
 
 const SummeryWrapper = styled.div`
@@ -127,7 +136,16 @@ const OtherOffersSection = styled.section`
 const OtherOffersGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  grid-auto-rows: max-content;
   gap: 3rem;
+
+  ${(props) => props.theme.responsive.medium} {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  }
+
+  ${(props) => props.theme.responsive.smaller} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 
 export {
