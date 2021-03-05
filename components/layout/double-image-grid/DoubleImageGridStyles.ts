@@ -10,6 +10,10 @@ const Grid = styled.section`
   grid-template-columns: repeat(2, 1fr);
   grid-auto-columns: max-content;
   gap: 5rem;
+
+  ${(props) => props.theme.responsive.small} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Image = styled.div<ImageProps>`
@@ -20,6 +24,10 @@ const Image = styled.div<ImageProps>`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  ${(props) => props.theme.responsive.small} {
+    padding-top: 56.5%;
+  }
 `;
 
 export { Grid, Image };
