@@ -10,6 +10,7 @@ const Box = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: minmax(25rem, 30rem) minmax(20rem, 1fr);
   grid-auto-rows: minmax(max-content, 1fr);
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: ${(props) => props.theme.shadows.low};
@@ -22,7 +23,7 @@ const Box = styled.div`
 
 const Image = styled.div<ImageProps>`
   width: 100%;
-  padding-top: 56.25%;
+  height: 100%;
 
   background-image: ${(props) => `url(${props.image})`};
   background-position: center center;
