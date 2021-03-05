@@ -18,6 +18,15 @@ const Group = styled.div`
   grid-template-columns: repeat(3, minmax(min-content, 1fr));
   grid-auto-rows: minmax(min-content, 50vh);
   gap: 5rem;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    gap: 3rem;
+  }
+
+  ${(props) => props.theme.responsive.small} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 
 export { Section, Group };
