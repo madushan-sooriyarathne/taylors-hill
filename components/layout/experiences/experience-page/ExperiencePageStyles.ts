@@ -13,10 +13,14 @@ const Container = styled.div`
 const Experience = styled.section`
   display: grid;
   grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 60%);
-  grid-template-rows: "max-content";
+  grid-template-rows: max-content;
   align-items: center;
   justify-items: start;
   gap: 5rem;
+
+  ${(props) => props.theme.responsive.medium} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 
 const ExperienceDetails = styled.div`
@@ -50,8 +54,16 @@ const OtherExperiencesGroup = styled.section`
 
   display: grid;
   grid-template-columns: repeat(3, minmax(min-content, 1fr));
-  grid-auto-rows: 50vh;
+  grid-auto-rows: minmax(40rem, 30vw);
   gap: 3rem;
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  }
+
+  ${(props) => props.theme.responsive.smaller} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 
 export {
