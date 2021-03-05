@@ -12,6 +12,15 @@ const Container = styled.section`
   align-items: start;
   justify-items: center;
   place-content: center center;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    gap: 3rem;
+  }
+
+  ${(props) => props.theme.responsive.small} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 
 export { Container };
