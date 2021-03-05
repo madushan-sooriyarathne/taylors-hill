@@ -15,11 +15,30 @@ const ContentWrapper = styled.div`
 
   display: grid;
   grid-template-columns: repeat(6, minmax(min-content, 1fr));
-  grid-template-rows: repeat(2, minmax(min-content, 25vw));
+  grid-template-rows: repeat(2, minmax(50rem, 25vw));
+  grid-auto-rows: minmax(50rem, 25vw);
   grid-template-areas:
     "bo bo bo bt bt bt"
     "bh bh bf bf bi bi";
   gap: 3rem;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-template-areas:
+      "bo bo"
+      "bt bh"
+      "bf bi";
+  }
+
+  ${(props) => props.theme.responsive.small} {
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-template-areas:
+      "bo"
+      "bt"
+      "bh"
+      "bf"
+      "bi";
+  }
 
   & > div {
     width: 100%;
