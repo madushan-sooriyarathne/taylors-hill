@@ -28,6 +28,10 @@ const SummeryWrapper = styled.section`
     align-items: center;
     justify-items: center;
     gap: 5rem;
+
+    ${(props) => props.theme.responsive.mediumSmall} {
+      grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    }
   }
 `;
 
@@ -68,6 +72,14 @@ const DetailsWrapper = styled.section`
   align-items: start;
   justify-content: start;
   gap: 10rem;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-auto-rows: min-content;
+    grid-template-areas:
+      "de"
+      "am";
+  }
 `;
 
 const DescriptionWrapper = styled.div`
@@ -149,6 +161,10 @@ const ImageSection = styled.section`
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: min-content;
   gap: 3rem;
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 
 const ImageItem = styled.div<ImageItemProps>`
@@ -174,8 +190,20 @@ const OtherRoomSection = styled.section`
 const OtherRoomsGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(min-content, 1fr));
-  grid-template-rows: repeat(1, 50vh);
+  grid-auto-rows: minmax(45rem, 50vh);
   gap: 3rem;
+
+  ${(props) => props.theme.responsive.mediumLarge} {
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  }
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  }
+
+  ${(props) => props.theme.responsive.smaller} {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
 `;
 export {
   Container,
