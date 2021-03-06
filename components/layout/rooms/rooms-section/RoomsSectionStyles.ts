@@ -15,6 +15,10 @@ const Section = styled.section`
   ${(props) => props.theme.responsive.mediumBig} {
     min-height: 150vh;
   }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+  }
 `;
 
 const ContentWrapper = styled.div`

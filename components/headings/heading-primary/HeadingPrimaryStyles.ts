@@ -11,6 +11,10 @@ const Heading = styled.h1<HeadingProps>`
   font-family: ${(props) => props.theme.fonts.secondary};
   color: ${(props) =>
     props.color ? props.color : props.theme.colors.secondary};
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    font-size: 3rem;
+  }
 `;
 
 export { Heading };

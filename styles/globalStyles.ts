@@ -23,6 +23,10 @@ const globalStyles: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
         ${(props) => props.theme.responsive.big} {
             font-size: 56.25%;
         }
+
+        ${(props) => props.theme.responsive.smaller} {
+            font-size: 50%;
+        }
     }
 
     body {

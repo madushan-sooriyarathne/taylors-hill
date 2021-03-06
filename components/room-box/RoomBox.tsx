@@ -16,7 +16,7 @@ const RoomBox: React.FC<Props> = ({ room }: Props): JSX.Element => {
   return (
     <Box image={room.image}>
       <ContentWrapper>
-        <HeadingSecondary>{room.title}</HeadingSecondary>
+        <HeadingSecondary alignment="left">{room.title}</HeadingSecondary>
         <RoomType>{room.type}</RoomType>
         <Description>{room.intro}</Description>
         <Link href={`/accommodation/${room.id}`}>

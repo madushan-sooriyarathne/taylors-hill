@@ -36,6 +36,7 @@ const Container = styled.footer`
       "ad"
       "li"
       "co";
+    padding: 5rem;
   }
 `;
 
@@ -69,12 +70,20 @@ const NewsletterTitle = styled.p`
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.white};
   text-align: left;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.3rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileSmall} {
+    font-size: 1.2rem;
+  }
 `;
 
 const InputWrapper = styled.form`
   display: grid;
   width: 100%;
-  grid-template-columns: 80% 1fr;
+  grid-template-columns: 1fr min-content;
   gap: 1rem;
   align-items: center;
   justify-items: start;
@@ -99,6 +108,10 @@ const NewsletterInput = styled.input`
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.white};
   background-color: transparent;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.2rem;
+  }
 `;
 
 const NewsletterButton = styled.button`
@@ -125,6 +138,10 @@ const NewsletterButton = styled.button`
     fill: ${(props) => props.theme.colors.secondaryLight};
     margin-left: 1rem;
     transition: transform 0.2s ease;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.3rem;
   }
 `;
 
@@ -173,6 +190,10 @@ const ContactItem = styled.p`
   text-align: left;
 
   color: ${(props) => props.theme.colors.white};
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.3rem;
+  }
 `;
 
 const LinkWrapper = styled.div`
@@ -222,6 +243,16 @@ const LinkGroup = styled.div`
   & > *:not(:last-child) {
     margin-right: 2rem;
   }
+
+  @media only screen and (max-width: 28.125em) {
+    flex-direction: column;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
 `;
 
 const LinkItem = styled.a`
@@ -265,6 +296,10 @@ const CopyrightItem = styled.p`
     &:hover {
       color: ${(props) => props.theme.colors.primaryLight};
     }
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.2rem;
   }
 `;
 

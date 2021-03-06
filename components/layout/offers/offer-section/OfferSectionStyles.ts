@@ -12,6 +12,11 @@ const Section = styled.section`
 
   align-items: center;
   justify-items: center;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+    padding: 0 1rem;
+  }
 `;
 
 const ContentWrapper = styled.div`

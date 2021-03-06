@@ -3,8 +3,8 @@ import styled from "styled-components";
 const Section = styled.section`
   grid-column: full-start / full-end;
   width: 100%;
-  min-height: 100vh;
-  margin: 0m 0 2rem 0;
+  height: auto;
+  max-height: 100vh;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -12,7 +12,7 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  margin-bottom: -10rem;
+  margin-bottom: -8rem;
 `;
 
 const Gallery = styled.div`

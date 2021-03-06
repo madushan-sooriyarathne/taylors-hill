@@ -32,6 +32,18 @@ const Title = styled.h1<TitleProps>`
   letter-spacing: 1px;
   opacity: 0.7;
   color: ${(props) => props.theme.colors.white};
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    font-size: ${(props) => (props.isLarge ? "4rem" : "8rem")};
+  }
+
+  ${(props) => props.theme.responsive.small} {
+    font-size: ${(props) => (props.isLarge ? "3rem" : "6rem")};
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: ${(props) => (props.isLarge ? "2rem" : "4rem")};
+  }
 `;
 
 const SubTitle = styled.h2`

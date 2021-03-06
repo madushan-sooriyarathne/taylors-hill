@@ -25,6 +25,10 @@ const Section = styled.section<SectionProps>`
       "im"
       "co";
   }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+  }
 `;
 
 interface ImageProps {
@@ -41,6 +45,10 @@ const Image = styled.div<ImageProps>`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    min-height: 30rem;
+  }
 `;
 
 const Content = styled.div`
@@ -51,6 +59,10 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    padding: 0 2rem;
+  }
 `;
 
 export { Section, Image, Content };

@@ -56,6 +56,15 @@ const ContentWrapper = styled.div`
   background-color: transparent;
 
   transition: transform 0.3s ease-out 0.1s, background-color 0.3s ease 0.1s;
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    height: 70%;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    height: 80%;
+    transform: translateY(75%);
+  }
 `;
 
 const RoomType = styled.p`

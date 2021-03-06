@@ -14,6 +14,10 @@ const Grid = styled.section`
   ${(props) => props.theme.responsive.small} {
     grid-template-columns: 1fr;
   }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+  }
 `;
 
 const Image = styled.div<ImageProps>`

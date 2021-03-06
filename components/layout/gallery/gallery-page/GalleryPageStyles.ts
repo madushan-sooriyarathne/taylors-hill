@@ -20,6 +20,10 @@ const Container = styled.div`
   grid-template-rows: repeat(2, max-content);
   gap: 10rem;
   align-items: start;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+  }
 `;
 
 const SelectionPanel = styled.section`

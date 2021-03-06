@@ -89,6 +89,10 @@ const DetailsWrapper = styled.div`
   gap: 5rem;
   align-items: start;
   justify-items: start;
+
+  ${(props) => props.theme.responsive.small} {
+    padding: 5rem 0;
+  }
 `;
 
 const DetailsSection = styled.div`
