@@ -8,6 +8,11 @@ const Container = styled.div`
   gap: 2rem;
 
   margin-bottom: -10rem;
+
+  ${(props) => props.theme.responsive.medium} {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
 `;
 
 const CoverImage = styled.div`
@@ -27,6 +32,10 @@ const FormContainer = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 2rem;
   }
+
+  ${(props) => props.theme.responsive.medium} {
+    padding: 5rem 3rem;
+  }
 `;
 
 const MessageHeading = styled.h1`
@@ -35,6 +44,18 @@ const MessageHeading = styled.h1`
   color: ${(props) => props.theme.colors.bgDark};
   text-align: center;
   margin-bottom: 2rem;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    font-size: 5rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    font-size: 4rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 3rem;
+  }
 `;
 
 const ButtonWrapper = styled.div`

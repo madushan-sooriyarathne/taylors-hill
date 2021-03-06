@@ -8,6 +8,16 @@ const Container = styled.div`
   align-items: start;
   justify-items: start;
   gap: 10rem;
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    margin-top: -10rem;
+    margin-bottom: -5rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+    padding: 1rem;
+  }
 `;
 
 const Experience = styled.section`

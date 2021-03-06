@@ -7,6 +7,10 @@ const Container = styled.div`
   height: 100vh;
 
   position: relative;
+
+  ${(props) => `${props.theme.responsive.smaller} and (min-height: 31.25em)`} {
+    height: 70vh;
+  }
 `;
 
 const Button = styled.div`
@@ -27,6 +31,12 @@ const Button = styled.div`
   opacity: 0.5;
 
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+  ${(props) => props.theme.responsive.smaller} {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+  }
 `;
 
 const ButtonRight = styled(Button)`
@@ -48,18 +58,34 @@ const ButtonLeft = styled(Button)`
 `;
 
 const SliderHeading = styled.h1`
-  font-size: 6rem;
+  font-size: 8rem;
   font-weight: 900;
   font-family: ${(props) => props.theme.fonts.secondary};
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.white};
   text-align: center;
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    font-size: 6rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    font-size: 4rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 3rem;
+  }
 `;
 
 const Description = styled.p`
   font-size: 2rem;
   font-weight: 400;
   color: ${(props) => props.color || props.theme.colors.white};
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.4rem;
+  }
 `;
 
 export { Container, ButtonRight, ButtonLeft, SliderHeading, Description };

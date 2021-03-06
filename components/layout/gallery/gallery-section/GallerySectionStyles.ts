@@ -13,6 +13,10 @@ const Section = styled.section`
   justify-content: center;
   gap: 5rem;
   margin-bottom: -8rem;
+
+  ${(props) => props.theme.responsive.smallest} {
+    display: none;
+  }
 `;
 
 const Gallery = styled.div`
@@ -35,6 +39,10 @@ const Gallery = styled.div`
     &:hover {
       transform: scale(1.02);
     }
+  }
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    gap: 1rem;
   }
 
   & > *:nth-child(1) {
