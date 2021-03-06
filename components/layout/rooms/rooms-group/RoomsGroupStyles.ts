@@ -7,6 +7,15 @@ const Container = styled.section`
   grid-template-columns: 1fr;
   grid-auto-rows: min-content;
   gap: 5rem;
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    margin-top: -10rem;
+    margin-bottom: -5rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+  }
 `;
 
 const ContentWrapper = styled.div`

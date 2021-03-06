@@ -47,6 +47,14 @@ const ShadowTitle = styled.span<ShadowTitleProps>`
   ${(props) => props.theme.responsive.smaller} {
     font-size: 6rem;
   }
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    font-size: 5rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 4rem;
+  }
 `;
 
 export { Wrapper, ShadowTitle };

@@ -19,6 +19,7 @@ const Page = styled.section`
     grid-template-areas:
       "co"
       "ma";
+    margin-bottom: -20rem;
   }
 `;
 
@@ -42,6 +43,18 @@ const ContactFormWrapper = styled.div`
   ${(props) => props.theme.responsive.bigger} {
     padding: 15rem 5rem 5rem 5rem;
   }
+
+  ${(props) => props.theme.responsive.smallest} {
+    padding: 15rem 3rem 3rem 3rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    padding: 15rem 2rem 2rem 2rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    padding: 15rem 1rem 1rem 1rem;
+  }
 `;
 
 const ContactForm = styled.form`
@@ -63,6 +76,11 @@ const Map = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    height: 80vh;
+    margin-bottom: -10rem;
+  }
 `;
 
 const ContactDetailsWrapper = styled.div`
@@ -83,6 +101,10 @@ const ContactDetailsWrapper = styled.div`
   ${(props) => props.theme.responsive.bigger} {
     padding: 5rem 5rem;
   }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    padding: 2rem;
+  }
 `;
 
 const ContactDetails = styled.div`
@@ -95,6 +117,10 @@ const Logo = styled.img`
   height: 5rem;
   width: auto;
   margin-bottom: 2rem;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    height: 3rem;
+  }
 `;
 
 const ContactItem = styled.p`
@@ -105,6 +131,10 @@ const ContactItem = styled.p`
   white-space: nowrap;
   color: ${(props) => props.theme.colors.secondary};
   margin-bottom: 2rem;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.3rem;
+  }
 `;
 
 export {

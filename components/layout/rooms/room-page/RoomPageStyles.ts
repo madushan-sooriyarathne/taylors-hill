@@ -10,6 +10,11 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   grid-auto-rows: max-content;
   gap: 15rem;
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+    padding: 1rem;
+  }
 `;
 
 const SummeryWrapper = styled.section`

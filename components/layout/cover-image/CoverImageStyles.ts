@@ -38,11 +38,11 @@ const Title = styled.h1<TitleProps>`
   }
 
   ${(props) => props.theme.responsive.small} {
-    font-size: ${(props) => (props.isLarge ? "3rem" : "6rem")};
+    font-size: ${(props) => (props.isLarge ? "4rem" : "6rem")};
   }
 
   ${(props) => props.theme.responsive.mobileMedium} {
-    font-size: ${(props) => (props.isLarge ? "2rem" : "4rem")};
+    font-size: ${(props) => (props.isLarge ? "3rem" : "4rem")};
   }
 `;
 
@@ -52,6 +52,14 @@ const SubTitle = styled.h2`
   font-family: ${(props) => props.theme.fonts.primary};
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.white};
+
+  ${(props) => props.theme.responsive.small} {
+    font-size: 2rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    font-size: 1.5rem;
+  }
 `;
 
 export { Image, Title, SubTitle };

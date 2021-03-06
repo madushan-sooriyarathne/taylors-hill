@@ -23,6 +23,16 @@ const Container = styled.section`
       "de"
       "ot";
   }
+
+  ${(props) => props.theme.responsive.mediumSmall} {
+    margin-top: -10rem;
+    margin-bottom: -20rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+    padding: 1rem;
+  }
 `;
 
 const SummeryWrapper = styled.div`

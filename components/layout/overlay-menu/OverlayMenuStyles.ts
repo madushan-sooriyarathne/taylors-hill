@@ -44,6 +44,18 @@ const MenuOverlay = styled.div<MenuOverlayProps>`
   ${(props) => props.theme.responsive.mediumLarge} {
     display: flex;
   }
+
+  ${(props) => props.theme.responsive.small} {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url("/static/img/story-cover.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 `;
 
 const NavLinkGroup = styled.nav`
@@ -69,7 +81,10 @@ const NavLink = styled(animated.a)`
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: ${(props) => props.theme.colors.secondaryLight};
+    color: ${(props) => props.theme.colors.secondary};
+  }
+  ${(props) => props.theme.responsive.mobileLarge} {
+    font-size: 3.5rem;
   }
 `;
 

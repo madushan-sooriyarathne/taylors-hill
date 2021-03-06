@@ -18,8 +18,18 @@ const Container = styled.section`
     gap: 3rem;
   }
 
+  ${(props) => props.theme.responsive.mediumSmall} {
+    margin-top: -10rem;
+    margin-bottom: -5rem;
+  }
+
   ${(props) => props.theme.responsive.small} {
     grid-template-columns: minmax(min-content, 1fr);
+  }
+
+  ${(props) => props.theme.responsive.mobileMedium} {
+    grid-column: full-start / full-end;
+    padding: 1rem;
   }
 `;
 
