@@ -5,7 +5,7 @@ interface Props {
 }
 
 const MenuOpenContext: Context<boolean> = createContext<boolean>(false);
-const MenuOpenDispatchContext: Context<DispatchFn | null> = createContext<DispatchFn | null>(
+const MenuOpenDispatchContext: Context<DispatchFn<boolean> | null> = createContext<DispatchFn<boolean> | null>(
   null
 );
 
