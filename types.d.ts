@@ -90,7 +90,7 @@ declare global {
     };
   };
 
-  type DispatchFn = Dispatch<SetStateAction<boolean>>;
+  type DispatchFn<T> = Dispatch<SetStateAction<T>>;
 }
 
 export {};
