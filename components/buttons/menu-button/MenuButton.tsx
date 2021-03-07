@@ -14,9 +14,9 @@ const MenuButton: React.FC<Props> = ({
 }: Props): JSX.Element => {
   // context subscriber;
   const menuOpen: boolean = useContext<boolean>(MenuOpenContext);
-  const setMenuOpen: DispatchFn = useContext<DispatchFn | null>(
+  const setMenuOpen: DispatchFn<boolean> = useContext<DispatchFn<boolean> | null>(
     MenuOpenDispatchContext
-  ) as DispatchFn;
+  ) as DispatchFn<boolean>;
 
   // Menu Open handler
   const handleMenuOpen = () => {
