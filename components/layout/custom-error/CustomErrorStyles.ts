@@ -32,6 +32,14 @@ const Heading = styled.h1`
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.white};
   opacity: 0.8;
+
+  ${(props) => props.theme.responsive.mediumSmaller} {
+    font-size: 8rem;
+  }
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    font-size: 4rem;
+  }
 `;
 
 const SubHeading = styled.h2`
@@ -42,6 +50,15 @@ const SubHeading = styled.h2`
 
   display: flex;
   align-items: center;
+
+  ${(props) => props.theme.responsive.mediumSmaller} {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    font-size: 2rem;
+  }
 
   &::before,
   &::after {
