@@ -22,9 +22,9 @@ const OverlayMenu: React.FC = (): JSX.Element => {
 
   // context subscribers
   const menuOpen: boolean = useContext<boolean>(MenuOpenContext);
-  const setMenuOpen: DispatchFn = useContext<DispatchFn | null>(
+  const setMenuOpen: DispatchFn<boolean> = useContext<DispatchFn<boolean> | null>(
     MenuOpenDispatchContext
-  ) as DispatchFn;
+  ) as DispatchFn<boolean>;
 
   // Nav Links transition
   const navLinksAnimationTrail = useTrail(navLinks.length, {
