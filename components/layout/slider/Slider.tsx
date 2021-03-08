@@ -21,6 +21,36 @@ const Slider: React.FC<Props> = ({ slides }: Props): JSX.Element => {
   const [pageLoad, setPageLoad] = useState<boolean>(true);
 
   // spring transition
+  // const transitions = useTransition(index, (index: number): number => index, {
+  //   from: {
+  //     transform: pageLoad
+  //       ? "translate3d(0, 0, 0)"
+  //       : reverse
+  //       ? "translate3d(-100%, 0, 0)"
+  //       : "translate3d(100%, 0, 0)",
+  //   },
+  //   enter: {
+  //     transform: "translate3d(0%, 0, 0)",
+  //   },
+  //   leave: {
+  //     transform: reverse
+  //       ? "translate3d(100%, 0, 0)"
+  //       : "translate3d(-100%, 0, 0)",
+  //   },
+  // });
+
+  // const transitions = useTransition(index, (index: number): number => index, {
+  //   from: {
+  //     opacity: 0,
+  //   },
+  //   enter: {
+  //     opacity: 1,
+  //   },
+  //   leave: {
+  //     opacity: 0,
+  //   },
+  // });
+
   const transitions = useTransition(index, (index: number): number => index, {
     from: {
       opacity: 0,
@@ -35,8 +65,10 @@ const Slider: React.FC<Props> = ({ slides }: Props): JSX.Element => {
       transform: "translate3d(0%, 0, 0)",
     },
     leave: {
-      opacity: 0,
-      transform: reverse ? "translate3d(50%, 0, 0)" : "translate3d(-50%, 0, 0)",
+      opacity: 0.5,
+      transform: reverse
+        ? "translate3d(100%, 0, 0)"
+        : "translate3d(-100%, 0, 0)",
     },
   });
 
