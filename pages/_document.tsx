@@ -47,7 +47,7 @@ class MainDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body>
+        <body style={{ visibility: "hidden" }}>
           <Main />
           <NextScript />
         </body>
