@@ -8,11 +8,18 @@ import theme from "../styles/theme";
 import GlobalStyles from "../styles/globalStyles";
 
 import "../styles/fonts.css";
+import { useEffect } from "react";
 
 const MainApp: React.FC<AppProps> = ({
   Component,
   pageProps,
 }: AppProps): JSX.Element => {
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      document.body.style.visibility = "visible";
+    });
+  });
+
   return (
     <>
       <Head>
