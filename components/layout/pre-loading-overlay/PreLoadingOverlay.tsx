@@ -1,4 +1,4 @@
-import LoadingSpinner from "../../loading-spinner/LoadingSpinner";
+import LoadingBar from "../../loading-bar/LoadingBar";
 import { Page, Logo, Container } from "./PreLoadingOverlayStyles";
 
 interface Props {
@@ -15,7 +15,7 @@ const PreLoadingOverlay: React.FC<Props> = ({
           src="/static/svg/th-logo.svg"
           alt="Taylors Hill Boutique Hotel Logo"
         ></Logo>
-        <LoadingSpinner />
+        <LoadingBar />
       </Container>
     </Page>
   );
