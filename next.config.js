@@ -1,3 +1,5 @@
+import { generateStaticSitemapNodes } from "./utils/sitemapOperations";
+
 module.exports = {
   env: {
     MAP_BOX_SECRET: process.env.MAP_BOX_SECRET,
@@ -6,5 +8,12 @@ module.exports = {
       process.env.CONTENTFUL_CONTENT_DELIVERY_API_TOKEN,
     CONTENTFUL_CONTENT_PREVIEW_API_TOKEN:
       process.env.CONTENTFUL_CONTENT_PREVIEW_API_TOKEN,
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      generateStaticSitemapNodes("https://taylorshill.lk");
+    }
+
+    return config;
   },
 };
