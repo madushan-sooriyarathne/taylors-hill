@@ -64,6 +64,47 @@ const globalStyles: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
         color: ${(props) => props.theme.colors.secondary}
     }
 
+    // Scrollbar width
+    scrollbar {
+        width:7px;
+    }
+
+    ::-webkit-scrollbar {
+        width:7px;
+    }
+
+    // Scrollbar track
+    scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    // Scrollbar handle
+    scrollbar-thumb {
+        background-color: ${(props) => props.theme.colors.secondaryLight};
+        border-radius: 1rem;
+        transition: background-color 0.2s ease;
+
+        &:active {
+            background-color: ${(props) => props.theme.colors.secondary};
+        }
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: ${(props) => props.theme.colors.secondaryLight};
+        border-radius: 1rem;
+        transition: background-color 0.2s ease;
+
+        &:active {
+            background-color: ${(props) => props.theme.colors.secondary};
+        }
+    }
+
+
+
     
 `;
 
