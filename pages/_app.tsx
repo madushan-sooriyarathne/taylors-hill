@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import Head from "next/head";
@@ -7,16 +8,19 @@ import MenuContextProvider from "../context/MenuContext";
 import theme from "../styles/theme";
 import GlobalStyles from "../styles/globalStyles";
 
+import PreLoadingOverlay from "../components/layout/pre-loading-overlay/PreLoadingOverlay";
+
 import "../styles/fonts.css";
-import { useEffect } from "react";
 
 const MainApp: React.FC<AppProps> = ({
   Component,
   pageProps,
 }: AppProps): JSX.Element => {
+  const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
     window.addEventListener("load", () => {
-      document.body.style.visibility = "visible";
+      setLoading(false);
     });
   });
 
@@ -28,6 +32,7 @@ const MainApp: React.FC<AppProps> = ({
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <MenuContextProvider>
+          <PreLoadingOverlay loading={loading} />
           <Component {...pageProps} />
         </MenuContextProvider>
       </ThemeProvider>
