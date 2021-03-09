@@ -1,5 +1,3 @@
-import { generateStaticSitemapNodes } from "./utils/sitemapOperations";
-
 module.exports = {
   env: {
     MAP_BOX_SECRET: process.env.MAP_BOX_SECRET,
@@ -11,7 +9,7 @@ module.exports = {
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
-      generateStaticSitemapNodes("https://taylorshill.lk");
+      require("./utils/generateStaticSitemap");
     }
 
     return config;
