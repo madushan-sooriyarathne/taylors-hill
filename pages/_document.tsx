@@ -46,8 +46,27 @@ class MainDocument extends Document {
             href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
             rel="stylesheet"
           />
+
+          {/* Google analytics site-tag */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-175641451-1"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){
+                    dataLayer.push(arguments);
+                  }
+                  
+                  gtag('js', new Date());
+                  gtag('config', 'UA-175641451-1');
+              `,
+            }}
+          ></script>
         </Head>
-        <body style={{ visibility: "hidden" }}>
+        <body>
           <Main />
           <NextScript />
         </body>
