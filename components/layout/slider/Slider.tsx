@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTransition } from "react-spring";
 
 import {
@@ -12,13 +12,21 @@ import ImageSlide from "../../image-slide/ImageSlide";
 import SliderTextBox from "../../slider-text-box/SliderTextBox";
 
 interface Props {
-  slides: any[];
+  slides: HeroSlides[];
 }
 
 const Slider: React.FC<Props> = ({ slides }: Props): JSX.Element => {
   const [index, setIndex] = useState<number>(0);
   const [reverse, setReverse] = useState<boolean>(false);
   const [pageLoad, setPageLoad] = useState<boolean>(true);
+
+  // preload slider images to prevent white-spaces
+  useEffect(() => {
+    slides.forEach(({ image }) => {
+      const imageEl: HTMLImageElement = document.createElement("img");
+      imageEl.src = image;
+    });
+  }, []);
 
   // spring transition
   // const transitions = useTransition(index, (index: number): number => index, {
