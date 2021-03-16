@@ -4,9 +4,18 @@ import CTADescription from "../components/layout/cta-description/CTADescription"
 import Page from "../components/layout/page/Page";
 import DoubleImageGrid from "../components/layout/double-image-grid/DoubleImageGrid";
 
-import { history, historyTaylorsHill } from "../site-data";
+import { GetStaticProps, GetStaticPropsResult } from "next";
+import { getSingleEntry, serializeAssetUrls } from "../utils/contentful";
 
-const Story: React.FC = (): JSX.Element => {
+interface Props {
+  teaHistory: SectionData;
+  taylorsHillHistory: SectionData;
+}
+
+const Story: React.FC<Props> = ({
+  teaHistory,
+  taylorsHillHistory,
+}: Props): JSX.Element => {
   return (
     <Page>
       <CoverImage
@@ -14,17 +23,50 @@ const Story: React.FC = (): JSX.Element => {
         title="Story"
         subTitle="The Tale of Taylors Hill & Authentic Ceylon Tea"
       />
-      <ImageContentSection image={history.image} reversed>
-        <CTADescription data={history} alignment="justify" />
+      <ImageContentSection image={teaHistory.image} reversed>
+        <CTADescription
+          data={teaHistory}
+          alignment="justify"
+          withButton={false}
+        />
       </ImageContentSection>
       <DoubleImageGrid
         images={["/static/img/story/01.webp", "/static/img/story/03.webp"]}
       />
-      <ImageContentSection image={historyTaylorsHill.image}>
-        <CTADescription data={historyTaylorsHill} alignment="justify" />
+      <ImageContentSection image={taylorsHillHistory.image}>
+        <CTADescription
+          data={taylorsHillHistory}
+          alignment="justify"
+          withButton={false}
+        />
       </ImageContentSection>
     </Page>
   );
 };
+
+const getStaticProps: GetStaticProps = async (): Promise<
+  GetStaticPropsResult<Props>
+> => {
+  // fetch tea history data from contentful and format image links
+  const teaHistory: SectionData = serializeAssetUrls<
+    ContentfulSectionDataFields,
+    SectionData
+  >(await getSingleEntry("01SOoX9MdPWA89FXUuYpt"), "image");
+
+  // fetch taylors Hill History data from contentful and format image links
+  const taylorsHillHistory: SectionData = serializeAssetUrls<
+    ContentfulSectionDataFields,
+    SectionData
+  >(await getSingleEntry("5lUKNDCwOxMNWyQj5Mtjmd"), "image");
+
+  return {
+    props: {
+      teaHistory,
+      taylorsHillHistory,
+    },
+  };
+};
+
+export { getStaticProps };
 
 export default Story;
