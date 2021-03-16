@@ -74,17 +74,19 @@ const OfferPage: React.FC<Props> = ({
           </DetailsSection>
         )}
       </DetailsWrapper>
-      <OtherOffersSection>
-        <MainTitle
-          mainHeading="Check-out other offers"
-          shadowHeading="Offers"
-        />
-        <OtherOffersGroup>
-          {otherOffers.map((offer: Offer) => (
-            <OfferBox offer={offer} />
-          ))}
-        </OtherOffersGroup>
-      </OtherOffersSection>
+      {otherOffers.length > 0 && (
+        <OtherOffersSection>
+          <MainTitle
+            mainHeading="Check-out other offers"
+            shadowHeading="Offers"
+          />
+          <OtherOffersGroup>
+            {otherOffers.map((offer: Offer) => (
+              <OfferBox offer={offer} />
+            ))}
+          </OtherOffersGroup>
+        </OtherOffersSection>
+      )}
     </Container>
   );
 };
