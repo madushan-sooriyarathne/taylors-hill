@@ -3,12 +3,17 @@ import CoverImage from "../../components/layout/cover-image/CoverImage";
 import { excursions } from "../../site-data";
 import ExperiencesGroup from "../../components/layout/experiences/experiences-group/ExperiencesGroup";
 import { GetStaticProps, GetStaticPropsResult } from "next";
+import { getMultipleEntries, serializeAssetUrls } from "../../utils/contentful";
 
 interface Props {
-  experiences: Excursion[];
+  excursions: Excursion[];
+  activities: Excursion[];
 }
 
-const Experience: React.FC<Props> = ({ experiences }: Props): JSX.Element => {
+const Experience: React.FC<Props> = ({
+  excursions,
+  activities,
+}: Props): JSX.Element => {
   return (
     <Page>
       <CoverImage
@@ -17,13 +22,13 @@ const Experience: React.FC<Props> = ({ experiences }: Props): JSX.Element => {
         subTitle="Things that keep you occupied while your stay"
       />
       <ExperiencesGroup
-        experiences={experiences}
+        experiences={activities}
         mainHeading="Activities"
         subHeading="Take time to relax, There’s enough activities to keep within the Taylors Hill premises"
       />
 
       <ExperiencesGroup
-        experiences={experiences}
+        experiences={excursions}
         mainHeading="Excursions"
         subHeading="A stay would not be completed without having explored the various attractions that are within short distance of Taylors Hill."
       />
@@ -34,9 +39,36 @@ const Experience: React.FC<Props> = ({ experiences }: Props): JSX.Element => {
 const getStaticProps: GetStaticProps = async (): Promise<
   GetStaticPropsResult<Props>
 > => {
+  // Fetch excursions from contentful and serialize it
+  const excursions: Excursion[] = await getMultipleEntries<ContentfulExcursionFields>(
+    "excursion"
+  ).then((result: ContentfulExcursionFields[]) =>
+    result.map((item: ContentfulExcursionFields) =>
+      serializeAssetUrls<ContentfulExcursionFields, Excursion>(
+        item,
+        "image",
+        "images"
+      )
+    )
+  );
+
+  // Fetch activities from contentful and serialize it
+  const activities: Excursion[] = await getMultipleEntries<ContentfulExcursionFields>(
+    "activity"
+  ).then((result: ContentfulExcursionFields[]) =>
+    result.map((item: ContentfulExcursionFields) =>
+      serializeAssetUrls<ContentfulExcursionFields, Excursion>(
+        item,
+        "image",
+        "images"
+      )
+    )
+  );
+
   return {
     props: {
-      experiences: excursions,
+      excursions,
+      activities,
     },
   };
 };
