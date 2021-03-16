@@ -1,6 +1,5 @@
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
-import { excursions } from "../../site-data";
 import ExperiencesGroup from "../../components/layout/experiences/experiences-group/ExperiencesGroup";
 import { GetStaticProps, GetStaticPropsResult } from "next";
 import { getMultipleEntries, serializeAssetUrls } from "../../utils/contentful";
