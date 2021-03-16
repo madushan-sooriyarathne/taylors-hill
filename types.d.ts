@@ -33,7 +33,6 @@ declare global {
     image: string;
     images: string[];
     title: string;
-    url: string;
     summery: string;
     description: string;
   }
