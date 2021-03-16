@@ -22,6 +22,7 @@ const Page = styled.div<PageProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.3s ease-out;
 `;
 
 const Container = styled.div`
