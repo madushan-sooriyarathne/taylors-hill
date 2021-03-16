@@ -5,22 +5,24 @@ import { Box, ContentGroup, Anchor, AnchorText, Arrow } from "./ImageBoxStyles";
 interface Props {
   image: string;
   title: string;
-  url: string;
+  id: string;
   withButton?: boolean;
 }
 
 const ImageBox: React.FC<Props> = ({
   image,
   title,
-  url,
+  id,
   withButton,
 }: Props): JSX.Element => {
   return (
     <Box image={image}>
       <ContentGroup>
-        <HeadingSecondary color="#fff">{title}</HeadingSecondary>
+        <HeadingSecondary color="#fff" alignment="left">
+          {title}
+        </HeadingSecondary>
         {withButton && (
-          <Link href={url}>
+          <Link href={`/experience/${id}`}>
             <Anchor>
               <AnchorText>Explore</AnchorText> <Arrow />
             </Anchor>
