@@ -65,7 +65,6 @@ const ImageCarousel: React.FC<Props> = ({
 
   const handleRight: () => void = () => {
     setReversed(true);
-    console.log("im clicked");
     setIndex((prevState) => (prevState + 1) % images.length);
   };
 
