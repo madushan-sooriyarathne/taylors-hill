@@ -12,7 +12,7 @@ import ImageSlide from "../../image-slide/ImageSlide";
 import SliderTextBox from "../../slider-text-box/SliderTextBox";
 
 interface Props {
-  slides: HeroSlides[];
+  slides: HeroSlide[];
 }
 
 const Slider: React.FC<Props> = ({ slides }: Props): JSX.Element => {
