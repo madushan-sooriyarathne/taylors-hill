@@ -82,7 +82,7 @@ const OfferPage: React.FC<Props> = ({
           />
           <OtherOffersGroup>
             {otherOffers.map((offer: Offer) => (
-              <OfferBox offer={offer} />
+              <OfferBox offer={offer} key={offer.id} />
             ))}
           </OtherOffersGroup>
         </OtherOffersSection>

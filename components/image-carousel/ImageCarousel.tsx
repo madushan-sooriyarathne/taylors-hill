@@ -102,6 +102,7 @@ const ImageCarousel: React.FC<Props> = ({
         <ThumbRow length={images.length}>
           {images.map((image, curIndex) => (
             <ThumbItem
+              key={curIndex}
               image={image}
               selected={index === curIndex}
               onClick={() => handleSelect(curIndex)}

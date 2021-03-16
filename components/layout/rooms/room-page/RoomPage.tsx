@@ -61,27 +61,27 @@ const RoomPage: React.FC<Props> = ({
         <FeaturesWrapper>
           <h3>Room Features</h3>
           <ul>
-            {firstRow.map((item: string) => (
-              <FeatureItem>{item}</FeatureItem>
+            {firstRow.map((item: string, index: number) => (
+              <FeatureItem key={`first-row-${index}`}>{item}</FeatureItem>
             ))}
           </ul>
           <ul>
-            {secondRow.map((item: string) => (
-              <FeatureItem>{item}</FeatureItem>
+            {secondRow.map((item: string, index: number) => (
+              <FeatureItem key={`second-row-${index}`}>{item}</FeatureItem>
             ))}
           </ul>
         </FeaturesWrapper>
       </DetailsWrapper>
       <ImageSection>
         {primaryRoom.images.map((image: string, index: number) => {
-          if (index < 2) return <ImageItem image={image} />;
+          if (index < 2) return <ImageItem image={image} key={index} />;
         })}
       </ImageSection>
       <OtherRoomSection>
         <MainTitle mainHeading="View our other rooms" shadowHeading="Rooms" />
         <OtherRoomsGroup>
           {otherRooms.map((room: Room) => (
-            <RoomBox room={room} />
+            <RoomBox room={room} key={room.id} />
           ))}
         </OtherRoomsGroup>
       </OtherRoomSection>

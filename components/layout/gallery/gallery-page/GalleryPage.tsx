@@ -90,6 +90,7 @@ const GalleryPage: React.FC<Props> = ({
               setSelected(item.id);
               setPageLoaded(false);
             }}
+            key={item.id}
           >
             {item.name}
           </SelectionItem>

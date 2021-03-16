@@ -9,7 +9,7 @@ const OfferGroup: React.FC<Props> = ({ offers }: Props): JSX.Element => {
   return (
     <Container>
       {offers.map((offer: Offer) => (
-        <OfferBox offer={offer} />
+        <OfferBox offer={offer} key={offer.id} />
       ))}
     </Container>
   );
