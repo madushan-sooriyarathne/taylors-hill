@@ -5,11 +5,13 @@ import { Wrapper, Description } from "./CTADescriptionStyles";
 interface Props {
   data: SectionData;
   alignment?: AlignmentProps;
+  withButton?: boolean;
 }
 
 const CTADescription: React.FC<Props> = ({
   data,
   alignment = "center",
+  withButton = true,
 }: Props): JSX.Element => {
   return (
     <Wrapper>
@@ -23,7 +25,7 @@ const CTADescription: React.FC<Props> = ({
         alignment={alignment}
         dangerouslySetInnerHTML={{ __html: data.description }}
       ></Description>
-      {data.route && (
+      {withButton && data.route && (
         <Button route={data.route.url} invert={true}>
           {data.route.name}
         </Button>
