@@ -1,15 +1,10 @@
+import { Asset, Entry } from "contentful";
 import { SetStateAction, Dispatch } from "react";
 
 declare global {
-  type AlignmentProps = "center" | "left" | "right" | "justify";
+  /** Application Data Types */
 
-  interface Offer {
-    title: string;
-    image: string;
-    description: string;
-    id: string;
-  }
-
+  // Room related types
   interface Room {
     id: string;
     title: string;
@@ -25,6 +20,14 @@ declare global {
     description: string;
   }
 
+  interface ContentfulRoomFields extends Room {
+    image: Asset;
+    images: Asset[];
+  }
+
+  type ContentfulRoomResult = Entry<ContentfulRoomFields>;
+
+  // Activities & Excursion related types
   interface Excursion {
     id: string;
     image: string;
@@ -35,6 +38,14 @@ declare global {
     description: string;
   }
 
+  interface ContentfulExcursionFields extends Excursion {
+    image: Asset;
+    images: Asset[];
+  }
+
+  type ContentfulExcursionResult = Entry<ContentfulExcursionFields>;
+
+  // Offer related types
   interface Offer {
     id: string;
     title: string;
@@ -43,12 +54,20 @@ declare global {
     currency: "LKR" | "USD";
     price: number | null;
     discount: number | null;
-    validTill: string; // Date().toJSON();
+    validTill: Date; // Date().toJSON();
     terms: string[];
     includes: string[];
   }
 
-  interface HeroSlides {
+  interface ContentfulOfferFields extends Offer {
+    image: Asset;
+    validTill: Date;
+  }
+
+  type ContentfulOfferResult = Entry<ContentfulOfferFields>;
+
+  // HeroSlide related types
+  interface HeroSlide {
     id: number;
     image: string;
     text: {
@@ -58,6 +77,13 @@ declare global {
     textPos: CSSGridPos;
   }
 
+  interface ContentfulHeroSlideFields extends HeroSlide {
+    image: Asset;
+  }
+
+  type ContentfulHeroSlideResult = Entry<ContentfulHeroSlideFields>;
+
+  // Section Data related types
   interface SectionData {
     image: string;
     mainHeading: string;
@@ -67,11 +93,28 @@ declare global {
     description: string;
   }
 
+  interface ContentfulSectionDataFields extends SectionData {
+    image: Asset;
+  }
+
+  type ContentfulSectionDataResult = Entry<ContentfulSectionDataFields>;
+
+  // Gallery Images related types
   interface GalleryImage {
-    img: string;
+    image: string;
     type: string;
     id: number;
   }
+
+  interface ContentfulGalleryImageFields extends GalleryImage {
+    image: Asset;
+  }
+
+  type ContentfulGalleryImageResults = Entry<ContentfulGalleryImageFields>;
+
+  /** Meta Types */
+
+  type AlignmentProps = "center" | "left" | "right" | "justify";
 
   interface GallerySelection {
     id: string;
