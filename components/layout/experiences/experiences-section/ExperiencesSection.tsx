@@ -33,7 +33,7 @@ const ExperiencesSection: React.FC<Props> = ({
               <ImageBox
                 image={item.image}
                 title={item.title}
-                url={`/experience/${item.id}`}
+                id={item.id}
                 key={item.id}
                 withButton
               />
