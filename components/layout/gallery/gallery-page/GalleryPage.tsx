@@ -102,7 +102,7 @@ const GalleryPage: React.FC<Props> = ({
             className="img"
             data-index={index}
             onClick={handleImageClick}
-            image={selectedImages[index].img}
+            image={selectedImages[index].image}
             style={{
               transform: transform.interpolate((x) => x),
               ...rest,
@@ -116,7 +116,7 @@ const GalleryPage: React.FC<Props> = ({
         <ImageCarousel
           height="80%"
           width="80%"
-          images={selectedImages.map((img) => img.img)}
+          images={selectedImages.map((img) => img.image)}
           defaultIndex={clickedImg}
         />
         <SliderOverLayCloseBtn onClick={handleImageClick}>

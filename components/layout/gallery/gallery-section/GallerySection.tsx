@@ -9,7 +9,7 @@ const GallerySection: React.FC<Props> = ({ images }: Props): JSX.Element => {
     <Section>
       <Gallery>
         {images.map((img: GalleryImage) => (
-          <div key={img.id} style={{ backgroundImage: `url(${img.img})` }} />
+          <div key={img.id} style={{ backgroundImage: `url(${img.image})` }} />
         ))}
       </Gallery>
     </Section>
