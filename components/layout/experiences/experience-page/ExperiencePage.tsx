@@ -44,7 +44,7 @@ const ExperiencePage: React.FC<Props> = ({
                 <ImageBox
                   key={item.id}
                   image={item.image}
-                  id={item.id}
+                  url={`/experience/${item.id}`}
                   title={item.title}
                   withButton
                 />

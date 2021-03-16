@@ -22,7 +22,12 @@ const ExperiencesGroup: React.FC<Props> = ({
       />
       <Group>
         {experiences.map((item: Excursion) => (
-          <ImageBox key={item.id} {...item} withButton />
+          <ImageBox
+            key={item.id}
+            {...item}
+            url={`/experience/${item.id}`}
+            withButton
+          />
         ))}
       </Group>
     </Section>
