@@ -1,7 +1,5 @@
 import { Asset, Entry, EntryCollection } from "contentful";
 
-console.log();
-
 // contentful client
 const client = require("contentful").createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
