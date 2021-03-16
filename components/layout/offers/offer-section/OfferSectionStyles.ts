@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-const Section = styled.section`
+interface SectionProps {
+  available: boolean;
+}
+
+const Section = styled.section<SectionProps>`
   grid-column: content-start / content-end;
   width: 100%;
   height: auto;
 
-  display: grid;
+  display: ${(props) => (props.available ? "grid" : "none")};
   grid-template-columns: 1fr;
   grid-auto-rows: max-content;
   gap: 5rem;

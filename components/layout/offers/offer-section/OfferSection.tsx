@@ -9,7 +9,7 @@ interface Props {
 
 const OfferSection: React.FC<Props> = ({ offers }: Props): JSX.Element => {
   return (
-    <Section>
+    <Section available={offers.length > 0}>
       <MainTitle
         mainHeading="Offers"
         shadowHeading="Exclusive Deals"
