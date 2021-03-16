@@ -7,11 +7,11 @@ import {
 } from "next";
 import { ParsedUrlQuery } from "querystring";
 
+import { getMultipleEntries, serializeAssetUrls } from "../../utils/contentful";
+
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import ExperiencePage from "../../components/layout/experiences/experience-page/ExperiencePage";
-
-import { excursions } from "../../site-data";
 
 interface Props {
   primaryExperience: Excursion;
@@ -39,10 +39,29 @@ const IndividualExperience: React.FC<Props> = ({
 const getStaticProps: GetStaticProps = async ({
   params,
 }: GetStaticPropsContext): Promise<GetStaticPropsResult<Props>> => {
-  const primaryExperience = excursions.filter(
+  // fetch experiences from contentful;
+  const excursions: ContentfulExcursionFields[] = await getMultipleEntries<ContentfulExcursionFields>(
+    "excursion"
+  );
+
+  const activities: ContentfulExcursionFields[] = await getMultipleEntries<ContentfulExcursionFields>(
+    "activity"
+  );
+
+  // combine fetched data and serialize data
+  const experiences: Excursion[] = [...excursions, ...activities].map((item) =>
+    serializeAssetUrls<ContentfulExcursionFields, Excursion>(
+      item,
+      "image",
+      "images"
+    )
+  );
+
+  // split data
+  const primaryExperience = experiences.filter(
     (item) => item.id === (params as ParsedUrlQuery).experienceId
   )[0];
-  const otherExperiences = excursions.filter(
+  const otherExperiences = experiences.filter(
     (item) => item.id !== (params as ParsedUrlQuery).experienceId
   );
 
@@ -57,7 +76,21 @@ const getStaticProps: GetStaticProps = async ({
 const getStaticPaths: GetStaticPaths = async (): Promise<
   GetStaticPathsResult<{ experienceId: string }>
 > => {
-  const paths = excursions.map((item) => ({
+  // fetch experiences from contentful;
+  const excursions: ContentfulExcursionFields[] = await getMultipleEntries<ContentfulExcursionFields>(
+    "excursion"
+  );
+
+  const activities: ContentfulExcursionFields[] = await getMultipleEntries<ContentfulExcursionFields>(
+    "activity"
+  );
+
+  const experiences: ContentfulExcursionFields[] = [
+    ...excursions,
+    ...activities,
+  ];
+
+  const paths = experiences.map((item) => ({
     params: {
       experienceId: item.id,
     },
