@@ -12,6 +12,7 @@ import OfferPage from "../../components/layout/offers/offer-page/OfferPage";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 
 import { offers } from "../../site-data";
+import { getMultipleEntries } from "../../utils/contentful";
 
 interface Props {
   primaryOffer: Offer;
@@ -37,10 +38,25 @@ const IndividualOffer: React.FC<Props> = ({
 const getStaticProps: GetStaticProps = async ({
   params,
 }: GetStaticPropsContext): Promise<GetStaticPropsResult<Props>> => {
-  const primaryOffer = offers.filter(
+  // Fetch offers from contentful
+  const fetchedOffers: ContentfulOfferFields[] = await getMultipleEntries<ContentfulOfferFields>(
+    "offer"
+  );
+
+  // didn't use serializeAssetUrls function here because validTill field also need to be serialized
+  let offers: Offer[] = fetchedOffers.map((offer) => {
+    const { image, validTill, ...rest } = offer;
+    return {
+      ...rest,
+      validTill,
+      image: image.fields.file.url,
+    };
+  });
+
+  const primaryOffer: Offer = offers.filter(
     (offer) => offer.id == (params as ParsedUrlQuery).offerId
   )[0];
-  const otherOffers = offers.filter(
+  const otherOffers: Offer[] = offers.filter(
     (offer) => offer.id !== (params as ParsedUrlQuery).offerId
   );
 
@@ -55,7 +71,11 @@ const getStaticProps: GetStaticProps = async ({
 const getStaticPaths: GetStaticPaths = async (): Promise<
   GetStaticPathsResult<{ offerId: string }>
 > => {
-  const paths = offers.map((offer: Offer) => ({
+  const offers: ContentfulOfferFields[] = await getMultipleEntries<ContentfulOfferFields>(
+    "offer"
+  );
+
+  const paths = offers.map((offer: ContentfulOfferFields) => ({
     params: {
       offerId: offer.id,
     },
