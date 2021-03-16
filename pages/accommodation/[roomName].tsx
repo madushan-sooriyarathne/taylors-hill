@@ -12,6 +12,7 @@ import { getMultipleEntries, serializeAssetUrls } from "../../utils/contentful";
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import RoomPage from "../../components/layout/rooms/room-page/RoomPage";
+import { addToSiteMap } from "../../utils/sitemapOps";
 
 interface Props {
   primaryRoom: Room;
@@ -71,6 +72,11 @@ const getStaticPaths: GetStaticPaths = async (): Promise<
   );
 
   const paths = rooms.map((room) => ({ params: { roomName: room.id } }));
+
+  // add urls to sitemap.xml file
+  addToSiteMap(
+    rooms.map((room) => `https://taylorshill.lk/accommodation/${room.id}`)
+  );
 
   return { paths, fallback: false };
 };

@@ -11,7 +11,7 @@ import Page from "../../components/layout/page/Page";
 import OfferPage from "../../components/layout/offers/offer-page/OfferPage";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 
-import { offers } from "../../site-data";
+import { addToSiteMap } from "../../utils/sitemapOps";
 import { getMultipleEntries } from "../../utils/contentful";
 
 interface Props {
@@ -80,6 +80,11 @@ const getStaticPaths: GetStaticPaths = async (): Promise<
       offerId: offer.id,
     },
   }));
+
+  // update the sitemap.xml file
+  addToSiteMap(
+    offers.map((offer) => `https://taylorshill.lk/offers/${offer.id}`)
+  );
 
   return {
     paths,

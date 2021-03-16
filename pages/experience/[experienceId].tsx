@@ -12,6 +12,7 @@ import { getMultipleEntries, serializeAssetUrls } from "../../utils/contentful";
 import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import ExperiencePage from "../../components/layout/experiences/experience-page/ExperiencePage";
+import { addToSiteMap } from "../../utils/sitemapOps";
 
 interface Props {
   primaryExperience: Excursion;
@@ -95,6 +96,11 @@ const getStaticPaths: GetStaticPaths = async (): Promise<
       experienceId: item.id,
     },
   }));
+
+  // add urls to sitemap.xml
+  addToSiteMap(
+    experiences.map((item) => `https://taylorshill.lk/experience/${item.id}`)
+  );
 
   return {
     paths,
