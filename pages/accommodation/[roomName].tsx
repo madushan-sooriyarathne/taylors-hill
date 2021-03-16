@@ -1,7 +1,3 @@
-import { rooms } from "../../site-data";
-import Page from "../../components/layout/page/Page";
-import CoverImage from "../../components/layout/cover-image/CoverImage";
-import RoomPage from "../../components/layout/rooms/room-page/RoomPage";
 import {
   GetStaticPaths,
   GetStaticPathsResult,
@@ -10,6 +6,12 @@ import {
   GetStaticPropsResult,
 } from "next";
 import { ParsedUrlQuery } from "querystring";
+
+import { getMultipleEntries, serializeAssetUrls } from "../../utils/contentful";
+
+import Page from "../../components/layout/page/Page";
+import CoverImage from "../../components/layout/cover-image/CoverImage";
+import RoomPage from "../../components/layout/rooms/room-page/RoomPage";
 
 interface Props {
   primaryRoom: Room;
@@ -35,10 +37,20 @@ const Room: React.FC<Props> = ({
 const getStaticProps: GetStaticProps = async ({
   params,
 }: GetStaticPropsContext): Promise<GetStaticPropsResult<Props>> => {
-  const primaryRoom = rooms.filter(
+  // Fetch the data from contentful
+  const rooms: Room[] = await getMultipleEntries<ContentfulRoomFields>(
+    "room"
+  ).then((results: ContentfulRoomFields[]) =>
+    results.map((item) =>
+      serializeAssetUrls<ContentfulRoomFields, Room>(item, "image", "images")
+    )
+  );
+
+  // Split the result
+  const primaryRoom: Room = rooms.filter(
     (room) => room.id === (params as ParsedUrlQuery).roomName
   )[0];
-  const otherRooms = rooms.filter(
+  const otherRooms: Room[] = rooms.filter(
     (room) => room.id !== (params as ParsedUrlQuery).roomName
   );
 
@@ -53,6 +65,11 @@ const getStaticProps: GetStaticProps = async ({
 const getStaticPaths: GetStaticPaths = async (): Promise<
   GetStaticPathsResult<{ roomName: string }>
 > => {
+  // fetch the data from contentful
+  const rooms: ContentfulRoomFields[] = await getMultipleEntries<ContentfulRoomFields>(
+    "room"
+  );
+
   const paths = rooms.map((room) => ({ params: { roomName: room.id } }));
 
   return { paths, fallback: false };
