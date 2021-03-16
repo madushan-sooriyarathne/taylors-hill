@@ -24,12 +24,11 @@ async function addToSiteMap(urlList) {
   const today = new Date();
   const formattedDate = today.toISOString().substring(0, 10);
 
+  const filePath = path.resolve(process.cwd(), "public/sitemap.xml");
+
   try {
     // read the sitemap.xml file
-    const data = await promisify(fs.readFile)(
-      path.join(__dirname, "../public/sitemap.xml"),
-      "utf-8"
-    );
+    const data = await promisify(fs.readFile)(filePath, "utf-8");
 
     // convert xml tree into a object
     const xmlTree = await promisify(xml2js.parseString)(data);
@@ -50,11 +49,7 @@ async function addToSiteMap(urlList) {
     const updatedXmlData = builder.buildObject(xmlTree);
 
     // write new Xml data to the file
-    fs.writeFileSync(
-      path.join(__dirname, "../public/sitemap.xml"),
-      updatedXmlData,
-      "utf-8"
-    );
+    fs.writeFileSync(filePath, updatedXmlData, "utf-8");
   } catch (error) {
     console.error(`Error occurred! - ${error}`);
   }
