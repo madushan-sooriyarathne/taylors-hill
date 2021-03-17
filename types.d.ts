@@ -120,6 +120,21 @@ declare global {
     name: string;
   }
 
+  interface MailchimpContact {
+    email: string;
+    firstName?: string;
+    lastName?: string;
+    phone?: string;
+  }
+
+  interface InquiryData {
+    email: string;
+    firstName: string;
+    lastName: string;
+    phone?: string;
+    message?: string;
+  }
+
   type CSSStyles = { [key: string]: string };
   type CSSGridPos = {
     column: {
