@@ -1,11 +1,16 @@
-import { Asset, Entry, EntryCollection } from "contentful";
+import { Asset, ContentfulClientApi, Entry, EntryCollection } from "contentful";
 
 // contentful client
-const client = require("contentful").createClient({
+const client: ContentfulClientApi = require("contentful").createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
   accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY_API_TOKEN as string,
 });
 
+/**
+ * Fetch on single entry from contentful using entry ID
+ * @param {string} entryId entry ID
+ * @returns {Promise<T>} a promise that resolve to a generic object
+ */
 async function getSingleEntry<T>(entryId: string): Promise<T> {
   try {
     const data: Entry<T> = await client.getEntry(entryId);
@@ -16,6 +21,11 @@ async function getSingleEntry<T>(entryId: string): Promise<T> {
   }
 }
 
+/**
+ * Fetch all entries in a content model using content model ID
+ * @param {string} contentType content model ID
+ * @returns {Promise<T[]>} a promise that resolve to a generic object array
+ */
 async function getMultipleEntries<T>(contentType: string): Promise<T[]> {
   let fetchedData: T[] = [];
 
@@ -32,6 +42,11 @@ async function getMultipleEntries<T>(contentType: string): Promise<T[]> {
   return fetchedData;
 }
 
+/**
+ * Fetch one or multiple entries using a query
+ * @param {object} query a query in a object format.
+ * @returns {Promise<T[] | T>} a promise that resolve to a generic object or object array
+ */
 async function getEntriesFromQuery<T>(query: Object): Promise<T[] | T> {
   let fetchedData: T[] | T = [];
   try {
@@ -53,6 +68,12 @@ async function getEntriesFromQuery<T>(query: Object): Promise<T[] | T> {
   return fetchedData;
 }
 
+/**
+ * Extract the url from given asset fields
+ * @param obj data object that fetched from contentful
+ * @param fields Asset fields that need to extract the url
+ * @returns {K} generic object that assets has been converted to url strings
+ */
 function serializeAssetUrls<T, K>(obj: T, ...fields: string[]): K {
   // create a shallow copy of the object
   const cloneObject: { [key: string]: any } = { ...obj };
@@ -71,6 +92,21 @@ function serializeAssetUrls<T, K>(obj: T, ...fields: string[]): K {
   }
 
   return cloneObject as K;
+}
+
+async function getSingleAsset(assetId: string): Promise<string> {
+  let assetURL: string = "/static/img/fallback-img.webp";
+
+  try {
+    const asset: Asset = await client.getAsset(assetId);
+    if (asset) {
+      assetURL = asset.fields.file.url;
+    }
+  } catch (error: any) {
+    console.error(`an error occurred - ${error.message}`);
+  } finally {
+    return assetURL;
+  }
 }
 
 export {
