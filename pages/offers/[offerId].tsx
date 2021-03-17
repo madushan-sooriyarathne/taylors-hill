@@ -84,6 +84,8 @@ const getStaticPaths: GetStaticPaths = async (): Promise<
   // update the sitemap.xml file
   addToSiteMap(
     offers.map((offer) => `https://taylorshill.lk/offers/${offer.id}`)
+  ).then(() =>
+    console.log("SITEMAP => offer url endpoints added to sitemap.xml")
   );
 
   return {

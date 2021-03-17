@@ -100,6 +100,8 @@ const getStaticPaths: GetStaticPaths = async (): Promise<
   // add urls to sitemap.xml
   addToSiteMap(
     experiences.map((item) => `https://taylorshill.lk/experience/${item.id}`)
+  ).then(() =>
+    console.log("SITEMAP => experience url endpoints added to sitemap.xml")
   );
 
   return {

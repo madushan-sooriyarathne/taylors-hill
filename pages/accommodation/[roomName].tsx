@@ -76,6 +76,8 @@ const getStaticPaths: GetStaticPaths = async (): Promise<
   // add urls to sitemap.xml file
   addToSiteMap(
     rooms.map((room) => `https://taylorshill.lk/accommodation/${room.id}`)
+  ).then(() =>
+    console.log("SITEMAP => accommodation url endpoints added to sitemap.xml")
   );
 
   return { paths, fallback: false };
