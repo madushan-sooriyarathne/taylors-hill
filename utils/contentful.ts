@@ -94,6 +94,11 @@ function serializeAssetUrls<T, K>(obj: T, ...fields: string[]): K {
   return cloneObject as K;
 }
 
+/**
+ * get url of a asset using asset Id
+ * @param assetId Id of the asset that need to be fetched
+ * @returns {string} url of the asset if fetched successfully otherwise default fallback image url
+ */
 async function getSingleAsset(assetId: string): Promise<string> {
   let assetURL: string = "/static/img/fallback-img.webp";
 
@@ -114,4 +119,5 @@ export {
   getMultipleEntries,
   getEntriesFromQuery,
   serializeAssetUrls,
+  getSingleAsset,
 };
