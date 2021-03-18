@@ -1,6 +1,8 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import useInputState from "../../../hooks/use-input";
+
+import { notificationDispatchContext } from "../../../context/NotificationContext";
 
 import Button from "../../buttons/button/Button";
 import SubmitButton from "../../buttons/submit-button/SubmitButton";
@@ -20,7 +22,7 @@ import {
 
 const ContactPage: React.FC = (): JSX.Element => {
   // Input states
-  const [fistName, updateFirstName, resetFirstName] = useInputState("");
+  const [firstName, updateFirstName, resetFirstName] = useInputState("");
   const [lastName, updateLastName, resetLastName] = useInputState("");
   const [email, updateEmail, resetEmail] = useInputState("");
   const [phone, updatePhone, resetPhone] = useInputState("");
@@ -28,6 +30,11 @@ const ContactPage: React.FC = (): JSX.Element => {
 
   // other state
   const [loading, setLoading] = useState<boolean>(false);
+
+  // context subscribers
+  const showNotification = useContext(
+    notificationDispatchContext
+  ) as NotificationUpdateFunc;
 
   // side effects
   useEffect(() => {
@@ -54,22 +61,45 @@ const ContactPage: React.FC = (): JSX.Element => {
   }, []);
 
   // submit handler
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     event.preventDefault();
     setLoading(true);
 
-    // TODO: Implement the form submit mechanism
-    alert(`${fistName} - ${lastName} - ${email} - ${phone} ${message}`);
-    setTimeout((): void => {
-      setLoading(false);
-    }, 2000);
+    // send email
+    fetch("/api/inquire", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ email, firstName, lastName, phone, message }),
+    }).then((result) => {
+      if (result.status === 200) {
+        // show notification
+        showNotification(
+          `Hi ${firstName}! We have received your inquiry and appreciate you reaching out. Our Reservations team will get back to you as soon as possible.`
+        );
+        // remove notification in 5 seconds
+        setTimeout(() => showNotification(null), 5000);
+      } else {
+        // show notification
+        showNotification(
+          "Error occurred while submitting your inquiry. Please contact our reservation via +94 707 123 678 or reservations@taylorshill.lk for further inquiries"
+        );
+        // remove notification in 5 seconds
+        setTimeout(() => showNotification(null), 5000);
+      }
 
-    // clear fields on successful submit
-    resetFirstName();
-    resetLastName();
-    resetEmail();
-    resetPhone();
-    resetMessage();
+      setLoading(false);
+
+      // clear fields on successful submit
+      resetFirstName();
+      resetLastName();
+      resetEmail();
+      resetPhone();
+      resetMessage();
+    });
   };
 
   return (
@@ -85,7 +115,7 @@ const ContactPage: React.FC = (): JSX.Element => {
             name="First Name"
             type="text"
             onChange={updateFirstName}
-            value={fistName}
+            value={firstName}
             required
           />
           <InputField
