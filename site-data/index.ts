@@ -44,44 +44,38 @@ const days = [
   "Saturday",
 ];
 
-// TODO: Move all the section Data to CMS
-const history: SectionData = {
-  image: "/static/img/james-taylor.webp",
-  mainHeading: "The History",
-  subHeading: "History of Ceylon Tea & Taylors Hill",
-  shadowHeading: "Our Story",
-  route: null,
-  description: ` The sterling story of the Plantation Estate <b>Pattiyagama</b> dates
-          back to a coffee plantation in 18th Centaury established by a welsh
-          planter <b>Dominic Elwes</b>, subsequently the coffee Blight called
-          <i>Hemeleia vastatrix</i> in 1870s put an end to the coffee plantations.
-          <br />
-          <br />
-          After setting sails to Ceylon by the protagonist of Ceylon Tea <b>James
-          Taylor</b> emerged the Primal Tea plantation in Ceylon claimed <b>Filed no
-          07</b> in Loolecondera. This regal embellishment led Ceylon to be the Tea
-          Country under Her Majesty Queen Victoria’s Era.
-          <br />
-          <br />
-          While his endeavor on establishing Tea in Ceylon, Taylor had fallen in
-          love with Loolecondera Estate which is adjoining Pattiyagama Estate
-          where he marked his name in gold as the pioneer of the legendary
-          ceylon tea. Which made the central hill of Ceylon truly heavenly.
-          Taylors Seat is where Taylor has foreseen the future of Ceylon Tea by
-          glancing towards the astonishing sight towards Hills & Valleys
-          visible.`,
-};
+const socials = [
+  {
+    id: 0,
+    name: "Facebook",
+    logo: "facebook",
+    url: "https://www.facebook.com/taylorshillsrilanka",
+  },
+  {
+    id: 1,
+    name: "Instagram",
+    logo: "instagram",
+    url: "https://www.instagram.com/taylorshillboutiquehotel",
+  },
+  {
+    id: 2,
+    name: "LinkedIn",
+    logo: "linkedin",
+    url: "https://www.linkedin.com/company/taylors-hill-boutique-hotel",
+  },
+];
 
-const historyTaylorsHill: SectionData = {
-  image: "/static/img/taylors-old.webp",
-  mainHeading: "Pattiyagama Mansion",
-  subHeading: "The Planters Gathering House",
-  shadowHeading: "Taylors Hill",
-  route: null,
-  description: `<b>Taylors Hill</b> Known as Pattiyagama Mansion used to host Taylor and his fellow planters, Assisted by Dominic Elwis possessing as the Planters Gathering house. Tournament size 200 years old Burroughes and Watts “1836” Snooker table in house still enunciates the colonial day. <br><br>
-  Subsequently the Mansion being taken by a trust at the end of Colonial Era prior acquiring this Mansion by E.L Senanayake an International Lawyer trained at Kings College London and a scion of the well-known E.L. Senanayake former Cabinet minister and Speaker of Parliament of Sri Lanka. This dynastic family owned large plantations for more than five generations to date. <br><br>
-  Ingenious Colonial architecture of the mansion clarifies the uniqueness of its own boutique concept with quintuple dwellings in the loft, where a mezzanine allows a vast house room. Immense garden for a number of activities with an infinite pool overlooking the pinnacles of central hills & Valleys.`,
-};
+const footerLinks = [
+  { id: 0, name: "Contact", route: "/contact" },
+  { id: 1, name: "Privacy", route: "/privacy" },
+  {
+    id: 2,
+    name: "Payment & Cancellations",
+    route: "/payment-cancellation-policy",
+  },
+];
+
+// TODO: Move all the section Data to CMS
 
 const galleryImages: GalleryImage[] = [
   { id: 0, image: "/static/img/gallery/01.webp", type: "rooms" },
@@ -105,7 +99,7 @@ export {
   galleryImages,
   months,
   days,
-  history,
-  historyTaylorsHill,
+  socials,
+  footerLinks,
   gallerySelections,
 };
