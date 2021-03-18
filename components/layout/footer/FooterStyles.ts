@@ -262,10 +262,9 @@ const LinkItem = styled.a`
   outline: none;
   cursor: pointer;
   color: ${(props) => props.theme.colors.white};
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
 
   &:hover {
-    transform: scale(1.05);
     color: ${(props) => props.theme.colors.secondaryLight};
   }
 `;

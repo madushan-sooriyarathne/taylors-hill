@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { FormEvent, useContext } from "react";
+import { notificationDispatchContext } from "../../../context/NotificationContext";
+import useInputState from "../../../hooks/use-input";
+
+import { socials, footerLinks } from "../../../site-data";
+
 import {
   Container,
   Logo,
@@ -20,39 +26,49 @@ import {
   CopyrightItem,
 } from "./FooterStyles";
 
-const socials = [
-  {
-    id: 0,
-    name: "Facebook",
-    logo: "facebook",
-    url: "https://www.facebook.com/taylorshillsrilanka",
-  },
-  {
-    id: 1,
-    name: "Instagram",
-    logo: "instagram",
-    url: "https://www.instagram.com/taylorshillboutiquehotel",
-  },
-  {
-    id: 2,
-    name: "LinkedIn",
-    logo: "linkedin",
-    url: "https://www.linkedin.com/company/taylors-hill-boutique-hotel",
-  },
-];
-
-const footerLinks = [
-  { id: 0, name: "Contact", route: "/contact" },
-  { id: 1, name: "Privacy", route: "/privacy" },
-  {
-    id: 2,
-    name: "Payment & Cancellations",
-    route: "/payment-cancellation-policy",
-  },
-  { id: 3, name: "Site Map", route: "/site-map" },
-];
-
 const Footer: React.FC = (): JSX.Element => {
+  // input field state
+  const [email, updateEmail, resetEmail] = useInputState("");
+
+  // subscribing to notification context
+  const showNotification = useContext(
+    notificationDispatchContext
+  ) as DispatchFn<string | null>;
+
+  // handle newsletter submit
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // send post request to subscribe api route
+    fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    }).then((result) => {
+      if (result.status === 200) {
+        // show successful notification
+        showNotification(
+          "Thanks for subscribing to Taylors Hill Newsletter. We promise that we won't spam you."
+        );
+
+        // hide notification message after 3 seconds
+        setTimeout(() => showNotification(null), 5000);
+      } else {
+        // show error notification
+        showNotification(
+          "Error occurred while subscribing to the newsletter. Please try again later!"
+        );
+
+        // hide notification message after 3 seconds
+        setTimeout(() => showNotification(null), 5000);
+      }
+
+      resetEmail();
+    });
+  };
+
   return (
     <Container>
       <Logo
@@ -61,11 +77,13 @@ const Footer: React.FC = (): JSX.Element => {
       />
       <Newsletter>
         <NewsletterTitle>Subscribe to our newsletter</NewsletterTitle>
-        <InputWrapper>
+        <InputWrapper onSubmit={handleSubmit}>
           <InputFieldWrapper>
             <NewsletterInput
               type="email"
               placeholder="name@email.com"
+              value={email}
+              onChange={updateEmail}
               required
             />
           </InputFieldWrapper>
