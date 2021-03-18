@@ -5,16 +5,22 @@ import Page from "../components/layout/page/Page";
 import DoubleImageGrid from "../components/layout/double-image-grid/DoubleImageGrid";
 
 import { GetStaticProps, GetStaticPropsResult } from "next";
-import { getSingleEntry, serializeAssetUrls } from "../utils/contentful";
+import {
+  getSingleAsset,
+  getSingleEntry,
+  serializeAssetUrls,
+} from "../utils/contentful";
 
 interface Props {
   teaHistory: SectionData;
   taylorsHillHistory: SectionData;
+  imageGrid: string[];
 }
 
 const Story: React.FC<Props> = ({
   teaHistory,
   taylorsHillHistory,
+  imageGrid,
 }: Props): JSX.Element => {
   return (
     <Page>
@@ -30,9 +36,7 @@ const Story: React.FC<Props> = ({
           withButton={false}
         />
       </ImageContentSection>
-      <DoubleImageGrid
-        images={["/static/img/story/01.webp", "/static/img/story/03.webp"]}
-      />
+      <DoubleImageGrid images={imageGrid} />
       <ImageContentSection image={taylorsHillHistory.image}>
         <CTADescription
           data={taylorsHillHistory}
@@ -59,10 +63,15 @@ const getStaticProps: GetStaticProps = async (): Promise<
     SectionData
   >(await getSingleEntry("5lUKNDCwOxMNWyQj5Mtjmd"), "image");
 
+  // fetch grid images
+  const firstGridImage = await getSingleAsset("7DkCivzRH4VX0iqoGdDDfR");
+  const secondGridImage = await getSingleAsset("1Vy7lzDozoINqAOLS1brNd");
+
   return {
     props: {
       teaHistory,
       taylorsHillHistory,
+      imageGrid: [firstGridImage, secondGridImage],
     },
   };
 };
