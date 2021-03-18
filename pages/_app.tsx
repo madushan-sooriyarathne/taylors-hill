@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import Head from "next/head";
 
 import MenuContextProvider from "../context/MenuContext";
+import NotificationContextProvider from "../context/NotificationContext";
 
 import theme from "../styles/theme";
 import GlobalStyles from "../styles/globalStyles";
@@ -32,8 +33,10 @@ const MainApp: React.FC<AppProps> = ({
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <MenuContextProvider>
-          <PreLoadingOverlay loading={loading} />
-          <Component {...pageProps} />
+          <NotificationContextProvider>
+            <PreLoadingOverlay loading={loading} />
+            <Component {...pageProps} />
+          </NotificationContextProvider>
         </MenuContextProvider>
       </ThemeProvider>
     </>
