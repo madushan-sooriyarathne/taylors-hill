@@ -34,7 +34,7 @@ const ContactPage: React.FC = (): JSX.Element => {
   // context subscribers
   const showNotification = useContext(
     notificationDispatchContext
-  ) as NotificationUpdateFunc;
+  ) as DispatchFn<string | null>;
 
   // side effects
   useEffect(() => {
