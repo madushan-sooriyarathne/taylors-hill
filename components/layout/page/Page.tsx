@@ -1,5 +1,6 @@
 import { useState, useEffect, ReactNode } from "react";
 import { useTransition } from "react-spring";
+import SnackBar from "../../snack-bar/SnackBar";
 import Footer from "../footer/Footer";
 
 import HeaderCompressed from "../header-compressed/HeaderCompressed";
@@ -42,6 +43,7 @@ const Page: React.FC<Props> = ({
     <Container>
       <PageOverlay />
       <OverlayMenu />
+      <SnackBar />
       {!compressedHeader && <Header />}
 
       {transition.map(
