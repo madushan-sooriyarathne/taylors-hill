@@ -8,6 +8,7 @@ import {
   getSingleEntry,
   serializeAssetUrls,
 } from "../utils/contentful";
+import { shuffle } from "../utils/arrayShuffle";
 
 import CTADescription from "../components/layout/cta-description/CTADescription";
 import RoomsSection from "../components/layout/rooms/rooms-section/RoomsSection";
@@ -120,7 +121,14 @@ const getStaticProps: GetStaticProps = async (): Promise<
   // // TODO: Fetch Gallery Images
 
   return {
-    props: { slides, ourStory, rooms, experiences, dining, offers },
+    props: {
+      slides,
+      ourStory,
+      rooms,
+      dining,
+      offers,
+      experiences: shuffle(experiences),
+    },
   };
 };
 
