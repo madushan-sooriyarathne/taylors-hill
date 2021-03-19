@@ -67,25 +67,25 @@ class MainDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="192x192"
-            href="/static/icon/icon-192x192.png"
+            href="/static/icons/icon-192x192.png"
           />
           <link
             rel="apple-touch-icon"
             type="image/png"
             sizes="192x192"
-            href="/static/icon/icon-192x192.png"
+            href="/static/icons/icon-192x192.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="512x512"
-            href="/static/icon/icon-512x512.png"
+            href="/static/icons/icon-512x512.png"
           />
           <link
             rel="apple-touch-icon"
             type="image/png"
             sizes="512x512"
-            href="/static/icon/icon-512x512.png"
+            href="/static/icons/icon-512x512.png"
           ></link>
 
           {/* Google analytics site-tag */}
