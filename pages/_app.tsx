@@ -17,11 +17,11 @@ const MainApp: React.FC<AppProps> = ({
   Component,
   pageProps,
 }: AppProps): JSX.Element => {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     window.addEventListener("load", () => {
-      setLoading(false);
+      setIsLoading(false);
     });
   });
 
@@ -39,7 +39,7 @@ const MainApp: React.FC<AppProps> = ({
         <GlobalStyles />
         <MenuContextProvider>
           <NotificationContextProvider>
-            <PreLoadingOverlay loading={loading} />
+            <PreLoadingOverlay isLoading={isLoading} />
             <Component {...pageProps} />
           </NotificationContextProvider>
         </MenuContextProvider>

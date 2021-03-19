@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface PageProps {
-  loading: boolean;
+  show: boolean;
 }
 
 const Page = styled.div<PageProps>`
@@ -16,8 +16,8 @@ const Page = styled.div<PageProps>`
 
   background-color: ${(props) => props.theme.colors.bgLight};
 
-  visibility: ${(props) => (props.loading ? "visible" : "hidden")};
-  opacity: ${(props) => (props.loading ? 1 : 0)};
+  visibility: ${(props) => (props.show ? "visible" : "hidden")};
+  opacity: ${(props) => (props.show ? "1" : "0")};
 
   display: flex;
   align-items: center;

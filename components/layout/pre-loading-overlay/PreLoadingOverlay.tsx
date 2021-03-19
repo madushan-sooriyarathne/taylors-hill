@@ -2,14 +2,14 @@ import LoadingBar from "../../loading-bar/LoadingBar";
 import { Page, Logo, Container } from "./PreLoadingOverlayStyles";
 
 interface Props {
-  loading: boolean;
+  isLoading: boolean;
 }
 
 const PreLoadingOverlay: React.FC<Props> = ({
-  loading,
+  isLoading,
 }: Props): JSX.Element => {
   return (
-    <Page loading={loading}>
+    <Page show={isLoading}>
       <Container>
         <Logo
           src="/static/svg/th-logo.svg"
