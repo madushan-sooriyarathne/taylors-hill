@@ -1,0 +1,20 @@
+{
+  "name": "Taylors Hill Boutique Hotel",
+  "short_name": "Taylors Hill",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#d69d19",
+  "icons": [
+    {
+      "src": "/static/icon/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icon/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
