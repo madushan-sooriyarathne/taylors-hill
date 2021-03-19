@@ -3,12 +3,22 @@ import GalleryPage from "../components/layout/gallery/gallery-page/GalleryPage";
 import { gallerySelections } from "../site-data";
 import { GetStaticProps, GetStaticPropsResult } from "next";
 import { getMultipleEntries, serializeAssetUrls } from "../utils/contentful";
+import { shuffle } from "../utils/arrayShuffle";
+import { useEffect } from "react";
 
 interface Props {
   images: GalleryImage[];
 }
 
 const Gallery: React.FC<Props> = ({ images }: Props): JSX.Element => {
+  // pre load gallery images
+  useEffect(() => {
+    images.forEach((img) => {
+      const imageEl: HTMLImageElement = new Image();
+      imageEl.src = img.image;
+    });
+  }, []);
+
   return (
     <Page compressedHeader>
       <GalleryPage images={images} gallerySelections={gallerySelections} />
@@ -33,7 +43,7 @@ const getStaticProps: GetStaticProps = async (): Promise<
 
   return {
     props: {
-      images,
+      images: shuffle(images),
     },
   };
 };
