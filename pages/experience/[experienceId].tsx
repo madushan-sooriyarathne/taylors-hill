@@ -13,6 +13,7 @@ import Page from "../../components/layout/page/Page";
 import CoverImage from "../../components/layout/cover-image/CoverImage";
 import ExperiencePage from "../../components/layout/experiences/experience-page/ExperiencePage";
 import { addToSiteMap } from "../../utils/sitemapOps";
+import { shuffle } from "../../utils/arrayShuffle";
 
 interface Props {
   primaryExperience: Excursion;
@@ -69,7 +70,7 @@ const getStaticProps: GetStaticProps = async ({
   return {
     props: {
       primaryExperience,
-      otherExperiences,
+      otherExperiences: shuffle(otherExperiences),
     },
   };
 };
