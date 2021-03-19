@@ -29,6 +29,11 @@ const MainApp: React.FC<AppProps> = ({
     <>
       <Head>
         <title>Taylors Hill Boutique Hotel</title>
+
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
