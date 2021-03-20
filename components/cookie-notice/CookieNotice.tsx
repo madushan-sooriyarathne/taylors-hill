@@ -44,7 +44,7 @@ const CookieNotice: React.FC = (): JSX.Element => {
     <Popup open={popupOpen}>
       <HeadingMain>Your Privacy</HeadingMain>
       <Paragraph>
-        We use cookies to improve your experience on our site and to show your
+        We use cookies to improve your experience on our site and to show you
         relevant content. To find out more, read our{" "}
         <a href="/privacy-policy">Privacy policy</a>.
       </Paragraph>
