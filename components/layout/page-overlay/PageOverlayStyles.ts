@@ -19,7 +19,7 @@ const Overlay = styled.div`
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 10;
+  z-index: 20;
   background-color: ${(props) => props.theme.colors.bgLight};
   opacity: 0;
   visibility: hidden;
