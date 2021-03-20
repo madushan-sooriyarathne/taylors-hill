@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState, useEffect, ReactNode } from "react";
 import { useTransition } from "react-spring";
 import SnackBar from "../../snack-bar/SnackBar";
@@ -12,11 +13,13 @@ import { Container, ContentWrapper } from "./PageStyles";
 interface Props {
   children: ReactNode;
   compressedHeader?: boolean;
+  title?: string;
 }
 
 const Page: React.FC<Props> = ({
   children,
   compressedHeader = false,
+  title = "Small Luxury Boutique Hotel in Kandy",
 }: Props): JSX.Element => {
   const [scrolled, setScrolled] = useState<boolean>(compressedHeader);
 
@@ -41,6 +44,9 @@ const Page: React.FC<Props> = ({
   });
   return (
     <Container>
+      <Head>
+        <title>{`${title} | Taylors Hill Boutique Hotel`}</title>
+      </Head>
       <PageOverlay />
       <OverlayMenu />
       <SnackBar />
