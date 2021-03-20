@@ -28,7 +28,8 @@ const Popup = styled.div<PopupProps>`
     props.open ? "translateY(0)" : "translateY(calc(100% + 4rem))"};
 
   ${(props) => props.theme.responsive.mobileLarge} {
-    max-width: 40rem;
+    max-width: ${(props) =>
+      `calc(100vw - ((${props.theme.sizes.frameSize} * 2) + 2rem))`};
   }
 `;
 
