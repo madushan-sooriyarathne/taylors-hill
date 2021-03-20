@@ -23,7 +23,7 @@ const Story: React.FC<Props> = ({
   imageGrid,
 }: Props): JSX.Element => {
   return (
-    <Page>
+    <Page title="Story">
       <CoverImage
         image="/static/img/story-cover.webp"
         title="Story"

@@ -14,7 +14,7 @@ const Experience: React.FC<Props> = ({
   activities,
 }: Props): JSX.Element => {
   return (
-    <Page>
+    <Page title="Experiences">
       <CoverImage
         image="/static/img/experience-cover.webp"
         title="Experience"

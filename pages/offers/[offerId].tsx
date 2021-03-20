@@ -24,7 +24,7 @@ const IndividualOffer: React.FC<Props> = ({
   otherOffers,
 }: Props): JSX.Element => {
   return (
-    <Page>
+    <Page title={primaryOffer.title}>
       <CoverImage
         image={primaryOffer.image}
         title={primaryOffer.title}

@@ -24,7 +24,7 @@ const Room: React.FC<Props> = ({
   otherRooms,
 }: Props): JSX.Element => {
   return (
-    <Page>
+    <Page title={primaryRoom.title}>
       <CoverImage
         image={primaryRoom.image}
         title={primaryRoom.title}

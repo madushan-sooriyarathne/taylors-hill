@@ -3,7 +3,7 @@ import ContactPage from "../components/layout/contact-page/ContactPage";
 
 const Contact: React.FC = (): JSX.Element => {
   return (
-    <Page compressedHeader>
+    <Page title="Contact us" compressedHeader>
       <ContactPage />
     </Page>
   );

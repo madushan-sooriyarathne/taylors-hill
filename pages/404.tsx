@@ -3,7 +3,7 @@ import CustomError from "../components/layout/custom-error/CustomError";
 
 const FourOFourPage: React.FC = (): JSX.Element => {
   return (
-    <Page>
+    <Page title="404 Not Found!">
       <CustomError />
     </Page>
   );

@@ -12,7 +12,7 @@ interface Props {
 
 const Offers: React.FC<Props> = ({ offers }: Props): JSX.Element => {
   return (
-    <Page>
+    <Page title="Offers">
       <CoverImage
         title="Offers"
         subTitle="Grab the best deals for your stay"

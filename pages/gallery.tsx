@@ -20,7 +20,7 @@ const Gallery: React.FC<Props> = ({ images }: Props): JSX.Element => {
   }, []);
 
   return (
-    <Page compressedHeader>
+    <Page title="Gallery" compressedHeader>
       <GalleryPage
         images={shuffle(images)}
         gallerySelections={gallerySelections}

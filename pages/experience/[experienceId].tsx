@@ -25,7 +25,7 @@ const IndividualExperience: React.FC<Props> = ({
   otherExperiences,
 }: Props): JSX.Element => {
   return (
-    <Page>
+    <Page title={primaryExperience.title}>
       <CoverImage
         image={primaryExperience.image}
         title={primaryExperience.title}

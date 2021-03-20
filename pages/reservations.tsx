@@ -3,7 +3,7 @@ import Page from "../components/layout/page/Page";
 
 const Reservations: React.FC = (): JSX.Element => {
   return (
-    <Page compressedHeader={true}>
+    <Page title="Reservations" compressedHeader={true}>
       <ReservationsPage />
     </Page>
   );
