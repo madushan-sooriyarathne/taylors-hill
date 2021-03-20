@@ -62,18 +62,22 @@ const NavLink = styled.a<NavLinkProps>`
     content: "";
     visibility: ${(props) => (props.current ? "visible" : "hidden")};
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 1.2rem;
-    height: 1.2rem;
+    bottom: -8px;
+    left: 50%;
+    width: 3rem;
+    height: 0.4rem;
     transform: translateX(-50%);
-    border-radius: 50%;
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.white};
     z-index: -1;
+    transition: transform 0.2s ease-in-out;
   }
 
   &:hover {
     opacity: 0.7;
+
+    &::before {
+      transform: translate(-20%);
+    }
   }
 `;
 
