@@ -10,9 +10,21 @@ const CookieNotice: React.FC = (): JSX.Element => {
 
   const [popupOpen, togglePopup] = useState<boolean>(true);
 
-  // automatically close the popup when router changes
-  // by subscribing to next.js router's events
   useEffect(() => {
+    // get the save status from local storage
+    const savedState: string | null = window.localStorage.getItem(
+      "privacy_policy_accepted"
+    );
+
+    console.log(savedState);
+    if (savedState) {
+      togglePopup(savedState !== "true");
+    } else {
+      togglePopup(true);
+    }
+
+    // automatically close the popup when router changes
+    // by subscribing to next.js router's events
     const handleRouterChange = () => {
       togglePopup(false);
     };
@@ -23,6 +35,9 @@ const CookieNotice: React.FC = (): JSX.Element => {
   }, []);
 
   const handleClick = () => {
+    // save the status in local storage
+    window.localStorage.setItem("privacy_policy_accepted", "true");
+
     togglePopup(false);
   };
 
