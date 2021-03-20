@@ -32,7 +32,7 @@ const IndividualExperience: React.FC<Props> = ({
       />
       <ExperiencePage
         primaryExperience={primaryExperience}
-        otherExperiences={otherExperiences}
+        otherExperiences={shuffle(otherExperiences)}
       />
     </Page>
   );
@@ -70,7 +70,7 @@ const getStaticProps: GetStaticProps = async ({
   return {
     props: {
       primaryExperience,
-      otherExperiences: shuffle(otherExperiences),
+      otherExperiences,
     },
   };
 };

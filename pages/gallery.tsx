@@ -21,7 +21,10 @@ const Gallery: React.FC<Props> = ({ images }: Props): JSX.Element => {
 
   return (
     <Page compressedHeader>
-      <GalleryPage images={images} gallerySelections={gallerySelections} />
+      <GalleryPage
+        images={shuffle(images)}
+        gallerySelections={gallerySelections}
+      />
     </Page>
   );
 };
@@ -43,7 +46,7 @@ const getStaticProps: GetStaticProps = async (): Promise<
 
   return {
     props: {
-      images: shuffle(images),
+      images,
     },
   };
 };

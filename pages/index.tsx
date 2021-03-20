@@ -44,7 +44,7 @@ const Home: React.FC<Props> = ({
         <CTADescription data={ourStory} />
       </ImageContentSection>
       <RoomsSection rooms={rooms} />
-      <ExperiencesSection experiences={experiences} />
+      <ExperiencesSection experiences={shuffle(experiences)} />
       <ImageContentSection image={dining.image} reversed>
         <CTADescription data={dining} />
       </ImageContentSection>
@@ -127,7 +127,7 @@ const getStaticProps: GetStaticProps = async (): Promise<
       rooms,
       dining,
       offers,
-      experiences: shuffle(experiences),
+      experiences,
     },
   };
 };
