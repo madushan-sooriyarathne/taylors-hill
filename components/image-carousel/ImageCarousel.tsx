@@ -52,6 +52,12 @@ const ImageCarousel: React.FC<Props> = ({
     if (defaultIndex !== index) {
       setIndex(defaultIndex);
     }
+
+    // load all the images after first mount
+    images.forEach((image) => {
+      const imageElement: HTMLImageElement = document.createElement("img");
+      imageElement.src = image;
+    });
   }, [defaultIndex]);
 
   const handleLeft: () => void = (): void => {

@@ -11,14 +11,6 @@ interface Props {
 }
 
 const Gallery: React.FC<Props> = ({ images }: Props): JSX.Element => {
-  // pre load gallery images
-  useEffect(() => {
-    images.forEach((img) => {
-      const imageEl: HTMLImageElement = new Image();
-      imageEl.src = img.image;
-    });
-  }, []);
-
   return (
     <Page title="Gallery" compressedHeader>
       <GalleryPage
