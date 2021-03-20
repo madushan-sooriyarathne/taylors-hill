@@ -12,6 +12,7 @@ import GlobalStyles from "../styles/globalStyles";
 import PreLoadingOverlay from "../components/layout/pre-loading-overlay/PreLoadingOverlay";
 
 import "../styles/fonts.css";
+import CookieNotice from "../components/cookie-notice/CookieNotice";
 
 const MainApp: React.FC<AppProps> = ({
   Component,
@@ -39,6 +40,7 @@ const MainApp: React.FC<AppProps> = ({
         <GlobalStyles />
         <MenuContextProvider>
           <NotificationContextProvider>
+            <CookieNotice />
             <PreLoadingOverlay isLoading={isLoading} />
             <Component {...pageProps} />
           </NotificationContextProvider>
