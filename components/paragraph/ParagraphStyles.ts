@@ -30,6 +30,13 @@ const Para = styled.p<ParaProps>`
   & > mark {
     background-color: ${(props) => props.theme.colors.bgDark};
   }
+
+  & > a {
+    color: ${(props) => props.theme.colors.secondary};
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 export { Para };
