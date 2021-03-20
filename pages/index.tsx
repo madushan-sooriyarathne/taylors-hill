@@ -44,7 +44,7 @@ const Home: React.FC<Props> = ({
         <CTADescription data={ourStory} />
       </ImageContentSection>
       <RoomsSection rooms={rooms} />
-      <ExperiencesSection experiences={shuffle(experiences)} />
+      <ExperiencesSection experiences={experiences} />
       <ImageContentSection image={dining.image} reversed>
         <CTADescription data={dining} />
       </ImageContentSection>
@@ -84,15 +84,13 @@ const getStaticProps: GetStaticProps = async (): Promise<
     );
   });
 
-  // Fetch Activities & Excursion data
-  const excursions: ContentfulExcursionFields[] = await getMultipleEntries<ContentfulExcursionFields>(
-    "excursion"
-  );
+  // Fetch Activities data
+
   const activities: ContentfulExcursionFields[] = await getMultipleEntries<ContentfulExcursionFields>(
     "activity"
   );
 
-  const experiences: Excursion[] = [...excursions, ...activities].map((item) =>
+  const experiences: Excursion[] = activities.map((item) =>
     serializeAssetUrls<ContentfulExcursionFields, Excursion>(
       item,
       "image",
