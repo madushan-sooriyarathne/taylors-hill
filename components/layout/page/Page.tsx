@@ -25,7 +25,7 @@ const Page: React.FC<Props> = ({
   const [scrolled, setScrolled] = useState<boolean>(compressedHeader);
 
   useEffect(() => {
-    document.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (compressedHeader) {
         setScrolled(true);
         return;
@@ -35,7 +35,11 @@ const Page: React.FC<Props> = ({
       } else {
         setScrolled(false);
       }
-    });
+    };
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => document.removeEventListener("scroll", handleScroll);
   });
 
   const transition = useTransition(scrolled, null, {

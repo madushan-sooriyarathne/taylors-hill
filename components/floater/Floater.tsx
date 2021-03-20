@@ -7,7 +7,7 @@ const Floater: React.FC = (): JSX.Element => {
   useEffect(() => {
     // add scroll event listener to document object;
 
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       const yCoords: number = window.scrollY;
 
       if (yCoords >= 200) {
@@ -15,7 +15,11 @@ const Floater: React.FC = (): JSX.Element => {
       } else {
         toggleShow(false);
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleScrollUp = () => {
