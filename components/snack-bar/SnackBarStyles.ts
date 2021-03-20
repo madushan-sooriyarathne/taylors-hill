@@ -27,6 +27,10 @@ const Bar = styled.div<BarProps>`
 
   transform: ${(props) =>
     props.show ? "translateY(0)" : "translateY(calc(100% + 3rem))"};
+
+  ${(props) => props.theme.responsive.mobileLarge} {
+    width: 40rem;
+  }
 `;
 
 const NotificationMessage = styled.p`
