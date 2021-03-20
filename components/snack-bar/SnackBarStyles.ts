@@ -29,7 +29,8 @@ const Bar = styled.div<BarProps>`
     props.show ? "translateY(0)" : "translateY(calc(100% + 3rem))"};
 
   ${(props) => props.theme.responsive.mobileLarge} {
-    width: 40rem;
+    width: ${(props) =>
+      `calc(100vw - ((${props.theme.sizes.frameSize} * 2) + 2rem))`};
   }
 `;
 
