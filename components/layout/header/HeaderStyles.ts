@@ -62,21 +62,20 @@ const NavLink = styled.a<NavLinkProps>`
     content: "";
     visibility: ${(props) => (props.current ? "visible" : "hidden")};
     position: absolute;
-    bottom: -8px;
-    left: 50%;
-    width: 3rem;
-    height: 0.4rem;
-    transform: translateX(-50%);
-    background-color: ${(props) => props.theme.colors.white};
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    transform-origin: 0 0;
+    transform: translate(-10%, -10%) scaleX(0.4);
+    background-color: ${(props) => props.theme.colors.primary};
     z-index: -1;
     transition: transform 0.2s ease-in-out;
   }
 
   &:hover {
-    opacity: 0.7;
-
     &::before {
-      transform: translate(-20%);
+      transform: translate(-10%, -10%) scaleX(1);
     }
   }
 `;
