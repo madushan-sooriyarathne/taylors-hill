@@ -16,7 +16,6 @@ const CookieNotice: React.FC = (): JSX.Element => {
       "privacy_policy_accepted"
     );
 
-    console.log(savedState);
     if (savedState) {
       togglePopup(savedState !== "true");
     } else {
