@@ -63,6 +63,15 @@ class MainDocument extends Document {
           />
           <meta name="msapplication-starturl" content="/" />
 
+          {/* Description meta tag */}
+          <meta
+            name="Description"
+            content="Taylors Hill is a small luxury boutique hotel located in Kandy, 
+            Central Hills of Sri Lanka. It's a 200 Years old mansion built by English 
+            building architecture and directly involved in Ceylon Tea story. 
+            Taylors Hill was used as Gathering house by James Taylors, Father of Ceylon Tea."
+          ></meta>
+
           <link
             rel="icon"
             type="image/png"
