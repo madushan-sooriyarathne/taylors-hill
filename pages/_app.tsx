@@ -24,6 +24,9 @@ const MainApp: React.FC<AppProps> = ({
     window.addEventListener("load", () => {
       setIsLoading(false);
     });
+
+    // show the page after 10 seconds if images are still loading
+    setTimeout(() => setIsLoading(false), 10000);
   });
 
   return (
