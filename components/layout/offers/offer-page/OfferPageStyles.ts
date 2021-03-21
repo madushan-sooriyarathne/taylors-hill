@@ -26,7 +26,7 @@ const Container = styled.section`
 
   ${(props) => props.theme.responsive.mediumSmall} {
     margin-top: -10rem;
-    margin-bottom: -20rem;
+    margin-bottom: -10rem;
   }
 
   ${(props) => props.theme.responsive.mobileMedium} {
