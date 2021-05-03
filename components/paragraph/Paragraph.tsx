@@ -13,12 +13,8 @@ const Paragraph: React.FC<Props> = ({
   large = false,
 }: Props): JSX.Element => {
   return (
-    <Para
-      alignment={alignment}
-      large={large}
-      dangerouslySetInnerHTML={{ __html: children as string }}
-    >
-      {/* {children} */}
+    <Para alignment={alignment} large={large}>
+      {children}
     </Para>
   );
 };
