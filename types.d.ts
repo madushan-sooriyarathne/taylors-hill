@@ -131,7 +131,7 @@ declare global {
     email: string;
     firstName: string;
     lastName: string;
-    phone?: string;
+    phone: string;
     message?: string;
   }
 

@@ -30,7 +30,7 @@ const CookieNotice: React.FC = (): JSX.Element => {
 
     router.events.on("routeChangeStart", handleRouterChange);
 
-    return () => router.events.off("routerChangeStart", handleRouterChange);
+    return () => router.events.off("routeChangeStart", handleRouterChange);
   }, []);
 
   const handleClick = () => {
