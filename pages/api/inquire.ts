@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { addContact } from "../../utils/mailchimp";
-import { sendEmail } from "../../utils/mailer";
+import { sendInquiryNotification } from "../../utils/courier";
 
 type ResponseBody = {
   status: string;
@@ -32,7 +32,7 @@ export default async (
   }
 
   // send the email
-  const status: boolean = await sendEmail(inquiryData);
+  const status: boolean = await sendInquiryNotification(inquiryData);
 
   // subscribe to newsletter
   // output from this will simply discarded as subscribing the user is optional here

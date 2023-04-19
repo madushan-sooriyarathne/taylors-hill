@@ -101,9 +101,11 @@ const Footer: React.FC = (): JSX.Element => {
           <ContactItem>Kandy, Sri Lanka. 20430</ContactItem>
         </ContactGroup>
         <ContactGroup>
-          <ContactItem>Tel: +94 81 527 7788</ContactItem>
-          <ContactItem>Reservations: +94 707 123 678</ContactItem>
-          <ContactItem>Email: reservations@taylorshill.lk</ContactItem>
+          <ContactItem>Tel: +94 81 527 7788 / +94 77 773 3388</ContactItem>
+          <ContactItem>
+            Email: reservations@theserendipitycollection.com
+          </ContactItem>
+          <ContactItem>Web: www.theserendipitycollection.com</ContactItem>
         </ContactGroup>
       </ContactWrapper>
       <LinkWrapper>
@@ -130,8 +132,8 @@ const Footer: React.FC = (): JSX.Element => {
         </CopyrightItem>
         <CopyrightItem>
           Handcrafted by{" "}
-          <a href="https://madushan.dev" rel="noopener" target="_blank">
-            Madushan Sooriyarathne
+          <a href="https://advertaro.lk" rel="noopener" target="_blank">
+            Advertaro
           </a>
         </CopyrightItem>
       </CopyrightWrapper>

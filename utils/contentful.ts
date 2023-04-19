@@ -74,7 +74,10 @@ async function getEntriesFromQuery<T>(query: Object): Promise<T[] | T> {
  * @param fields Asset fields that need to extract the url
  * @returns {K} generic object that assets has been converted to url strings
  */
-function serializeAssetUrls<T, K>(obj: T, ...fields: string[]): K {
+function serializeAssetUrls<T extends { [key: string]: any }, K>(
+  obj: T,
+  ...fields: string[]
+): K {
   // create a shallow copy of the object
   const cloneObject: { [key: string]: any } = { ...obj };
 
