@@ -156,16 +156,28 @@ const ContactWrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   padding: 2rem 0 0 0;
 
+  & > *:last-child {
+    grid-column: 2 / span 2;
+  }
+
   ${(props) => props.theme.responsive.largest} {
     grid-template-columns: repeat(2, minmax(min-content, 1fr));
   }
 
   ${(props) => props.theme.responsive.mediumBig} {
     justify-items: center;
+
+    & > *:last-child {
+      grid-column: 2 / 3;
+    }
   }
 
   ${(props) => props.theme.responsive.mediumSmaller} {
     grid-template-columns: minmax(min-content, 1fr);
+
+    & > *:last-child {
+      grid-column: 1 / 2;
+    }
   }
 `;
 
@@ -190,6 +202,10 @@ const ContactItem = styled.p`
   text-align: left;
 
   color: ${(props) => props.theme.colors.white};
+
+  ${(props) => props.theme.responsive.mediumBig} {
+    text-align: center;
+  }
 
   ${(props) => props.theme.responsive.mobileMedium} {
     font-size: 1.3rem;

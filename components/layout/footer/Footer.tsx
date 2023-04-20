@@ -101,7 +101,7 @@ const Footer: React.FC = (): JSX.Element => {
           <ContactItem>Kandy, Sri Lanka. 20430</ContactItem>
         </ContactGroup>
         <ContactGroup>
-          <ContactItem>Tel: +94 81 527 7788 / +94 77 773 3388</ContactItem>
+          <ContactItem>Tel: +94 77 773 3337 / +94 77 773 3388</ContactItem>
           <ContactItem>
             Email: reservations@theserendipitycollection.com
           </ContactItem>
