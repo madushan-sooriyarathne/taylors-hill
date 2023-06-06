@@ -11,6 +11,9 @@ module.exports = {
     MAILCHIMP_SERVER_PREFIX: process.env.MAILCHIMP_SERVER_PREFIX,
     MAILCHIMP_LIST_ID: process.env.MAILCHIMP_LIST_ID,
   },
+  images: {
+    domains: ["www.bw2023.lk"],
+  },
   webpack: (config, { isServer }) => {
     if (isServer) {
       require("./utils/generateStaticSitemap");

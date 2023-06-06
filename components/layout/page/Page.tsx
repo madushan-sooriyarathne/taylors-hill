@@ -10,6 +10,7 @@ import Header from "../header/Header";
 import OverlayMenu from "../overlay-menu/OverlayMenu";
 import PageOverlay from "../page-overlay/PageOverlay";
 import { Container, ContentWrapper } from "./PageStyles";
+import BestWebVoteWidget from "../../best-web-vote-widget";
 
 interface Props {
   children: ReactNode;
@@ -56,6 +57,7 @@ const Page: React.FC<Props> = ({
       <OverlayMenu />
       <SnackBar />
       <Floater />
+      <BestWebVoteWidget />
       {!compressedHeader && <Header />}
 
       {transition.map(
