@@ -85,7 +85,7 @@ const ContactPage: React.FC = (): JSX.Element => {
       } else {
         // show notification
         showNotification(
-          "Error occurred while submitting your inquiry. Please contact our reservation via +94 77 773 3337 / +94 77 773 3388 or reservations@theserendipitycollection.com for further inquiries"
+          "Error occurred while submitting your inquiry. Please contact our reservation via +94 77 716 7178 / +94 70 707 0725 or reservations@taylorshill.lk for further inquiries"
         );
         // remove notification in 5 seconds
         setTimeout(() => showNotification(null), 5000);
@@ -163,8 +163,8 @@ const ContactPage: React.FC = (): JSX.Element => {
             />
             <ContactItem>
               Pattiygama Estate, Deltota, Kandy, Sri Lanka. <br />
-              +94 77 773 3337 / +94 77 773 3388 <br />
-              reservations@theserendipitycollection.com
+              +94 77 716 7178 / +94 70 707 0725 <br />
+              reservations@taylorshill.lk
             </ContactItem>
 
             <Button

@@ -57,7 +57,6 @@ const Page: React.FC<Props> = ({
       <OverlayMenu />
       <SnackBar />
       <Floater />
-      <BestWebVoteWidget />
       {!compressedHeader && <Header />}
 
       {transition.map(
