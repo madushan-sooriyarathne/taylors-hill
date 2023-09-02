@@ -19,9 +19,6 @@ const sendInquiryNotification = async (data: InquiryNotificationData) => {
         {
           email: "reservations@taylorshill.lk",
         },
-        {
-          email: "reservations@theserendipitycollection.com",
-        },
       ],
 
       template: "6J9TKAJWFD4JHKMF6GP8N6DWJ7V7",
