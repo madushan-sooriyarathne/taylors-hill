@@ -32,25 +32,45 @@ const MainApp: React.FC<AppProps> = ({
   return (
     <>
       <Head>
-        <title>Taylors Hill Boutique Hotel</title>
+        <title>Account Suspended</title>
 
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <MenuContextProvider>
-          <NotificationContextProvider>
-            <CookieNotice />
-            <PreLoadingOverlay isLoading={isLoading} />
-            <Component {...pageProps} />
-          </NotificationContextProvider>
-        </MenuContextProvider>
-      </ThemeProvider>
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        Account Suspended!
+      </div>
     </>
   );
 };
 
 export default MainApp;
+
+// <Head>
+//   <title>Taylors Hill Boutique Hotel</title>
+//
+//   <meta
+//     name="viewport"
+//     content="width=device-width, initial-scale=1, shrink-to-fit=no"
+//   />
+// </Head>
+// <ThemeProvider theme={theme}>
+//   <GlobalStyles />
+//   <MenuContextProvider>
+//     <NotificationContextProvider>
+//       <CookieNotice />
+//       <PreLoadingOverlay isLoading={isLoading} />
+//       <Component {...pageProps} />
+//     </NotificationContextProvider>
+//   </MenuContextProvider>
+// </ThemeProvider>
