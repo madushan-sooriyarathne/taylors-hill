@@ -58,7 +58,7 @@ const Page: React.FC<Props> = ({
       <SnackBar />
       <Floater />
       {!compressedHeader && <Header />}
-
+      <BestWebVoteWidget />
       {transition.map(
         ({ item, props, key }) =>
           item && (
@@ -66,7 +66,7 @@ const Page: React.FC<Props> = ({
               style={props as { [key: string]: string }}
               key={key}
             />
-          )
+          ),
       )}
 
       <ContentWrapper>{children}</ContentWrapper>
