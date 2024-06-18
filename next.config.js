@@ -12,7 +12,7 @@ module.exports = {
     MAILCHIMP_LIST_ID: process.env.MAILCHIMP_LIST_ID,
   },
   images: {
-    domains: ["www.bw2023.lk"],
+    domains: ["www.bw2024.lk"],
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
