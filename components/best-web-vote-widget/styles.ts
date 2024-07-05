@@ -5,7 +5,7 @@ const Widget = styled.a`
   bottom: 0;
   left: 2rem;
   background-color: ${(props) => props.theme.colors.white};
-  padding-bottom: 1rem;
+  padding-inline: 0.5rem;
   height: auto;
   width: auto;
   text-decoration: none;
@@ -18,20 +18,11 @@ const Widget = styled.a`
   z-index: 290;
   box-shadow: ${(props) => props.theme.shadows.medium};
 
-  & > div {
-    width: 10rem;
-    height: 10rem;
-    scale: 1.2;
-  }
-
   & > span {
-    font-family: ${(props) => props.theme.fonts.primary};
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: ${(props) => props.theme.colors.primary};
-    text-align: center;
+    width: 14rem !important;
+    height: auto;
+    aspect-ratio: 1.62/1;
+    scale: 1.2;
   }
 `;
 
