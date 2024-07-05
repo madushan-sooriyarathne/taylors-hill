@@ -12,7 +12,7 @@ const Page = styled.div<PageProps>`
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 20;
+  z-index: 300;
 
   background-color: ${(props) => props.theme.colors.bgLight};
 
